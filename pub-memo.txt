@@ -1,0 +1,14 @@
+'use client'
+
+`${process.env.NEXT_PUBLIC_FRONT_URL}`
+
+{'DEV: loading' && (
+  <div>
+    TODO: loading
+  </div>
+)}
+{'DEV: no data' && (
+  <NoData
+    text="최근 알림 내역이 없습니다."
+  />
+)}

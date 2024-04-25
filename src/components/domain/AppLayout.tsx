@@ -1,15 +1,17 @@
 import Header from '@/components/domain/Header';
 import NavBar, { NavBarProps } from '@/components/domain/NavBar';
+import Gnb from '@/components/domain/Gnb';
 
-interface AppLayoutProps {
+export interface AppLayoutProps {
   children: React.ReactNode;
   header?: boolean;
   navBar?: NavBarProps; 
+  hideGnb?: boolean;
 }
 
-export default function AppLayout({ children, header = false, navBar }: AppLayoutProps) {
+export default function AppLayout({ children, header = false, navBar, hideGnb = false }: AppLayoutProps) {
   return (
-    <div className="max-w-[800px] mx-auto">
+    <div className="relative max-w-[800px] mx-auto">
       {header && (
         <Header />
       )}
@@ -19,6 +21,9 @@ export default function AppLayout({ children, header = false, navBar }: AppLayou
       <main className="pt-17">
         {children}
       </main>
+      {!hideGnb && (
+        <Gnb />
+      )}
     </div>
   );
 }

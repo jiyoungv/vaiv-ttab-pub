@@ -1,13 +1,14 @@
+import Link from 'next/link';
+
 import AppLayout from '@/components/domain/AppLayout';
+import TabList from '@/components/domain/TabList';
 
 export default function Home() {
   return (
     <AppLayout header>
-      <p>안녕하세요</p>
-      <p>123</p>
-      <p>Abc</p>
-      <p>!@#$$</p>
-      <span className="mgc_search_line"></span>
+      home
+      <TabList />
+      <Link href={`${process.env.NEXT_PUBLIC_FRONT_URL}/tab/1`}>GO to Tab Detail Page</Link>
     </AppLayout>
   );
 }

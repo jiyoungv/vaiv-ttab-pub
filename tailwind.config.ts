@@ -1,6 +1,8 @@
 import type { Config } from 'tailwindcss';
 import colors from 'tailwindcss/colors';
 
+import variables from './src/style/variables';
+
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -39,55 +41,72 @@ const config: Config = {
       'stone': colors.stone,
     },
     fontSize: {
-      '6xl': ['60px', {
+      '6xl': [variables.text['6xl'], {
         lineHeight: '1.2',
         letterSpacing: '-0.004em',
       }],
-      '5xl': ['48px', {
+      '6xl-just': variables.text['6xl'],
+      '5xl': [variables.text['5xl'], {
         lineHeight: '1.25',
         letterSpacing: '-0.004em',
       }],
-      '4xl': ['36px', {
+      '5xl-just': variables.text['5xl'],
+      '4xl': [variables.text['4xl'], {
         lineHeight: '1.22222',
         letterSpacing: '-0.004em',
       }],
-      '3xl': ['32px', {
+      '4xl-just': variables.text['4xl'],
+      '3xl': [variables.text['3xl'], {
         lineHeight: '1.25',
         letterSpacing: '-0.004em',
       }],
-      '2xl': ['24px', {
+      '3xl-just': variables.text['3xl'],
+      '2xl': [variables.text['2xl'], {
         lineHeight: '1.33333',
         letterSpacing: '-0.004em',
       }],
-      'xl': ['20px', {
+      '2xl-just': variables.text['2xl'],
+      'xl': [variables.text['xl'], {
         lineHeight: '1.4',
         letterSpacing: '-0.004em',
       }],
-      'lg': ['18px', {
+      'xl-just': variables.text['xl'],
+      'lg': [variables.text['lg'], {
         lineHeight: '1.55556',
         letterSpacing: '-0.004em',
       }],
-      'base-read': ['16px', {
+      'lg-just': variables.text['lg'],
+      'base-read': [variables.text['base'], {
         lineHeight: '1.75',
         letterSpacing: '-0.004em',
       }],
-      'base': ['16px', {
+      'base': [variables.text['base'], {
         lineHeight: '1.5',
         letterSpacing: '-0.004em',
       }],
-      'sm': ['14px', {
+      'base-just': variables.text['base'],
+      'sm': [variables.text['sm'], {
         lineHeight: '1.42857',
         letterSpacing: '-0.004em',
       }],
-      'xs': ['12px', {
+      'sm-just': variables.text['sm'],
+      'xs': [variables.text['xs'], {
         lineHeight: '1.33333',
         letterSpacing: '-0.004em',
       }],
+      'xs-just': variables.text['xs'],
     },
     extend: {
       spacing: {
+        '4.5': '1.125rem',
         '17': '4.25rem',
       },
+      dropShadow: {
+        'primary': [
+            '0px 4px 6px rgba(244, 63, 94, 0.50)',
+            '0px 10px 15px rgba(244, 63, 94, 0.50)'
+        ]
+      }
     },
   },
   plugins: [],

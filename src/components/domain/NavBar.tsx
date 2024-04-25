@@ -2,6 +2,7 @@
 import { useRouter } from 'next/navigation';
 
 import Inner from '@/components/common/Inner';
+import IconButton from '@/components/common/IconButton';
 
 export interface NavBarProps {
   hideBack?: boolean;
@@ -14,18 +15,19 @@ export default function NavBar({ hideBack = false, title, left, right }: NavBarP
   const router = useRouter();
 
   return (
-    <header className="z-40 fixed top-0 left-0 w-full h-17 bg-white">
+    <header className="v-header">
       <Inner>
-        <nav className="flex justify-between items-center relative h-full">
+        <nav className="flex justify-between items-center gap-1 relative h-full">
           {!hideBack && (
-            <button 
-              type="button"
-              onClick={() => router.back()}
-              className="flex-shrink-0"
+            <IconButton 
+              icon={{
+                name: 'mgc_left_line',
+                size: 'text-3xl-just',
+                ariaLabel: '이전으로',
+              }}
               role="link"
-            >
-              <i className="mgc_left_line text-[32px] text-slate-700" aria-label="이전 페이지"></i>
-            </button>
+              onClick={() => router.back()}
+            />
           )}
           {left}
           {title && (
