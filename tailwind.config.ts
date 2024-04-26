@@ -41,60 +41,60 @@ const config: Config = {
       'stone': colors.stone,
     },
     fontSize: {
-      '6xl': [variables.text['6xl'], {
+      '6xl': ['var(--text-6xl)', {
         lineHeight: '1.2',
         letterSpacing: '-0.004em',
       }],
-      '6xl-just': variables.text['6xl'],
-      '5xl': [variables.text['5xl'], {
+      '6xl-just': 'var(--text-6xl)',
+      '5xl': ['var(--text-5xl)', {
         lineHeight: '1.25',
         letterSpacing: '-0.004em',
       }],
-      '5xl-just': variables.text['5xl'],
-      '4xl': [variables.text['4xl'], {
+      '5xl-just': 'var(--text-5xl)',
+      '4xl': ['var(--text-4xl)', {
         lineHeight: '1.22222',
         letterSpacing: '-0.004em',
       }],
-      '4xl-just': variables.text['4xl'],
-      '3xl': [variables.text['3xl'], {
+      '4xl-just': 'var(--text-4xl)',
+      '3xl': ['var(--text-3xl)', {
         lineHeight: '1.25',
         letterSpacing: '-0.004em',
       }],
-      '3xl-just': variables.text['3xl'],
-      '2xl': [variables.text['2xl'], {
+      '3xl-just': 'var(--text-3xl)',
+      '2xl': ['var(--text-2xl)', {
         lineHeight: '1.33333',
         letterSpacing: '-0.004em',
       }],
-      '2xl-just': variables.text['2xl'],
-      'xl': [variables.text['xl'], {
+      '2xl-just': 'var(--text-2xl)',
+      'xl': ['var(--text-xl)', {
         lineHeight: '1.4',
         letterSpacing: '-0.004em',
       }],
-      'xl-just': variables.text['xl'],
-      'lg': [variables.text['lg'], {
+      'xl-just': 'var(--text-xl)',
+      'lg': ['var(--text-lg)', {
         lineHeight: '1.55556',
         letterSpacing: '-0.004em',
       }],
-      'lg-just': variables.text['lg'],
-      'base-read': [variables.text['base'], {
+      'lg-just': 'var(--text-lg)',
+      'base-read': ['var(--text-base)', {
         lineHeight: '1.75',
         letterSpacing: '-0.004em',
       }],
-      'base': [variables.text['base'], {
+      'base': ['var(--text-base)', {
         lineHeight: '1.5',
         letterSpacing: '-0.004em',
       }],
-      'base-just': variables.text['base'],
-      'sm': [variables.text['sm'], {
+      'base-just': 'var(--text-base)',
+      'sm': ['var(--text-sm)', {
         lineHeight: '1.42857',
         letterSpacing: '-0.004em',
       }],
-      'sm-just': variables.text['sm'],
-      'xs': [variables.text['xs'], {
+      'sm-just': 'var(--text-sm)',
+      'xs': ['var(--text-xs)', {
         lineHeight: '1.33333',
         letterSpacing: '-0.004em',
       }],
-      'xs-just': variables.text['xs'],
+      'xs-just': 'var(--text-xs)',
     },
     extend: {
       spacing: {

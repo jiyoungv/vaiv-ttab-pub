@@ -1,3 +1,4 @@
+// MEMO: 변수 어떻게 할지 고민...
 const variables = {
   text: {
     '6xl': '60px',

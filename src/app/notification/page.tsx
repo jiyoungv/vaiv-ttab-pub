@@ -13,7 +13,7 @@ export default function Notification() {
         right: (
           <button 
             type="button"
-            className="text-slate-500 text-sm font-medium hover:underline active:underline"
+            className="text-slate-500 text-sm font-medium hover:underline"
             onClick={() => {
               const res = confirm('최근 30일 알림을 전체 삭제하시겠습니까?');
               if (res) {

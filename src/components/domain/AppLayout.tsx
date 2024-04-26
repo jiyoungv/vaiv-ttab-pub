@@ -11,7 +11,7 @@ export interface AppLayoutProps {
 
 export default function AppLayout({ children, header = false, navBar, hideGnb = false }: AppLayoutProps) {
   return (
-    <div className="relative max-w-[800px] mx-auto">
+    <div className="relative max-w-[var(--mo-max-width)] mx-auto">
       {header && (
         <Header />
       )}

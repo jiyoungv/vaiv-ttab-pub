@@ -51,14 +51,17 @@ export default function Gnb({}: GnbProps) {
                   name={v.icon}
                   color={pathnameDepth1 !== v.pathname ? 'text-slate-400': 'text-primary-500'}
                   ariaLabel={v.label}
-                  className="group-hover:text-primary-500 group-active:text-primary-500"
+                  className="group-hover:text-primary-500"
                 />
               </Link>
             )}
           </li>
         ))}
         <li className="absolute bottom-3 left-1/2 -translate-x-1/2">
-          <Link href={`${process.env.NEXT_PUBLIC_FRONT_URL}/create`} className="inline-flex justify-center items-center w-16 aspect-square rounded-full bg-primary-500 drop-shadow-primary">
+          <Link 
+            href={`${process.env.NEXT_PUBLIC_FRONT_URL}/create`} 
+            className="inline-flex justify-center items-center w-16 aspect-square rounded-full bg-primary-500 drop-shadow-primary transition-transform hover:translate-y-1"
+          >
             <Image src={ImgSymbol} alt="정보 및 탭 생성" />
           </Link>
         </li>

@@ -15,3 +15,18 @@ export interface RecentSearchData {
   link: string;
   keyword: string;
 };
+
+export interface MyCommentData {
+  link: string;
+  comment: string;
+  date: string;
+  time: string;
+  tabName: string;
+};
+
+export interface MyNoticeData {
+  link: string;
+  title: string;
+  date: string;
+  new?: boolean;
+};

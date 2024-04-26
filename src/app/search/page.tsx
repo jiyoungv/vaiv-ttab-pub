@@ -1,22 +1,24 @@
 'use client'
 import { useCallback, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 import AppLayout from '@/components/domain/AppLayout';
 import Inner from '@/components/common/Inner';
 import Input from '@/components/common/Input';
 import RecentSearchItem from '@/components/domain/RecentSearchItem';
-import Icon from '@/components/common/Icon';
 import NoData from '@/components/common/NoData';
 import { tempRecentSearchData } from '@/utils/tempData';
 
 export default function Search() {
+  const router = useRouter();
+
   const [keyword, setKeyword] = useState('');
 
   const onSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
-
     alert('DEV: 검색하기');
-  }, []);
+    router.push(`${process.env.NEXT_PUBLIC_FRONT_URL}/search/${keyword}`);
+  }, [router, keyword]);
 
   return (
     <AppLayout 
@@ -27,8 +29,10 @@ export default function Search() {
               value={keyword}
               onChange={(e) => setKeyword(e.target.value)}
               placeholder="검색어를 입력해주세요."
-              left={<Icon name="mgc_search_line" color="text-slate-500" size="text-xl" />}
+              leftIcon="mgc_search_line"
               focus
+              required
+              variant="dark"
               full 
             />
           </form>
@@ -44,7 +48,7 @@ export default function Search() {
             </p>
             <button 
               type="button"
-              className="text-slate-500 text-sm font-medium hover:underline active:underline"
+              className="text-slate-500 text-sm font-medium hover:underline"
               onClick={() => {
                 const res = confirm('최근 검색어를 전체 삭제하시겠습니까?');
                 if (res) {

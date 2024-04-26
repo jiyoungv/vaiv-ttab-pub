@@ -31,9 +31,9 @@ export default function NavBar({ hideBack = false, title, left, right }: NavBarP
           )}
           {left}
           {title && (
-            <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-slate-700 text-lg font-bold">
+            <h1 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-slate-700 text-lg font-bold">
               {title}
-            </p>
+            </h1>
           )}
           {right}
         </nav>
