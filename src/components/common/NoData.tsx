@@ -8,7 +8,7 @@ export interface NoDataProps {
 }
 
 export default function NoData({
-  text = 'no data',
+  text = 'No Data',
   height = '200px',
   children,
   className,

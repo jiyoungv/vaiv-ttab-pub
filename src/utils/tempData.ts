@@ -56,14 +56,6 @@ export const tempRecentSearchData = [
     link: `${process.env.NEXT_PUBLIC_FRONT_URL}/search/기획`,
     keyword: '기획',
   },
-  {
-    link: `${process.env.NEXT_PUBLIC_FRONT_URL}/search/개발`,
-    keyword: '개발',
-  },
-  {
-    link: `${process.env.NEXT_PUBLIC_FRONT_URL}/search/프론트엔드`,
-    keyword: '프론트엔드',
-  },
 ];
 
 export const tempMyCommentData = [
@@ -76,10 +68,10 @@ export const tempMyCommentData = [
   },
   {
     link: `${process.env.NEXT_PUBLIC_FRONT_URL}/tab/1`,
-    comment: '탭에 대한 댓글을 이렇게 저렇게 요렇게 쓰고 이건 요건 저건 좋아요',
+    comment: '탭에 대한 댓글을 이렇게 저렇게 요렇게 쓰고 이건 요건 저건 좋아요 탭에 대한 댓글을 이렇게 저렇게 요렇게 쓰고 이건 요건 저건 좋아요 탭에 대한 댓글을 이렇게 저렇게 요렇게 쓰고 이건 요건 저건 좋아요',
     date: '2024-02-01',
     time: '18:00',
-    tabName: '탭 이름만 써도 괜찮치 않을까 탭이름 영역',
+    tabName: '탭 이름만 써도 괜찮치 않을까 탭이름 영역 탭 이름만 써도 괜찮치 않을까 탭이름 영역 탭 이름만 써도 괜찮치 않을까 탭이름 영역 탭 이름만 써도 괜찮치 않을까 탭이름 영역',
   },
   {
     link: `${process.env.NEXT_PUBLIC_FRONT_URL}/tab/1`,
@@ -87,6 +79,27 @@ export const tempMyCommentData = [
     date: '2024-01-01',
     time: '18:00',
     tabName: '탭 이름만 써도 괜찮치 않을까 탭이름 영역',
+  },
+];
+
+export const tempMyJoinTabData = [
+  {
+    link: `${process.env.NEXT_PUBLIC_FRONT_URL}/tab/1`,
+    title: '탭 제목에 대한 영역입니다.',
+    subText: '탭에 대한 서브텍스트 영역입니다.',
+    join: true,
+  },
+  {
+    link: `${process.env.NEXT_PUBLIC_FRONT_URL}/tab/2`,
+    title: '탭 제목에 대한 영역입니다. 탭 제목에 대한 영역입니다. 탭 제목에 대한 영역입니다. 탭 제목에 대한 영역입니다.',
+    subText: '탭에 대한 서브텍스트 영역입니다. 탭에 대한 서브텍스트 영역입니다. 탭에 대한 서브텍스트 영역입니다. 탭에 대한 서브텍스트 영역입니다. 탭에 대한 서브텍스트 영역입니다.',
+    join: false,
+  },
+  {
+    link: `${process.env.NEXT_PUBLIC_FRONT_URL}/tab/1`,
+    title: '탭 제목에 대한 영역입니다.',
+    subText: '탭에 대한 서브텍스트 영역입니다.',
+    join: true,
   },
 ];
 

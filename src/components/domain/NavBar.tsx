@@ -22,7 +22,7 @@ export default function NavBar({ hideBack = false, title, left, right }: NavBarP
             <IconButton 
               icon={{
                 name: 'mgc_left_line',
-                size: 'text-3xl-just',
+                size: 'text-3xl-size',
                 ariaLabel: '이전으로',
               }}
               role="link"

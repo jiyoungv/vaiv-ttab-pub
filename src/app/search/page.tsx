@@ -6,6 +6,7 @@ import AppLayout from '@/components/domain/AppLayout';
 import Inner from '@/components/common/Inner';
 import Input from '@/components/common/Input';
 import RecentSearchItem from '@/components/domain/RecentSearchItem';
+import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
 import { tempRecentSearchData } from '@/utils/tempData';
 
@@ -29,9 +30,9 @@ export default function Search() {
               value={keyword}
               onChange={(e) => setKeyword(e.target.value)}
               placeholder="검색어를 입력해주세요."
-              leftIcon="mgc_search_line"
-              focus
+              autoFocus
               required
+              leftIcon="mgc_search_line"
               variant="dark"
               full 
             />
@@ -68,9 +69,11 @@ export default function Search() {
               ))}
             </ul>
           )}
-          {'DEV: loading' && (
-            <div>
-              TODO: loading
+          {'DEV: loading' && (            
+            <div className="flex flex-col gap-3">
+              <Skeleton />
+              <Skeleton />
+              <Skeleton />
             </div>
           )}
           {'DEV: no data' && (

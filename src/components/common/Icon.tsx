@@ -11,14 +11,14 @@ export interface IconProps {
 export default function Icon({
   name = 'mgc_heart_line', 
   color = 'text-slate-700', 
-  size = 'text-2xl-just', 
+  size = 'text-2xl-size', 
   ariaLabel,
   className,
 }: IconProps) {
   return (
     <i 
       className={classNames(
-        'inline-block align-top relative',
+        'inline-block align-middle relative',
         {
           [`${name}`]: name,
           [`${color}`]: color,

@@ -6,12 +6,12 @@ import Icon from '@/components/common/Icon';
 export interface InputProps {
   type?: React.HTMLInputTypeAttribute;
   value?: string;
-  onChange?: React.ChangeEventHandler<HTMLInputElement>;
   placeholder?: string;
   required?: boolean;
   maxLength?: number;
-  focus?: boolean;
   error?: boolean;
+  autoFocus?: boolean;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
   variant?: 'default' | 'dark';
   full?: boolean;
   leftIcon?: string; 
@@ -22,12 +22,12 @@ export interface InputProps {
 export default function Input({
   type = 'text',
   value,
-  onChange,
   placeholder,
   required,
   maxLength,
-  focus,
   error,
+  autoFocus,
+  onChange,
   variant = 'default',
   full,
   leftIcon = 'mgc_search_line',
@@ -37,14 +37,14 @@ export default function Input({
 }: InputProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const [focusState, setFocusState] = useState<boolean | undefined>();
+  const [focus, setFocus] = useState<boolean | undefined>();
 
   useEffect(() => {
-    if (focus) {
-      setFocusState(true);
+    if (autoFocus) {
+      setFocus(true);
       inputRef?.current?.focus();
     }
-  }, [focus]);
+  }, [autoFocus]);
 
   return (
     <div 
@@ -55,7 +55,7 @@ export default function Input({
           'border-slate-200 rounded-lg bg-white': variant === 'default',
           'border-slate-50 rounded-[50px] bg-slate-50': variant === 'dark',
           'w-full': full,
-          'border-slate-500': focusState,
+          'border-slate-500': focus,
         },
       )}
     >
@@ -80,8 +80,8 @@ export default function Input({
           )}
           value={value} 
           onChange={onChange}
-          onFocus={() => setFocusState(true)}
-          onBlur={() => setFocusState(false)}
+          onFocus={() => setFocus(true)}
+          onBlur={() => setFocus(false)}
           placeholder={placeholder}
           required={required}
           maxLength={maxLength}

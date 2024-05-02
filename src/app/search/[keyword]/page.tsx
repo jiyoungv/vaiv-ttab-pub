@@ -7,6 +7,7 @@ import Inner from '@/components/common/Inner';
 import TabList from '@/components/domain/TabList';
 import Input from '@/components/common/Input';
 import Radio from '@/components/common/Radio';
+import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
 
 export default function SearchResult() {
@@ -65,7 +66,13 @@ export default function SearchResult() {
       </section>
       {'DEV: loading' && (
         <div>
-          TODO: loading
+          <Inner>
+            <div className="flex flex-col gap-3">
+              <Skeleton height="100px" />
+              <Skeleton height="100px" />
+              <Skeleton height="100px" />
+            </div>
+          </Inner>
         </div>
       )}
       {'DEV: no data' && (

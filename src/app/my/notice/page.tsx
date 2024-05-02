@@ -1,5 +1,7 @@
 import AppLayout from '@/components/domain/AppLayout';
 import MyNoticeItem from '@/components/domain/my/MyNoticeItem';
+import Inner from '@/components/common/Inner';
+import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
 import { tempMyNoticeData } from '@/utils/tempData';
 
@@ -22,7 +24,13 @@ export default function MyNotice() {
         )}
         {'DEV: loading' && (
           <div>
-            TODO: loading
+            <Inner>
+              <div className="flex flex-col gap-3">
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+              </div>
+            </Inner>
           </div>
         )}
         {'DEV: no data' && (

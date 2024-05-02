@@ -26,7 +26,8 @@ export default function My() {
               </h1>
             </div>
             <div className="flex justify-center mb-5">
-              <Button>내 정보 수정</Button>
+              <a href="/my/info">내 정보 수정</a>
+              {/* <Button>내 정보 수정</Button> */}
             </div>
             <div className="flex justify-between items-center px-10 py-3 rounded-2xl bg-primary-500">
               {[
@@ -62,7 +63,7 @@ export default function My() {
                     text: '내 댓글',
                   },
                   { 
-                    link: `${process.env.NEXT_PUBLIC_FRONT_URL}/my/tab-join`,
+                    link: `${process.env.NEXT_PUBLIC_FRONT_URL}/my/join-tab`,
                     text: '탭 참여 신청',
                   },
                 ],
@@ -95,7 +96,7 @@ export default function My() {
                           <p className="text-slate-600 text-base-read font-bold group-hover:underline">
                             {v2.text}
                           </p>
-                          <Icon name="mgc_right_line" color="text-slate-600" size="text-xl-just" />
+                          <Icon name="mgc_right_line" color="text-slate-600" size="text-xl-size" />
                         </div>
                       </Link>
                     </li>
@@ -114,7 +115,7 @@ export default function My() {
                   }
                 }}
               >
-                <p className="block  text-slate-500 text-sm font-bold group-hover:underline">
+                <p className="block text-slate-500 text-sm font-bold group-hover:underline">
                   로그아웃
                 </p>
               </button>

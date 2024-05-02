@@ -1,23 +1,23 @@
 import AppLayout from '@/components/domain/AppLayout';
-import MyCommentItem from '@/components/domain/my/MyCommentItem';
+import MyJoinTabItem from '@/components/domain/my/MyJoinTabItem';
 import Inner from '@/components/common/Inner';
 import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
-import { tempMyCommentData } from '@/utils/tempData';
+import { tempMyJoinTabData } from '@/utils/tempData';
 
-export default function MyComment() {
+export default function MyJoinTab() {
   return (
     <AppLayout
       navBar={{
-        title: '내 댓글',
+        title: '탭 참여 신청',
       }}
     >
       <section>
-        {tempMyCommentData && (
+        {tempMyJoinTabData && (
           <ul>
-            {tempMyCommentData.map((data, i) => (
+            {tempMyJoinTabData.map((data, i) => (
               <li key={i}>
-                <MyCommentItem data={data} />
+                <MyJoinTabItem data={data} />
               </li>
             ))}
           </ul>
@@ -35,7 +35,7 @@ export default function MyComment() {
         )}
         {'DEV: no data' && (
           <NoData
-            text="내 댓글이 없습니다."
+            text="참여 신청한 탭이 없습니다."
           />
         )}
       </section>

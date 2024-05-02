@@ -2,6 +2,7 @@
 import AppLayout from '@/components/domain/AppLayout';
 import Inner from '@/components/common/Inner';
 import NotificationItem from '@/components/domain/NotificationItem';
+import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
 import { tempNotificationData } from '@/utils/tempData';
 
@@ -42,7 +43,22 @@ export default function Notification() {
           )}
           {'DEV: loading' && (
             <div>
-              TODO: loading
+              <Inner>
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center gap-3">
+                    <Skeleton round />
+                    <Skeleton />
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Skeleton round />
+                    <Skeleton />
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Skeleton round />
+                    <Skeleton />
+                  </div>
+                </div>
+              </Inner>
             </div>
           )}
           {'DEV: no data' && (

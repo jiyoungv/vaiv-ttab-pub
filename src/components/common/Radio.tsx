@@ -5,8 +5,8 @@ export interface RadioProps {
   name: string;
   checked: boolean;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
-  required?: boolean;
   disabled?: boolean;
+  required?: boolean;
   size?: 'sm' | 'md';
   text?: string;
   supportText?: string;
@@ -18,8 +18,8 @@ export default function Radio({
   name,
   checked,
   onChange,
-  required,
   disabled,
+  required,
   size = 'sm',
   text,
   supportText,

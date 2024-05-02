@@ -45,37 +45,37 @@ const config: Config = {
         lineHeight: '1.2',
         letterSpacing: '-0.004em',
       }],
-      '6xl-just': 'var(--text-6xl)',
+      '6xl-size': 'var(--text-6xl)',
       '5xl': ['var(--text-5xl)', {
         lineHeight: '1.25',
         letterSpacing: '-0.004em',
       }],
-      '5xl-just': 'var(--text-5xl)',
+      '5xl-size': 'var(--text-5xl)',
       '4xl': ['var(--text-4xl)', {
         lineHeight: '1.22222',
         letterSpacing: '-0.004em',
       }],
-      '4xl-just': 'var(--text-4xl)',
+      '4xl-size': 'var(--text-4xl)',
       '3xl': ['var(--text-3xl)', {
         lineHeight: '1.25',
         letterSpacing: '-0.004em',
       }],
-      '3xl-just': 'var(--text-3xl)',
+      '3xl-size': 'var(--text-3xl)',
       '2xl': ['var(--text-2xl)', {
         lineHeight: '1.33333',
         letterSpacing: '-0.004em',
       }],
-      '2xl-just': 'var(--text-2xl)',
+      '2xl-size': 'var(--text-2xl)',
       'xl': ['var(--text-xl)', {
         lineHeight: '1.4',
         letterSpacing: '-0.004em',
       }],
-      'xl-just': 'var(--text-xl)',
+      'xl-size': 'var(--text-xl)',
       'lg': ['var(--text-lg)', {
         lineHeight: '1.55556',
         letterSpacing: '-0.004em',
       }],
-      'lg-just': 'var(--text-lg)',
+      'lg-size': 'var(--text-lg)',
       'base-read': ['var(--text-base)', {
         lineHeight: '1.75',
         letterSpacing: '-0.004em',
@@ -84,17 +84,17 @@ const config: Config = {
         lineHeight: '1.5',
         letterSpacing: '-0.004em',
       }],
-      'base-just': 'var(--text-base)',
+      'base-size': 'var(--text-base)',
       'sm': ['var(--text-sm)', {
         lineHeight: '1.42857',
         letterSpacing: '-0.004em',
       }],
-      'sm-just': 'var(--text-sm)',
+      'sm-size': 'var(--text-sm)',
       'xs': ['var(--text-xs)', {
         lineHeight: '1.33333',
         letterSpacing: '-0.004em',
       }],
-      'xs-just': 'var(--text-xs)',
+      'xs-size': 'var(--text-xs)',
     },
     extend: {
       spacing: {
@@ -103,10 +103,17 @@ const config: Config = {
       },
       dropShadow: {
         'primary': [
-            '0px 4px 6px rgba(244, 63, 94, 0.50)',
-            '0px 10px 15px rgba(244, 63, 94, 0.50)'
-        ]
-      }
+          '0px 4px 6px rgba(244, 63, 94, 0.50)',
+          '0px 10px 15px rgba(244, 63, 94, 0.50)',
+        ],
+        'toggle': [
+          '0px 1px 2px rgba(16, 24, 40, 0.06)', 
+          '0px 1px 3px rgba(16, 24, 40, 0.10)',
+        ],
+      },
+      transitionDuration: {
+        DEFAULT: '200ms',
+      },
     },
   },
   plugins: [],

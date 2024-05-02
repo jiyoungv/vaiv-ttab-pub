@@ -18,7 +18,7 @@ export default function RecentSearchItem({ data }: RecentSearchItemProps) {
         <Icon 
           name="mgc_time_line"
           color="text-slate-400"
-          size="text-xl-just"
+          size="text-xl-size"
           className="flex-shrink-0"
         />
         <p className="text-slate-700 text-base-read font-medium group-hover:underline active-hover:underline">
@@ -32,7 +32,7 @@ export default function RecentSearchItem({ data }: RecentSearchItemProps) {
           icon={{
             name: "mgc_close_line",
             color: "text-slate-500",
-            size: "text-base-just",
+            size: "text-base-size",
             className: "flex-shrink-0",
           }}
           onClick={() => alert('DEV: 검색어 삭제')}

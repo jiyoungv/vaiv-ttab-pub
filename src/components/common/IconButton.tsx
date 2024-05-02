@@ -26,7 +26,7 @@ export default function IconButton({
   target,
 }: IconButtonProps) {
   const rootClassName = useMemo(() => classNames(
-    'inline-block relative before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:hidden before:w-[calc(100%+4px)] before:h-[calc(100%+4px)] before:rounded-lg before:bg-slate-100 hover:before:block', 
+    'inline-flex items-center relative before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:hidden before:w-[calc(100%+4px)] before:h-[calc(100%+4px)] before:rounded-lg before:bg-slate-100 hover:before:block', 
     {
       [`${className}`]: className,
     },
