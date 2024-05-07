@@ -71,9 +71,9 @@ export default function Search() {
           )}
           {'DEV: loading' && (            
             <div className="flex flex-col gap-3">
-              <Skeleton />
-              <Skeleton />
-              <Skeleton />
+              {Array(5).fill('').map((v, i) => (
+                <Skeleton key={i} />
+              ))}
             </div>
           )}
           {'DEV: no data' && (

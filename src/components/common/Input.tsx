@@ -9,6 +9,8 @@ export interface InputProps {
   placeholder?: string;
   required?: boolean;
   maxLength?: number;
+  disabled?: boolean;
+  readOnly?: boolean;
   error?: boolean;
   autoFocus?: boolean;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
@@ -25,12 +27,14 @@ export default function Input({
   placeholder,
   required,
   maxLength,
+  disabled,
+  readOnly,
   error,
   autoFocus,
   onChange,
   variant = 'default',
   full,
-  leftIcon = 'mgc_search_line',
+  leftIcon, // eg. leftIcon="mgc_search_line"
   left,
   right,
 
@@ -51,11 +55,18 @@ export default function Input({
       className={classNames(
         'inline-flex justify-between items-center gap-2 px-3 py-2.5 border',
         {
+          'rounded-lg': variant === 'default',
+          'border-slate-200': variant === 'default' && !focus,
+          'bg-white': variant === 'default' && !disabled,
+
+          'rounded-[50px]': variant === 'dark',
+          'border-slate-50': variant === 'dark' && !focus,
+          'bg-slate-50': variant === 'dark' && !disabled,
+
+          'bg-slate-100': disabled,
           'border-error-500': error,
-          'border-slate-200 rounded-lg bg-white': variant === 'default',
-          'border-slate-50 rounded-[50px] bg-slate-50': variant === 'dark',
+          'border-primary-500': focus,
           'w-full': full,
-          'border-slate-500': focus,
         },
       )}
     >
@@ -72,10 +83,12 @@ export default function Input({
           ref={inputRef}
           type={type} 
           className={classNames(
-            'flex-auto text-slate-700 text-base-read placeholder:text-slate-400 focus:outline-none',
+            'flex-auto text-base-read font-medium placeholder:text-slate-400 focus:outline-none',
             {
-              'bg-white': variant === 'default',
-              'bg-slate-50': variant === 'dark',
+              'text-slate-700': !disabled,
+              'bg-white': variant === 'default' && !disabled,
+              'bg-slate-50': variant === 'dark' && !disabled,
+              'bg-slate-100 text-slate-400': disabled,
             },
           )}
           value={value} 
@@ -85,6 +98,8 @@ export default function Input({
           placeholder={placeholder}
           required={required}
           maxLength={maxLength}
+          disabled={disabled}
+          readOnly={readOnly}
         />
       </div>
       {right && (

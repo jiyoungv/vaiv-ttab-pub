@@ -26,8 +26,9 @@ export default function My() {
               </h1>
             </div>
             <div className="flex justify-center mb-5">
-              <a href="/my/info">내 정보 수정</a>
-              {/* <Button>내 정보 수정</Button> */}
+              <Button href={`${process.env.NEXT_PUBLIC_FRONT_URL}/my/info`} color="white" size="sm" round>
+                내 정보 수정
+              </Button>
             </div>
             <div className="flex justify-between items-center px-10 py-3 rounded-2xl bg-primary-500">
               {[

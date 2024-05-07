@@ -1,12 +1,17 @@
 'use client'
+import { useState } from 'react';
+
 import AppLayout from '@/components/domain/AppLayout';
 import Inner from '@/components/common/Inner';
+import Tab from '@/components/common/Tab';
 import NotificationItem from '@/components/domain/NotificationItem';
 import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
 import { tempNotificationData } from '@/utils/tempData';
 
 export default function Notification() {
+  const [tab, setTab] = useState('all');
+
   return (
     <AppLayout
       navBar={{
@@ -27,6 +32,19 @@ export default function Notification() {
         ),
       }}
     >
+      {tempNotificationData && (
+        <div className="relative mb-4">
+          <Tab 
+            list={[
+              { value: 'all', label: '전체' },
+              { value: 'join-tab', label: '참여탭' },
+              { value: 'like-tab', label: '관심탭' },
+              { value: 'follow', label: '팔로우' },
+            ]}
+            onChange={(activeValue) => setTab(activeValue)}
+          />
+        </div>
+      )}
       <section>
         <Inner>
           <div className="mb-5">
@@ -45,18 +63,12 @@ export default function Notification() {
             <div>
               <Inner>
                 <div className="flex flex-col gap-3">
-                  <div className="flex items-center gap-3">
-                    <Skeleton round />
-                    <Skeleton />
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Skeleton round />
-                    <Skeleton />
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Skeleton round />
-                    <Skeleton />
-                  </div>
+                  {Array(5).fill('').map((v, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <Skeleton round />
+                      <Skeleton />
+                    </div>
+                  ))}
                 </div>
               </Inner>
             </div>

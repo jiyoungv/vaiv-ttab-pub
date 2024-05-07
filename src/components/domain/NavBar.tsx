@@ -1,6 +1,7 @@
 'use client'
 import { useRouter } from 'next/navigation';
 
+import HeaderLayout from '@/components/domain/HeaderLayout';
 import Inner from '@/components/common/Inner';
 import IconButton from '@/components/common/IconButton';
 
@@ -11,11 +12,16 @@ export interface NavBarProps {
   right?: React.ReactNode;
 }
 
-export default function NavBar({ hideBack = false, title, left, right }: NavBarProps) {
+export default function NavBar({ 
+  hideBack, 
+  title, 
+  left, 
+  right,
+}: NavBarProps) {
   const router = useRouter();
 
   return (
-    <header className="v-header">
+    <HeaderLayout>
       <Inner>
         <nav className="flex justify-between items-center gap-1 relative h-full">
           {!hideBack && (
@@ -38,6 +44,6 @@ export default function NavBar({ hideBack = false, title, left, right }: NavBarP
           {right}
         </nav>
       </Inner>
-    </header>
+    </HeaderLayout>
   );
 }

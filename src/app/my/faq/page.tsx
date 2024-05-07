@@ -90,9 +90,9 @@ export default function MyFAQ() {
           <div>
             <Inner>
               <div className="flex flex-col gap-3">
-                <Skeleton />
-                <Skeleton />
-                <Skeleton />
+                {Array(5).fill('').map((v, i) => (
+                  <Skeleton key={i} />
+                ))}
               </div>
             </Inner>
           </div>

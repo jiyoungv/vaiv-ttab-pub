@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import HeaderLayout from '@/components/domain/HeaderLayout';
 import Inner from '@/components/common/Inner';
 import IconButton from '@/components/common/IconButton';
 import ImgLogo from '/public/images/logo.svg';
@@ -9,7 +10,7 @@ export interface HeaderProps {};
 
 export default function Header({}: HeaderProps) {
   return (
-    <header className="v-header">
+    <HeaderLayout>
       <Inner>
         <nav className="flex justify-between items-center gap-1 h-full">
           <Link href={`${process.env.NEXT_PUBLIC_FRONT_URL}`}>
@@ -28,6 +29,6 @@ export default function Header({}: HeaderProps) {
           </IconButton>
         </nav>
       </Inner>
-    </header>
+    </HeaderLayout>
   );
 }

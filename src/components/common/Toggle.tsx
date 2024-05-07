@@ -13,9 +13,9 @@ export interface ToggleProps {
 }
 
 export default function Toggle({
-  checked = false,
-  defaultChecked = false,
-  disabled = false,
+  checked,
+  defaultChecked,
+  disabled,
   onChange,
   text,
   supportText,

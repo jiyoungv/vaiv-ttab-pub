@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "antd": "^5.17.0",
     "classnames": "^2.5.1",
     "mingcute_icon": "^2.9.4",
     "next": "14.2.2",

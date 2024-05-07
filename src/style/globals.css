@@ -6,6 +6,7 @@
 @tailwind utilities;
 
 @layer base {
+  /* TODO: 변수 정리 */
   :root {
     /* font */
     --text-6xl: 60px;
@@ -26,8 +27,12 @@
 }
 
 @layer utilities {
-  .v-header {@apply z-40 fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[var(--mo-max-width)] h-17 bg-white}
-  .v-my-item {@apply py-6 border-b border-b-slate-200 hover:bg-slate-50}
+  .scrollbar-hidden::-webkit-scrollbar {display: none;}
+
+  .scrollbar-mini::-webkit-scrollbar {width: 4px;height: 4px;}
+  .scrollbar-mini::-webkit-scrollbar-track {background: transparent;}
+  .scrollbar-mini::-webkit-scrollbar-thumb {border-radius: 5em;background: theme('colors.slate.200');}
+  .scrollbar-mini::-webkit-scrollbar-thumb:hover {background: theme('colors.slate.300');}
 }
 
 [class^="mgc_"]::before, [class*=" mgc_"]::before {color: currentColor !important;}

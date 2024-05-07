@@ -68,9 +68,9 @@ export default function SearchResult() {
         <div>
           <Inner>
             <div className="flex flex-col gap-3">
-              <Skeleton height="100px" />
-              <Skeleton height="100px" />
-              <Skeleton height="100px" />
+              {Array(5).fill('').map((v, i) => (
+                <Skeleton key={i} height="100px" />
+              ))}
             </div>
           </Inner>
         </div>

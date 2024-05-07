@@ -19,8 +19,8 @@ export default function Badge({
   onClick,
   size = 'sm',
   color = 'gray',
-  dot = false,
-  closeButton = false,
+  dot,
+  closeButton,
   left,
   right,
 }: BadgeProps) { 

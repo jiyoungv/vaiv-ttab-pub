@@ -13,8 +13,8 @@ export interface AccordionProps {
 export default function Accordion({
   title,
   panel,
-  open = false,
-  defaultOpen = false,
+  open,
+  defaultOpen,
   onChange,
   className,
 }: AccordionProps) {

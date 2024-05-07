@@ -9,7 +9,7 @@ export interface SkeletonProps {
 export default function Skeleton({
   width = '100%',
   height = '50px',
-  round = false,
+  round,
 }: SkeletonProps) {
   return (
     <div

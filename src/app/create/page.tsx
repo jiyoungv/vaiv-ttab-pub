@@ -1,10 +1,14 @@
 'use client'
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import AppLayout from '@/components/domain/AppLayout';
+import Tab from '@/components/common/Tab';
 
 export default function Create() {
   const router = useRouter();
+
+  const [tab, setTab] = useState('information');
 
   return (
     <AppLayout
@@ -42,7 +46,13 @@ export default function Create() {
         ),
       }}
     >
-      Create
+      <Tab 
+        list={[
+          { value: 'information', label: '정보 생성' },
+          { value: 'tab', label: '탭 생성' },
+        ]}
+        onChange={(activeValue) => setTab(activeValue)}
+      />
     </AppLayout>
   );
 }

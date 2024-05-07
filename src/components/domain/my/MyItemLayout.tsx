@@ -10,8 +10,8 @@ export interface MyItemLayoutProps {
 
 export default function MyItemLayout({ 
   children, 
-  notBorder = false, 
-  notHover = false, 
+  notBorder, 
+  notHover, 
 }: MyItemLayoutProps) {
   return (
     <div 
