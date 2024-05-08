@@ -31,7 +31,7 @@ export default function MyInfo() {
       navBar={{
         title: '내 정보 수정',
       }}
-      className="bg-slate-100"
+      bg="dark"
     >
       <section className="py-5 bg-white shadow-sm">
         <Inner>

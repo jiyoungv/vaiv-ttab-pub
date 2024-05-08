@@ -4,7 +4,7 @@ import Link from 'next/link';
 import MyItemLayout from '@/components/domain/my/MyItemLayout';
 import Badge from '@/components/common/Badge';
 import Icon from '@/components/common/Icon';
-import { MyJoinTabData } from '@/types';
+import { MyJoinTabData } from '@/types/my';
 
 export interface MyJoinTabItemProps {
   data: MyJoinTabData;

@@ -1,6 +1,6 @@
 import colors from 'tailwindcss/colors';
 
-// TODO: 변수 정리
+// TODO: 변수 정리 예정
 const variables = {
   color: {
     'current': colors.current,

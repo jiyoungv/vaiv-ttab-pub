@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import MyItemLayout from '@/components/domain/my/MyItemLayout';
-import { MyCommentData } from '@/types';
+import { MyCommentData } from '@/types/my';
 
 export interface MyCommentItemProps {
   data: MyCommentData;

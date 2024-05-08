@@ -1,12 +1,12 @@
 import { useState } from 'react';
+import classNames from 'classnames';
 
 import MyItemLayout from '@/components/domain/my/MyItemLayout';
 import Inner from '@/components/common/Inner';
 import Icon from '@/components/common/Icon';
 import Accordion from '@/components/common/Accordion';
-import { faqCategorys } from '@/constants';
-import { MyFAQData } from '@/types';
-import classNames from 'classnames';
+import { faqCategorys } from '@/utils/constant';
+import { MyFAQData } from '@/types/my';
 
 const getFAQCategoryLabel = (value: string): string => faqCategorys.filter(v => v.value === value)[0].label;
 

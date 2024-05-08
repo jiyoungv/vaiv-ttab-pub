@@ -4,7 +4,7 @@ import { useState } from 'react';
 import AppLayout from '@/components/domain/AppLayout';
 import Inner from '@/components/common/Inner';
 import Tab from '@/components/common/Tab';
-import NotificationItem from '@/components/domain/NotificationItem';
+import NotificationItem from '@/components/domain/notification/NotificationItem';
 import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
 import { tempNotificationData } from '@/utils/tempData';
@@ -33,7 +33,7 @@ export default function Notification() {
       }}
     >
       {tempNotificationData && (
-        <div className="relative mb-4">
+        <section className="relative mb-4">
           <Tab 
             list={[
               { value: 'all', label: '전체' },
@@ -43,7 +43,7 @@ export default function Notification() {
             ]}
             onChange={(activeValue) => setTab(activeValue)}
           />
-        </div>
+        </section>
       )}
       <section>
         <Inner>

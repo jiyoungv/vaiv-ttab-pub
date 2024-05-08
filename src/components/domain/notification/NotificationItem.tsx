@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import ProfileThumbnail from '@/components/domain/ProfileThumbnail';
-import { notificationMessage } from '@/constants';
+import { notificationMessage } from '@/utils/constant';
 import { NotificationData } from '@/types';
 
 export interface NotificationItemProps {

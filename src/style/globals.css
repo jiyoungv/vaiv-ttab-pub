@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 @layer base {
-  /* TODO: 변수 정리 */
+  /* TODO: 변수 정리 예정 */
   :root {
     /* font */
     --text-6xl: 60px;

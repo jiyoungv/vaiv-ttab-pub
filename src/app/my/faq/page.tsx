@@ -8,7 +8,7 @@ import Input from '@/components/common/Input';
 import MyFAQItem from '@/components/domain/my/MyFAQItem';
 import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
-import { faqCategorys, faqData } from '@/constants';
+import { faqCategorys, faqData } from '@/utils/constant';
 
 export default function MyFAQ() {
   const [keyword, setKeyword] = useState('');

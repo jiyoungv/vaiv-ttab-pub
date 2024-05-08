@@ -1,3 +1,227 @@
+import { TabData } from "@/types/tab";
+
+export const tempTabData: TabData[] = [
+  {
+    id: 7,
+    title: '타이틀이 한줄이면 이렇게.',
+    subText: '서브텍스트가 있다면 이렇게 나오겠지요.',
+    nickname: 'Nickname',
+    joinAmount: 36,
+    date: '2024-01-01',
+    likeAmount: '1.1k',
+    commentAmount: '1.1k',
+    viewAmount: '1.1k',
+    like: true,
+    bookmark: true,
+    contents: [
+      {
+        category: 'image',
+        src: '/images/temp/temp1.png',
+      },
+      {
+        category: 'note',
+        text: '일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
+      },
+      {
+        category: 'file',
+        text: '파일명이 1234.pdf',
+      },
+      {
+        category: 'search',
+        question: '질문이 뭔가요?',
+        answer: 'A. 답변은 이런거고 저런거고 요런거다.',
+      },
+      {
+        category: 'report',
+        text: '리포트 명이 1234',
+      },
+      {
+        category: 'link',
+        text: 'https://www.vaiv.kr',
+      },
+    ],
+    contentsRestAmount: 40,
+  },
+  {
+    id: 6,
+    title: '타이틀이 한줄이면 이렇게.',
+    subText: '서브텍스트가 있다면 이렇게 나오겠지요.',
+    nickname: 'Nickname',
+    joinAmount: 36,
+    date: '2024-01-01',
+    likeAmount: '1.1k',
+    commentAmount: '1.1k',
+    viewAmount: '1.1k',
+    like: false,
+    bookmark: false,
+    contents: [
+      {
+        category: 'image',
+        src: '/images/temp/temp1.png',
+      },
+      {
+        category: 'note',
+        text: '일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
+      },
+      {
+        category: 'file',
+        text: '파일명이 1234.pdf',
+      },
+      {
+        category: 'search',
+        question: '질문이 뭔가요?',
+        answer: 'A. 답변은 이런거고 저런거고 요런거다.',
+      },
+      {
+        category: 'report',
+        text: '리포트 명이 1234',
+      },
+      {
+        category: 'link',
+        text: 'https://www.vaiv.kr',
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: '타이틀이 한줄이면 이렇게.',
+    subText: '서브텍스트가 있다면 이렇게 나오겠지요.',
+    nickname: 'Nickname',
+    joinAmount: 36,
+    date: '2024-01-01',
+    likeAmount: '1.1k',
+    commentAmount: '1.1k',
+    viewAmount: '1.1k',
+    like: false,
+    bookmark: false,
+    contents: [
+      {
+        category: 'link',
+        text: 'https://www.vaiv.kr',
+      },
+      {
+        category: 'image',
+        src: '/images/temp/temp1.png',
+      },
+      {
+        category: 'note',
+        text: '일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
+      },
+      {
+        category: 'file',
+        text: '파일명이 1234.pdf',
+      },
+      {
+        category: 'search',
+        question: '질문이 뭔가요?',
+        answer: 'A. 답변은 이런거고 저런거고 요런거다.',
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: '타이틀이 한줄이면 이렇게.',
+    subText: '서브텍스트가 있다면 이렇게 나오겠지요.',
+    nickname: 'Nickname',
+    joinAmount: 36,
+    date: '2024-01-01',
+    likeAmount: '1.1k',
+    commentAmount: '1.1k',
+    viewAmount: '1.1k',
+    like: false,
+    bookmark: false,
+    contents: [
+      {
+        category: 'link',
+        text: 'https://www.vaiv.kr',
+      },
+      {
+        category: 'image',
+        src: '/images/temp/temp1.png',
+      },
+      {
+        category: 'note',
+        text: '일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
+      },
+      {
+        category: 'file',
+        text: '파일명이 1234.pdf',
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: '타이틀이 한줄이면 이렇게.',
+    subText: '서브텍스트가 있다면 이렇게 나오겠지요.',
+    nickname: 'Nickname',
+    joinAmount: 36,
+    date: '2024-01-01',
+    likeAmount: '1.1k',
+    commentAmount: '1.1k',
+    viewAmount: '1.1k',
+    like: false,
+    bookmark: false,
+    contents: [
+      {
+        category: 'image',
+        src: '/images/temp/temp1.png',
+      },
+      {
+        category: 'note',
+        text: '일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
+      },
+      {
+        category: 'file',
+        text: '파일명이 1234.pdf',
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: '타이틀이 한줄이면 이렇게.',
+    subText: '서브텍스트가 있다면 이렇게 나오겠지요.',
+    nickname: 'Nickname',
+    joinAmount: 36,
+    date: '2024-01-01',
+    likeAmount: '1.1k',
+    commentAmount: '1.1k',
+    viewAmount: '1.1k',
+    like: false,
+    bookmark: false,
+    contents: [
+      {
+        category: 'image',
+        src: '/images/temp/temp1.png',
+      },
+      {
+        category: 'note',
+        text: '일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
+      },
+    ],
+  },
+  {
+    id: 1,
+    title: '타이틀이 한줄이면 이렇게.',
+    subText: '서브텍스트가 있다면 이렇게 나오겠지요.',
+    nickname: 'Nickname',
+    joinAmount: 36,
+    date: '2024-01-01',
+    likeAmount: '1.1k',
+    commentAmount: '1.1k',
+    viewAmount: '1.1k',
+    like: false,
+    bookmark: false,
+    contents: [
+      {
+        category: 'image',
+        src: '/images/temp/temp1.png',
+      },
+    ],
+  },
+];
+
+export const tempTtabDetailData = {};
+
 export const tempNotificationData = [
   {
     link: `${process.env.NEXT_PUBLIC_FRONT_URL}/tab/1`,

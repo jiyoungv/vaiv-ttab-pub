@@ -9,6 +9,7 @@ export interface AppLayoutProps {
   header?: boolean;
   navBar?: NavBarProps; 
   hideGnb?: boolean;
+  bg?: 'default' | 'dark';
   className?: string;
 }
 
@@ -17,12 +18,14 @@ export default function AppLayout({
   header, 
   navBar, 
   hideGnb,
+  bg = 'default',
   className,
 }: AppLayoutProps) {
   return (
     <div className={classNames(
       'relative max-w-[var(--mo-max-width)] mx-auto',
       {
+        'bg-slate-100': bg === 'dark',
         [`${className}`]: className,
       },
     )}>
@@ -35,7 +38,7 @@ export default function AppLayout({
       {!hideGnb && (
         <Gnb />
       )}
-      <main className="relative pt-17 pb-[calc(76px+theme(spacing[4.5])*2)]">
+      <main className="relative min-h-screen pt-17 pb-[calc(76px+theme(spacing[4.5]))]">
         {children}
       </main>
     </div>

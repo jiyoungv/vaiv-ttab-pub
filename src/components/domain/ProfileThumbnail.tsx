@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { blurDataURL } from '@/constants';
+import { blurDataURL } from '@/utils/constant';
 
 export interface ProfileThumbnailProps {
   src: string;

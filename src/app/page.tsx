@@ -1,19 +1,35 @@
-'use client'
-import Link from 'next/link';
-
 import AppLayout from '@/components/domain/AppLayout';
-import TabList from '@/components/domain/TabList';
+import TabList from '@/components/domain/tab/TabList';
+import Skeleton from '@/components/common/Skeleton';
+import NoData from '@/components/common/NoData';
+import { tempTabData } from '@/utils/tempData';
 
 export default function Home() {
   return (
-    <AppLayout header>
-      <div>
-        TODO: 추천 카테고리
-      </div>
+    <AppLayout 
+      header
+      bg="dark"
+    >
       <section>
-        <TabList />
+        TODO: 추천 카테고리
       </section>
-      <Link href={`${process.env.NEXT_PUBLIC_FRONT_URL}/tab/1`}>GO to Tab Detail Page</Link>
+      <section>
+        {tempTabData && (
+          <TabList data={tempTabData} />
+        )}
+        {'DEV: loading' && (
+          <div className="flex flex-col gap-3">
+            {Array(5).fill('').map((v, i) => (
+              <Skeleton key={i} color="white" height="100px" square />
+            ))}
+          </div>
+        )}
+        {'DEV: no data' && (
+          <NoData
+            text="탭이 없습니다."
+          />
+        )}
+      </section>
     </AppLayout>
   );
 }

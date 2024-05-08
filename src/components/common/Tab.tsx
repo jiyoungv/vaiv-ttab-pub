@@ -33,7 +33,7 @@ export default function Tab({
   const activeIndex = useMemo(() => list.findIndex(v => v.value === activeValue), [list, activeValue]);
 
   return (
-    <div className="z-10 sticky top-0 bg-white">
+    <div className="z-10 sticky top-0 bg-white" role="tablist">
       <ul 
         className="flex border-b border-b-slate-400"
       >

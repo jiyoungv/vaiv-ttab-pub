@@ -3,7 +3,7 @@ import Link from 'next/link';
 import MyItemLayout from '@/components/domain/my/MyItemLayout';
 import Icon from '@/components/common/Icon';
 import NewIcon from '@/components/common/NewIcon';
-import { MyNoticeData } from '@/types';
+import { MyNoticeData } from '@/types/my';
 
 export interface MyNoticeItemProps {
   data: MyNoticeData;

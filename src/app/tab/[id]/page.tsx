@@ -1,6 +1,6 @@
 'use client'
 import AppLayout from '@/components/domain/AppLayout';
-import TabDetail from '@/components/domain/TabDetail';
+import TabDetail from '@/components/domain/tab/TabDetail';
 import IconButton from '@/components/common/IconButton';
 
 export default function Tab() {
