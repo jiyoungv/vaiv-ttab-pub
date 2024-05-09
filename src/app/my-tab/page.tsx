@@ -1,10 +1,10 @@
 import AppLayout from '@/components/domain/AppLayout';
-import TabList from '@/components/domain/tab/TabList';
+import TabPreviewList from '@/components/domain/tab/TabPreviewList';
 import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
-import { tempTabData } from '@/utils/tempData';
+import { tempTabPreviewData } from '@/utils/tempData';
 
-export default function MyTab() {
+export default function MyTabPage() {
   return (
     <AppLayout
       navBar={{
@@ -16,8 +16,8 @@ export default function MyTab() {
         TODO: 최근 조회 탭
       </section>
       <section>
-        {tempTabData && (
-          <TabList data={tempTabData} />
+        {tempTabPreviewData && (
+          <TabPreviewList data={tempTabPreviewData} />
         )}
         {'DEV: loading' && (
           <div className="flex flex-col gap-3">

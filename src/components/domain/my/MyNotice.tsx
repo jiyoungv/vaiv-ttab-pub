@@ -1,36 +1,36 @@
 import Link from 'next/link';
 
-import MyItemLayout from '@/components/domain/my/MyItemLayout';
+import MyContentLayout from '@/components/domain/my/MyContentLayout';
 import Icon from '@/components/common/Icon';
 import NewIcon from '@/components/common/NewIcon';
 import { MyNoticeData } from '@/types/my';
 
-export interface MyNoticeItemProps {
+export interface MyNoticeProps {
   data: MyNoticeData;
 }
 
-export default function MyNoticeItem({ data }: MyNoticeItemProps) {
+export default function MyNotice({ data }: MyNoticeProps) {
   return (
     <Link 
-      href={data.link}
+      href={data?.link}
       className="block w-full"
     >
-      <MyItemLayout>
+      <MyContentLayout>
         <div className="flex justify-between items-center gap-4">
           <div>
             <p className="text-slate-700 text-base font-medium">
-              {data.title}
-              {data.new && (
+              {data?.title}
+              {data?.new && (
                 <NewIcon />
               )}
             </p>
             <p className="mt-1 text-slate-400 text-xs">
-              {data.date}
+              {data?.date}
             </p>
           </div>
           <Icon name="mgc_right_line" color="text-slate-400" />
         </div>
-      </MyItemLayout> 
+      </MyContentLayout> 
     </Link>
   );
 }

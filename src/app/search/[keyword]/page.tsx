@@ -4,14 +4,14 @@ import Link from 'next/link';
 
 import AppLayout from '@/components/domain/AppLayout';
 import Inner from '@/components/common/Inner';
-import TabList from '@/components/domain/tab/TabList';
+import TabPreviewList from '@/components/domain/tab/TabPreviewList';
 import Input from '@/components/common/Input';
 import Radio from '@/components/common/Radio';
 import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
-import { tempTabData } from '@/utils/tempData';
+import { tempTabPreviewData } from '@/utils/tempData';
 
-export default function SearchResult() {
+export default function SearchResultPage() {
   const [sort, setSort] = useState('sort1');
 
   return (
@@ -36,7 +36,7 @@ export default function SearchResult() {
       bg="dark"
     >
       <section>
-        {tempTabData && (
+        {tempTabPreviewData && (
           <>
             <div className="bg-white">
               <Inner>
@@ -66,7 +66,7 @@ export default function SearchResult() {
                 </div>
               </Inner>
             </div>
-            <TabList data={tempTabData} />
+            <TabPreviewList data={tempTabPreviewData} />
           </>
         )}
         {'DEV: loading' && (

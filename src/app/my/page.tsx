@@ -7,7 +7,7 @@ import ProfileThumbnail from '@/components/domain/ProfileThumbnail';
 import Button from '@/components/common/Button';
 import Icon from '@/components/common/Icon';
 
-export default function My() {
+export default function MyPage() {
   return (
     <AppLayout
       navBar={{

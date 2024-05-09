@@ -35,4 +35,9 @@
   .scrollbar-mini::-webkit-scrollbar-thumb:hover {background: theme('colors.slate.300');}
 }
 
+/* mingcute custom */
 [class^="mgc_"]::before, [class*=" mgc_"]::before {color: currentColor !important;}
+
+/* react-modal-sheet custom */
+.react-modal-sheet-container {border-top-left-radius: 20px !important;border-top-right-radius: 20px !important;box-shadow: none !important;}
+.react-modal-sheet-backdrop {background: rgba(0, 0, 0, 0.4);}

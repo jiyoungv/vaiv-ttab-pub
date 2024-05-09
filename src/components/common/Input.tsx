@@ -59,7 +59,7 @@ export default function Input({
           'border-slate-200': variant === 'default' && !focus,
           'bg-white': variant === 'default' && !disabled,
 
-          'rounded-[50px]': variant === 'dark',
+          'rounded-5xl': variant === 'dark',
           'border-slate-50': variant === 'dark' && !focus,
           'bg-slate-50': variant === 'dark' && !disabled,
 

@@ -76,6 +76,7 @@ const config: Config = {
       },
       borderRadius: {
         '4xl': '1.75rem',
+        '5xl': '3.125rem',
       },
       dropShadow: {
         'primary': [

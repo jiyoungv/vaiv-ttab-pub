@@ -1,8 +1,9 @@
 import AppLayout from '@/components/domain/AppLayout';
-import TabList from '@/components/domain/tab/TabList';
+import SwipeTab from '@/components/common/SwipeTab';
+import TabPreviewList from '@/components/domain/tab/TabPreviewList';
 import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
-import { tempTabData } from '@/utils/tempData';
+import { tempTabPreviewData } from '@/utils/tempData';
 
 export default function Home() {
   return (
@@ -11,11 +12,11 @@ export default function Home() {
       bg="dark"
     >
       <section>
-        TODO: 추천 카테고리
+        <SwipeTab />
       </section>
       <section>
-        {tempTabData && (
-          <TabList data={tempTabData} />
+        {tempTabPreviewData && (
+          <TabPreviewList data={tempTabPreviewData} />
         )}
         {'DEV: loading' && (
           <div className="flex flex-col gap-3">

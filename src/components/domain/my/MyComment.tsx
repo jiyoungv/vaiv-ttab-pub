@@ -1,39 +1,39 @@
 import Link from 'next/link';
 
-import MyItemLayout from '@/components/domain/my/MyItemLayout';
+import MyContentLayout from '@/components/domain/my/MyContentLayout';
 import { MyCommentData } from '@/types/my';
 
-export interface MyCommentItemProps {
+export interface MyCommentProps {
   data: MyCommentData;
 }
 
-export default function MyCommentItem({ data }: MyCommentItemProps) {
+export default function MyComment({ data }: MyCommentProps) {
   return (
     <Link 
-      href={data.link}
+      href={data?.link}
       className="block w-full"
     >
-      <MyItemLayout>
+      <MyContentLayout>
         <div>
           <p className="text-slate-700 text-base font-medium">
-            {data.comment}
+            {data?.comment}
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2 mt-2">
           <div className="inline-flex items-center gap-2">
             <p className="text-slate-400 text-xs font-medium">
-              {data.date}
+              {data?.date}
             </p>
             <p className="text-slate-400 text-xs font-medium">
-              {data.time}
+              {data?.time}
             </p>
           </div>
           <div className="w-px h-2.5 bg-slate-200"></div>
           <p className="text-slate-400 text-xs font-medium">
-            {data.tabName}
+            {data?.tabName}
           </p>
         </div>
-      </MyItemLayout>
+      </MyContentLayout>
     </Link>
   );
 }

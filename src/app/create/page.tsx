@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import AppLayout from '@/components/domain/AppLayout';
 import Tab from '@/components/common/Tab';
 
-export default function Create() {
+export default function CreatePage() {
   const router = useRouter();
 
   const [tab, setTab] = useState('information');

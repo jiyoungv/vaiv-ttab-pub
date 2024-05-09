@@ -11,7 +11,7 @@ import TextArea from '@/components/common/TextArea';
 import Select from '@/components/common/Select';
 import Toggle from '@/components/common/Toggle';
 
-export default function MyInfo() {
+export default function MyInfoPage() {
   const [nickname, setNickname] = useState('닉네임입니다');
 
   const [editNickname, setEditNickname] = useState(false);
@@ -132,7 +132,7 @@ export default function MyInfo() {
                 <label className="text-slate-500 text-sm font-medium">
                   로그인 계정
                 </label>
-                <p className="px-1.5 py-0.5 rounded-[50px] bg-slate-100 text-slate-500 text-xs font-medium">
+                <p className="px-1.5 py-0.5 rounded-5xl bg-slate-100 text-slate-500 text-xs font-medium">
                   가입일 : 2024-01-01
                 </p>
               </div>

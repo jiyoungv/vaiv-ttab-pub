@@ -9,9 +9,9 @@ export interface NotificationData {
   comment?: boolean;
   report?: boolean;
   unchecked?: boolean;
-};
+}
 
 export interface RecentSearchData {
   link: string;
   keyword: string;
-};
+}

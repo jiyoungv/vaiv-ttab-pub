@@ -8,12 +8,3 @@ export const tabCategoryIconName = (category: TabCategory) => {
   if (category === 'file') return 'mgc_box_2_line';
   if (category === 'report') return 'mgc_report_forms_line';
 };
-
-export const tabCategoryColor = (category: TabCategory) => {
-  if (category === 'note') return 'amber';
-  if (category === 'link') return 'orange';
-  if (category === 'search') return 'teal';
-  if (category === 'image') return 'blue';
-  if (category === 'file') return 'violet';
-  if (category === 'report') return 'primary';
-};

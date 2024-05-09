@@ -1,37 +1,37 @@
 'use client'
 import Link from 'next/link';
 
-import MyItemLayout from '@/components/domain/my/MyItemLayout';
+import MyContentLayout from '@/components/domain/my/MyContentLayout';
 import Badge from '@/components/common/Badge';
 import Icon from '@/components/common/Icon';
 import { MyJoinTabData } from '@/types/my';
 
-export interface MyJoinTabItemProps {
+export interface MyJoinTabProps {
   data: MyJoinTabData;
 }
 
-export default function MyJoinTabItem({ data }: MyJoinTabItemProps) {
+export default function MyJoinTab({ data }: MyJoinTabProps) {
   return (
-    <MyItemLayout>
+    <MyContentLayout>
       <Link 
-        href={data.link}
+        href={data?.link}
         className="block absolute left-0 top-0 w-full h-full"
       ></Link>
       <div className="flex justify-between items-center gap-2">
         <div>
           <div className="mb-2">
             <Badge 
-              color={data.join ? 'success' : 'gray'}
+              color={!data?.join ? 'gray' : 'success'}
               dot
             >
-              {data.join ? '참여중' : '참여대기'}
+              {!data?.join ? '참여대기': '참여중'}
             </Badge>
           </div>
           <p className="text-slate-700 text-lg font-medium">
-            {data.title}
+            {data?.title}
           </p>
           <p className="text-slate-400 text-sm font-medium">
-            {data.subText}
+            {data?.subText}
           </p>
         </div>
         <button 
@@ -47,6 +47,6 @@ export default function MyJoinTabItem({ data }: MyJoinTabItemProps) {
           <Icon name="mgc_close_circle_fill" color="text-slate-400 group-hover:text-slate-500" />
         </button>
       </div>
-    </MyItemLayout>
+    </MyContentLayout>
   );
 }

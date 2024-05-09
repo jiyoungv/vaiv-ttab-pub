@@ -1,10 +1,10 @@
 import AppLayout from '@/components/domain/AppLayout';
-import MyItemLayout from '@/components/domain/my/MyItemLayout';
+import MyContentLayout from '@/components/domain/my/MyContentLayout';
 import Inner from '@/components/common/Inner';
 import NewIcon from '@/components/common/NewIcon';
 import { tempMyNoticeDetailData } from '@/utils/tempData';
 
-export default function MyNotice() {
+export default function MyNoticeDetailPage() {
   return (
     <AppLayout
       navBar={{
@@ -12,7 +12,7 @@ export default function MyNotice() {
       }}
     >
       <section>
-        <MyItemLayout notHover>
+        <MyContentLayout notHover>
           <h2 className="text-slate-700 text-lg font-bold">
             {tempMyNoticeDetailData.title}
             {tempMyNoticeDetailData.new && (
@@ -22,7 +22,7 @@ export default function MyNotice() {
           <p className="mt-2 text-slate-400 text-xs">
             {tempMyNoticeDetailData.date}
           </p>
-        </MyItemLayout>
+        </MyContentLayout>
         <div className="py-7">
           <Inner>
             <p className="text-slate-700 text-base font-medium whitespace-pre-wrap">

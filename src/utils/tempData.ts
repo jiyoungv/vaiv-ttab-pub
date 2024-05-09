@@ -1,6 +1,6 @@
-import { TabData } from "@/types/tab";
+import { TabPreviewData, TabDetailData } from '@/types/tab';
 
-export const tempTabData: TabData[] = [
+export const tempTabPreviewData: TabPreviewData[] = [
   {
     id: 7,
     title: '타이틀이 한줄이면 이렇게.',
@@ -13,7 +13,7 @@ export const tempTabData: TabData[] = [
     viewAmount: '1.1k',
     like: true,
     bookmark: true,
-    contents: [
+    infos: [
       {
         category: 'image',
         src: '/images/temp/temp1.png',
@@ -40,7 +40,7 @@ export const tempTabData: TabData[] = [
         text: 'https://www.vaiv.kr',
       },
     ],
-    contentsRestAmount: 40,
+    infosRestAmount: 40,
   },
   {
     id: 6,
@@ -54,7 +54,7 @@ export const tempTabData: TabData[] = [
     viewAmount: '1.1k',
     like: false,
     bookmark: false,
-    contents: [
+    infos: [
       {
         category: 'image',
         src: '/images/temp/temp1.png',
@@ -94,7 +94,7 @@ export const tempTabData: TabData[] = [
     viewAmount: '1.1k',
     like: false,
     bookmark: false,
-    contents: [
+    infos: [
       {
         category: 'link',
         text: 'https://www.vaiv.kr',
@@ -130,7 +130,7 @@ export const tempTabData: TabData[] = [
     viewAmount: '1.1k',
     like: false,
     bookmark: false,
-    contents: [
+    infos: [
       {
         category: 'link',
         text: 'https://www.vaiv.kr',
@@ -161,7 +161,7 @@ export const tempTabData: TabData[] = [
     viewAmount: '1.1k',
     like: false,
     bookmark: false,
-    contents: [
+    infos: [
       {
         category: 'image',
         src: '/images/temp/temp1.png',
@@ -188,7 +188,7 @@ export const tempTabData: TabData[] = [
     viewAmount: '1.1k',
     like: false,
     bookmark: false,
-    contents: [
+    infos: [
       {
         category: 'image',
         src: '/images/temp/temp1.png',
@@ -211,7 +211,7 @@ export const tempTabData: TabData[] = [
     viewAmount: '1.1k',
     like: false,
     bookmark: false,
-    contents: [
+    infos: [
       {
         category: 'image',
         src: '/images/temp/temp1.png',
@@ -220,7 +220,25 @@ export const tempTabData: TabData[] = [
   },
 ];
 
-export const tempTtabDetailData = {};
+export const tempTabDetailData: TabDetailData = {
+  id: 1,
+  title: '타이틀이 한줄이면 이렇게.',
+  subText: '서브텍스트가 있다면 이렇게 나오겠지요.',
+  nickname: 'Nickname',
+  joinAmount: 36,
+  date: '2024-01-01',
+  likeAmount: '1.1k',
+  commentAmount: '1.1k',
+  viewAmount: '1.1k',
+  like: true,
+  bookmark: true,
+  infos: [],
+  mine: true,
+  privacy: false,
+  join: true,
+  keywords: ['키워드1', '키워드2', '키워드3', '키워드4'],
+  thumbNail: '/images/temp/temp1.png',
+};
 
 export const tempNotificationData = [
   {

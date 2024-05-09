@@ -2,17 +2,17 @@ import classNames from 'classnames';
 
 import Inner from '@/components/common/Inner';
 
-export interface MyItemLayoutProps {
+export interface MyContentLayoutProps {
   children: React.ReactNode,
   notBorder?: boolean;
   notHover?: boolean;
 }
 
-export default function MyItemLayout({ 
+export default function MyContentLayout({ 
   children, 
   notBorder, 
   notHover, 
-}: MyItemLayoutProps) {
+}: MyContentLayoutProps) {
   return (
     <div 
       className={classNames(

@@ -1,14 +1,14 @@
 export type TabCategory = 'note' | 'link' | 'search' | 'image' | 'file' | 'report';
 
-export interface TabContentsData {
+export interface TabPreviewInfoData {
   category: TabCategory;
-  src?: string;
   text?: string;
+  src?: string;
   question?: string;
   answer?: string;
 }
 
-export interface TabData {
+export interface TabPreviewData {
   id: number;
   title: string;
   subText: string;
@@ -20,6 +20,30 @@ export interface TabData {
   viewAmount: string;
   like: boolean;
   bookmark: boolean;
-  contents: TabContentsData[];
-  contentsRestAmount?: number;
-};
+  infos: TabPreviewInfoData[];
+  infosRestAmount?: number;
+}
+
+export interface TabDetailInfoData {
+
+}
+
+export interface TabDetailData {
+  id: number;
+  title: string;
+  subText: string;
+  nickname: string;
+  joinAmount: number;
+  date: string;
+  likeAmount: string;
+  commentAmount: string;
+  viewAmount: string;
+  like: boolean;
+  bookmark: boolean;
+  infos: TabDetailInfoData[];
+  mine: boolean;
+  privacy: boolean;
+  join: boolean;
+  keywords: string[];
+  thumbNail: string;
+}

@@ -5,12 +5,12 @@ import classNames from 'classnames';
 import AppLayout from '@/components/domain/AppLayout';
 import Inner from '@/components/common/Inner';
 import Input from '@/components/common/Input';
-import MyFAQItem from '@/components/domain/my/MyFAQItem';
+import MyFAQ from '@/components/domain/my/MyFAQ';
 import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
 import { faqCategorys, faqData } from '@/utils/constant';
 
-export default function MyFAQ() {
+export default function MyFAQPage() {
   const [keyword, setKeyword] = useState('');
 
   const onSubmit = useCallback((e: React.FormEvent) => {
@@ -81,7 +81,7 @@ export default function MyFAQ() {
             </ul>
             <div>
               {filteredData.map((data, i) => (
-                <MyFAQItem key={i} data={data} />
+                <MyFAQ key={i} data={data} />
               ))}
             </div>
           </>

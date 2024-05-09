@@ -1,11 +1,11 @@
 import AppLayout from '@/components/domain/AppLayout';
-import MyJoinTabItem from '@/components/domain/my/MyJoinTabItem';
+import MyJoinTab from '@/components/domain/my/MyJoinTab';
 import Inner from '@/components/common/Inner';
 import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
 import { tempMyJoinTabData } from '@/utils/tempData';
 
-export default function MyJoinTab() {
+export default function MyJoinTabPage() {
   return (
     <AppLayout
       navBar={{
@@ -17,7 +17,7 @@ export default function MyJoinTab() {
           <ul>
             {tempMyJoinTabData.map((data, i) => (
               <li key={i}>
-                <MyJoinTabItem data={data} />
+                <MyJoinTab data={data} />
               </li>
             ))}
           </ul>

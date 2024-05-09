@@ -9,7 +9,7 @@ import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
 import { tempNotificationData } from '@/utils/tempData';
 
-export default function Notification() {
+export default function NotificationPage() {
   const [tab, setTab] = useState('all');
 
   return (

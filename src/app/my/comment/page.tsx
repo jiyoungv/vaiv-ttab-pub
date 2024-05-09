@@ -1,11 +1,11 @@
 import AppLayout from '@/components/domain/AppLayout';
-import MyCommentItem from '@/components/domain/my/MyCommentItem';
+import MyComment from '@/components/domain/my/MyComment';
 import Inner from '@/components/common/Inner';
 import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
 import { tempMyCommentData } from '@/utils/tempData';
 
-export default function MyComment() {
+export default function MyCommentPage() {
   return (
     <AppLayout
       navBar={{
@@ -17,7 +17,7 @@ export default function MyComment() {
           <ul>
             {tempMyCommentData.map((data, i) => (
               <li key={i}>
-                <MyCommentItem data={data} />
+                <MyComment data={data} />
               </li>
             ))}
           </ul>

@@ -10,7 +10,7 @@ import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
 import { tempRecentSearchData } from '@/utils/tempData';
 
-export default function Search() {
+export default function SearchPage() {
   const router = useRouter();
 
   const [keyword, setKeyword] = useState('');
