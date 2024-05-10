@@ -5,12 +5,12 @@ import classNames from 'classnames';
 import AppLayout from '@/components/domain/AppLayout';
 import Inner from '@/components/common/Inner';
 import Input from '@/components/common/Input';
-import MyFAQ from '@/components/domain/my/MyFAQ';
+import SupportFAQ from '@/components/domain/support/SupportFAQ';
 import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
 import { faqCategorys, faqData } from '@/utils/constant';
 
-export default function MyFAQPage() {
+export default function SupportFAQPage() {
   const [keyword, setKeyword] = useState('');
 
   const onSubmit = useCallback((e: React.FormEvent) => {
@@ -54,7 +54,7 @@ export default function MyFAQPage() {
             />
           </Inner>
         </form>
-        TODO: tab slide 예정
+        TODO: tab slide 기능
         {filteredData && (
           <>
             <ul className="flex gap-1 my-6">
@@ -81,7 +81,7 @@ export default function MyFAQPage() {
             </ul>
             <div>
               {filteredData.map((data, i) => (
-                <MyFAQ key={i} data={data} />
+                <SupportFAQ key={i} data={data} />
               ))}
             </div>
           </>

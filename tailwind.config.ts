@@ -78,6 +78,11 @@ const config: Config = {
         '4xl': '1.75rem',
         '5xl': '3.125rem',
       },
+      fontFamily: {
+        'en': '"Red Hat Display"',
+        'kr': ['"Pretendard Variable"', 'Pretendard'],
+        'system': ['-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', '"Helvetica Neue"', '"Segoe UI"', '"Apple SD Gothic Neo"', '"Noto Sans KR"', '"Malgun Gothic"', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', 'sans-serif'],
+      },
       dropShadow: {
         'primary': [
           '0px 4px 6px rgba(244, 63, 94, 0.50)',
@@ -91,9 +96,14 @@ const config: Config = {
       transitionDuration: {
         DEFAULT: '200ms',
       },
+      lineClamp: {
+        10: '10',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
 };
 
 export default config;

@@ -60,7 +60,7 @@ export default function TabDetailHead({ data }: TabDetailHeadProps) {
             <button 
               type="button"
               className="inline-flex items-center gap-1"
-              onClick={() => alert('TODO: 탭 참여자 BottomSheet Open')}
+              onClick={() => alert('TODO: 탭 참여자 바텀시트 open')}
             >
               <div className="relative pr-3">
                 <div className="inline-block border border-white rounded-full">
@@ -95,7 +95,8 @@ export default function TabDetailHead({ data }: TabDetailHeadProps) {
                 <button 
                   type="button"
                   className="inline-flex items-center gap-1"
-                  onClick={() => setOpenCommentBottomsheet(true)}
+                  onClick={() => alert('TODO: 댓글 바텀시트 open')}
+                  // onClick={() => setOpenCommentBottomsheet(true)}
                 >
                   <Icon name="mgc_message_2_line" color="text-slate-400" size="text-xl-size" />
                   <p className="text-slate-400 text-sm font-medium leading-none">

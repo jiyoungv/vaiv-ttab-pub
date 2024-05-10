@@ -13,7 +13,7 @@ export default function MyTabPage() {
       bg="dark"
     >
       <section>
-        TODO: 최근 조회 탭
+        TODO: 탭 select, 보기 방식
       </section>
       <section>
         {tempTabPreviewData && (

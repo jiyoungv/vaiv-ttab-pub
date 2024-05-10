@@ -29,10 +29,9 @@ export default function AppLayout({
         [`${className}`]: className,
       },
     )}>
-      {header && (
+      {header ? (
         <Header />
-      )}
-      {navBar && (
+      ) : (
         <NavBar {...navBar} />
       )}
       {!hideGnb && (

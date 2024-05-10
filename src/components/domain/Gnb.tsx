@@ -1,5 +1,5 @@
 'use client'
-import { useMemo } from 'react';
+import { useMemo, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -13,6 +13,14 @@ export default function Gnb({}: GnbProps) {
   const pathname = usePathname();
   const pathnames = useMemo(() => pathname?.split('/'), [pathname]);
   const pathnameDepth1 = useMemo(() => `/${pathnames[1]}`, [pathnames]);
+
+  const active = useCallback((pathname: string): boolean => {
+    if (pathnameDepth1 === '/support') {
+      return pathname === '/my';
+    } else {
+      return pathnameDepth1 === pathname;
+    }
+  }, [pathnameDepth1]);
 
   return (
     <nav className="z-40 fixed bottom-4.5 left-1/2 -translate-x-1/2 w-[89%] max-w-[334px] px-4 py-5 rounded-[100px] bg-white/80 backdrop-blur-sm">
@@ -49,7 +57,7 @@ export default function Gnb({}: GnbProps) {
               <Link href={v.link} className="group inline-block w-full text-center">
                 <Icon 
                   name={v.icon}
-                  color={pathnameDepth1 !== v.pathname ? 'text-slate-400': 'text-primary-500'}
+                  color={!active(v.pathname) ? 'text-slate-400' : 'text-primary-500'}
                   ariaLabel={v.label}
                   className="group-hover:text-primary-500"
                 />

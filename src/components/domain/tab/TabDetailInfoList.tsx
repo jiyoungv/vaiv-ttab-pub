@@ -8,9 +8,8 @@ export interface TabDetailInfoListProps {
 export default function TabDetailInfoList({ data }: TabDetailInfoListProps) {
   return (
     <ul>
-      TabDetailInfoList
       {data?.map((v, i) => (
-        <li key={i}>
+        <li key={i} className="mb-4 last:mb-0">
           <TabDetailInfo data={v} />
         </li>
       ))}

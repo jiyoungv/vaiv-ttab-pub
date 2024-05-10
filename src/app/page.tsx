@@ -1,11 +1,17 @@
+'use client'
+import { useState } from 'react';
+
 import AppLayout from '@/components/domain/AppLayout';
 import SwipeTab from '@/components/common/SwipeTab';
 import TabPreviewList from '@/components/domain/tab/TabPreviewList';
 import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
 import { tempTabPreviewData } from '@/utils/tempData';
+import DevModal from '@/components/domain/DevModal';
 
 export default function Home() {
+  const [openDevModal, setOpenDevModal] = useState(true);
+
   return (
     <AppLayout 
       header
@@ -31,6 +37,7 @@ export default function Home() {
           />
         )}
       </section>
+      {openDevModal && <DevModal onClose={() => setOpenDevModal(false)} />}
     </AppLayout>
   );
 }

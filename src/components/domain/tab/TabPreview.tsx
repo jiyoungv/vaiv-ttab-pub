@@ -64,6 +64,7 @@ export default function TabPreview({ data }: TabPreviewProps) {
               key={i} 
               data={v} 
               dimAmount={(data?.infosRestAmount && i === data?.infos.length - 1) ? data?.infosRestAmount : undefined}
+              maxLine={data?.infos?.length > 3 ? 5 : 10}
             />
           ))}
         </section>
@@ -74,6 +75,7 @@ export default function TabPreview({ data }: TabPreviewProps) {
               <TabPreviewInfo 
                 key={i} 
                 data={v}
+                maxLine={5}
               />
             ))}
           </div>
@@ -119,7 +121,10 @@ export default function TabPreview({ data }: TabPreviewProps) {
                 onClick={() => alert('DEV: 관심탭 추가 or 관심탭 취소?')}
                 className="z-20 relative"
               >
-                <Icon name={!data?.bookmark ? 'mgc_bookmark_line' : 'mgc_bookmark_fill'} />
+                <Icon 
+                  name={!data?.bookmark ? 'mgc_bookmark_line' : 'mgc_bookmark_fill'} 
+                  ariaLabel={!data?.bookmark ? '관심탭 추가' : '관심탭 취소'} 
+                />
               </button>
             </div>
           </div>

@@ -6,15 +6,15 @@ import Inner from '@/components/common/Inner';
 import Icon from '@/components/common/Icon';
 import Accordion from '@/components/common/Accordion';
 import { faqCategorys } from '@/utils/constant';
-import { MyFAQData } from '@/types/my';
+import { SupportFAQData } from '@/types/support';
 
 const getFAQCategoryLabel = (value: string): string => faqCategorys.filter(v => v.value === value)[0].label;
 
-export interface MyFAQProps {
-  data: MyFAQData;
+export interface SupportFAQProps {
+  data: SupportFAQData;
 }
 
-export default function MyFAQ({ data }: MyFAQProps) {
+export default function SupportFAQ({ data }: SupportFAQProps) {
   const [open, setOpen] = useState(false);
 
   return (

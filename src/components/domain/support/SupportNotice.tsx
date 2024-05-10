@@ -3,13 +3,13 @@ import Link from 'next/link';
 import MyContentLayout from '@/components/domain/my/MyContentLayout';
 import Icon from '@/components/common/Icon';
 import NewIcon from '@/components/common/NewIcon';
-import { MyNoticeData } from '@/types/my';
+import { SupportNoticeData } from '@/types/support';
 
-export interface MyNoticeProps {
-  data: MyNoticeData;
+export interface SupportNoticeProps {
+  data: SupportNoticeData;
 }
 
-export default function MyNotice({ data }: MyNoticeProps) {
+export default function SupportNotice({ data }: SupportNoticeProps) {
   return (
     <Link 
       href={data?.link}

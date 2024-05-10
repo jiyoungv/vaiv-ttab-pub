@@ -8,6 +8,7 @@ export interface BadgeProps {
   onClick?: React.MouseEventHandler<HTMLDivElement>;
   size?: 'sm' | 'md' | 'lg';
   color?: 'gray' | 'primary' | 'error' | 'warning' | 'success';
+  notBlend?: boolean;
   dot?: boolean;
   closeButton?: boolean;
   left?: React.ReactNode;
@@ -19,6 +20,7 @@ export default function Badge({
   onClick,
   size = 'sm',
   color = 'gray',
+  notBlend,
   dot,
   closeButton,
   left,
@@ -66,6 +68,7 @@ export default function Badge({
           'px-3 py-1': size === 'lg',
           [`${bgColor}`]: color,
           [`${textColor}`]: color,
+          'mix-blend-multiply': !notBlend,
         },
       )}
       onClick={onClick}

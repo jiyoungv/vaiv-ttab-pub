@@ -16,28 +16,30 @@ export const tempTabPreviewData: TabPreviewData[] = [
     infos: [
       {
         category: 'image',
-        src: '/images/temp/temp1.png',
+        image: '/images/temp/temp1.png',
       },
       {
         category: 'note',
-        text: '일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
+        note: '일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
       },
       {
         category: 'file',
-        text: '파일명이 1234.pdf',
+        file: '파일명이 1234.pdf',
       },
       {
         category: 'search',
-        question: '질문이 뭔가요?',
-        answer: 'A. 답변은 이런거고 저런거고 요런거다.',
+        search: {
+          question: '질문이 뭔가요?',
+          answer: '답변은 이런거고 저런거고 요런거다.',
+        }
       },
       {
         category: 'report',
-        text: '리포트 명이 1234',
+        report: '리포트 명이 1234',
       },
       {
         category: 'link',
-        text: 'https://www.vaiv.kr',
+        link: 'https://www.vaiv.kr',
       },
     ],
     infosRestAmount: 40,
@@ -57,28 +59,30 @@ export const tempTabPreviewData: TabPreviewData[] = [
     infos: [
       {
         category: 'image',
-        src: '/images/temp/temp1.png',
+        image: '/images/temp/temp1.png',
       },
       {
         category: 'note',
-        text: '일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
+        note: '일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
       },
       {
         category: 'file',
-        text: '파일명이 1234.pdf',
+        file: '파일명이 1234.pdf',
       },
       {
         category: 'search',
-        question: '질문이 뭔가요?',
-        answer: 'A. 답변은 이런거고 저런거고 요런거다.',
+        search: {
+          question: '질문이 뭔가요?',
+          answer: '답변은 이런거고 저런거고 이런거고 저런거고 이런거고 저런거고 이런거고 저런거고 이런거고 저런거고 이런거고 저런거고 이런거고 저런거고 이런거고 저런거고 요런거다.',
+        },
       },
       {
         category: 'report',
-        text: '리포트 명이 1234',
+        report: '리포트 명이 1234',
       },
       {
         category: 'link',
-        text: 'https://www.vaiv.kr',
+        link: 'https://www.vaiv.kr',
       },
     ],
   },
@@ -97,24 +101,26 @@ export const tempTabPreviewData: TabPreviewData[] = [
     infos: [
       {
         category: 'link',
-        text: 'https://www.vaiv.kr',
+        link: 'https://www.vaiv.kr',
       },
       {
         category: 'image',
-        src: '/images/temp/temp1.png',
+        image: '/images/temp/temp1.png',
       },
       {
         category: 'note',
-        text: '일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
+        note: '일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
       },
       {
         category: 'file',
-        text: '파일명이 1234.pdf',
+        file: '파일명이 1234.pdf',
       },
       {
         category: 'search',
-        question: '질문이 뭔가요?',
-        answer: 'A. 답변은 이런거고 저런거고 요런거다.',
+        search: {
+          question: '질문이 뭔가요?',
+          answer: '답변은 이런거고 저런거고 요런거다.',
+        },
       },
     ],
   },
@@ -133,19 +139,19 @@ export const tempTabPreviewData: TabPreviewData[] = [
     infos: [
       {
         category: 'link',
-        text: 'https://www.vaiv.kr',
+        link: 'https://www.vaiv.kr',
       },
       {
         category: 'image',
-        src: '/images/temp/temp1.png',
+        image: '/images/temp/temp1.png',
       },
       {
         category: 'note',
-        text: '일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
+        note: '일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십 일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십 일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십 일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십 일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
       },
       {
         category: 'file',
-        text: '파일명이 1234.pdf',
+        file: '파일명이 1234.pdf',
       },
     ],
   },
@@ -164,15 +170,15 @@ export const tempTabPreviewData: TabPreviewData[] = [
     infos: [
       {
         category: 'image',
-        src: '/images/temp/temp1.png',
+        image: '/images/temp/temp1.png',
       },
       {
         category: 'note',
-        text: '일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
+        note: '일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십 일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십 일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십 일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십 일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
       },
       {
         category: 'file',
-        text: '파일명이 1234.pdf',
+        file: '파일명이 1234.pdf',
       },
     ],
   },
@@ -191,11 +197,11 @@ export const tempTabPreviewData: TabPreviewData[] = [
     infos: [
       {
         category: 'image',
-        src: '/images/temp/temp1.png',
+        image: '/images/temp/temp1.png',
       },
       {
         category: 'note',
-        text: '일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
+        note: '일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십 일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십 일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십 일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십 일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
       },
     ],
   },
@@ -214,7 +220,7 @@ export const tempTabPreviewData: TabPreviewData[] = [
     infos: [
       {
         category: 'image',
-        src: '/images/temp/temp1.png',
+        image: '/images/temp/temp1.png',
       },
     ],
   },
@@ -232,7 +238,93 @@ export const tempTabDetailData: TabDetailData = {
   viewAmount: '1.1k',
   like: true,
   bookmark: true,
-  infos: [],
+  infos: [
+    {
+      category: 'note',
+      thumbNail: '/images/temp/temp1.png',
+      nickname: '이탭은내꺼',
+      date: '2024-01-01',
+      contents: {
+        note: '노트입니다. 컨텐츠들이랑 메모들 엔터 처리를 [태그, \\n, 공백... ] 이중 어떻게 하실지 몰라서 그냥 일단 놔뒀어요 나중에 알려주시면 수정할게요',
+      },
+      memo: '메모입니다. 컨텐츠들이랑 메모들 엔터 처리를 [태그, \\n, 공백... ] 이중 어떻게 하실지 몰라서 그냥 일단 놔뒀어요 나중에 알려주시면 수정할게요',
+      keywords: ['키워드1', '키워드2'],
+      like: true,
+      likeAmount: '1.1k',
+      commentAmount: '1.1k',
+      viewAmount: '1.1k',
+    },
+    {
+      category: 'link',
+      thumbNail: '/images/temp/profile.png',
+      nickname: 'xman',
+      date: '2024-01-01',
+      contents: {
+        link: 'https://www.google.com/domain만 보여주기로 했었던 것 같은데...',
+      },
+      memo: '메모입니다. 링크도 여러개를 달 수 있나요?',
+      keywords: ['키워드1', '키워드2'],
+      like: false,
+      likeAmount: '1.1k',
+      commentAmount: '1.1k',
+      viewAmount: '1.1k',
+    },
+    {
+      category: 'search',
+      thumbNail: '/images/temp/temp2.jpg',
+      nickname: 'vaiv_worker',
+      date: '2024-01-01',
+      contents: {
+        search: {
+          question: 'AI 검색 질문입니다.',
+          answer: 'AI 검색 답변입니다. 대답이 길어지면 텍스트 글자 수 제한이 있어요 더보기를 누르면 볼 수 있습니다. 대답이 길어지면 텍스트 글자 수 제한이 있어요 더보기를 누르면 볼 수 있습니다. 대답이 길어지면 텍스트 글자 수 제한이 있어요 더보기를 누르면 볼 수 있습니다.',
+        },
+      },
+      memo: '메모입니다. 컨텐츠들이랑 메모들 엔터 처리를 [태그, \\n, 공백... ] 이중 어떻게 하실지 몰라서 그냥 일단 놔뒀어요 나중에 알려주시면 수정할게요',
+      keywords: ['키워드1', '키워드2'],
+      like: true,
+      likeAmount: '1.1k',
+      commentAmount: '1.1k',
+      viewAmount: '1.1k',
+    },
+    {
+      category: 'image',
+      thumbNail: '/images/temp/temp3.jpg',
+      nickname: '웨스턴차이나',
+      date: '2024-01-01',
+      contents: {
+        images: [
+          '/images/temp/temp1.png',
+          '/images/temp/temp2.jpg',
+          '/images/temp/temp3.jpg',
+          '/images/temp/temp1.png',
+          '/images/temp/temp2.jpg',
+          '/images/temp/temp3.jpg',
+        ],
+      },
+      memo: '메모입니다. 이미지는 최대 몇개까지 들어갈까요? 6개로 예상해봅니다. 최대 용량도 지정될까요?',
+      keywords: ['키워드1', '키워드2'],
+      like: false,
+      likeAmount: '1.1k',
+      commentAmount: '1.1k',
+      viewAmount: '1.1k',
+    },
+    {
+      category: 'file',
+      thumbNail: '/images/temp/temp1.png',
+      nickname: '라도집',
+      date: '2024-01-01',
+      contents: {
+        file: '파일명.pdf',
+      },
+      memo: '메모입니다. 파일은 최대 몇개까지 들어갈까요? 1개로 예상해봅니다. 최대 용량도 지정될까요? 위에 버튼을 누르면 다운로드인가요? 따로 뷰어 모달을 띄어주나요? 다운로드였으면 좋겠어요',
+      keywords: ['키워드1', '키워드2'],
+      like: false,
+      likeAmount: '1.1k',
+      commentAmount: '1.1k',
+      viewAmount: '1.1k',
+    },
+  ],
   mine: true,
   privacy: false,
   join: true,
@@ -345,29 +437,29 @@ export const tempMyJoinTabData = [
   },
 ];
 
-export const tempMyNoticeData = [
+export const tempSupportNoticeData = [
   {
-    link: `${process.env.NEXT_PUBLIC_FRONT_URL}/my/notice/3`,
+    link: `${process.env.NEXT_PUBLIC_FRONT_URL}/support/notice/3`,
     title: '티탭 서비스 고도화로 인한 서비스 중단 안내',
     date: '2024-03-01',
     new: true,
   },
   {
-    link: `${process.env.NEXT_PUBLIC_FRONT_URL}/my/notice/2`,
+    link: `${process.env.NEXT_PUBLIC_FRONT_URL}/support/notice/2`,
     title: '티탭 서비스 고도화로 인한 서비스 중단 안내 티탭 서비스 고도화로 인한 서비스 중단 안내 티탭 서비스 고도화로 인한 서비스 중단 안내',
     date: '2024-02-01',
     new: true,
   },
   {
-    link: `${process.env.NEXT_PUBLIC_FRONT_URL}/my/notice/1`,
+    link: `${process.env.NEXT_PUBLIC_FRONT_URL}/support/notice/1`,
     title: '티탭 서비스 고도화로 인한 서비스 중단 안내',
     date: '2024-01-01',
   },
 ];
 
-export const tempMyNoticeDetailData = {
+export const tempSupportNoticeDetailData = {
   title: '티탭 서비스 고도화로 인한 서비스 중단 안내',
   date: '2024-01-01',
-  text: `안녕하세요 Ttab 팀입니다.\nTtab 서비스 고도화 업데이트 작업으로 인해 2024.01.01 18시 부터 2024.01.02 7시까지 서비스가 중단될 예정입니다.\n\n좀 더 편리한 Ttab 서비스로 돌아오겠습니다.\n\nTtab팀 드림.`,
+  text: `안녕하세요 Ttab 팀입니다.\n\n일단 엔터를 \\n로 넣어봤습니다.\n어떻게 나누실지 모르겠네요.\n\nTtab 서비스 고도화 업데이트 작업으로 인해 2024.01.01 18시 부터 2024.01.02 7시까지 서비스가 중단될 예정입니다.\n\n좀 더 편리한 Ttab 서비스로 돌아오겠습니다.\n\nTtab팀 드림.`,
   new: true,
 };

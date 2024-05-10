@@ -1,11 +1,11 @@
 import AppLayout from '@/components/domain/AppLayout';
-import MyNotice from '@/components/domain/my/MyNotice';
+import SupportNotice from '@/components/domain/support/SupportNotice';
 import Inner from '@/components/common/Inner';
 import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
-import { tempMyNoticeData } from '@/utils/tempData';
+import { tempSupportNoticeData } from '@/utils/tempData';
 
-export default function MyNoticePage() {
+export default function SupportNoticePage() {
   return (
     <AppLayout
       navBar={{
@@ -13,11 +13,11 @@ export default function MyNoticePage() {
       }}
     >
       <section>
-        {tempMyNoticeData && (
+        {tempSupportNoticeData && (
           <ul>
-            {tempMyNoticeData.map((data, i) => (
+            {tempSupportNoticeData.map((data, i) => (
               <li key={i}>
-                <MyNotice data={data} />
+                <SupportNotice data={data} />
               </li>
             ))}
           </ul>

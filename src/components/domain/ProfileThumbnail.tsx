@@ -17,9 +17,9 @@ export default function ProfileThumbnail({ src = '', width = '20px' }: ProfileTh
     >
       <Image 
         src={src} 
-        fill 
-        style={{ objectFit: 'cover' }} 
         alt="" 
+        className="object-cover"
+        fill 
         placeholder="blur"
         blurDataURL={blurDataURL}
       />

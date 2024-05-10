@@ -11,7 +11,7 @@ import TextArea from '@/components/common/TextArea';
 import Select from '@/components/common/Select';
 import Toggle from '@/components/common/Toggle';
 
-export default function MyInfoPage() {
+export default function MyAccountPage() {
   const [nickname, setNickname] = useState('닉네임입니다');
 
   const [editNickname, setEditNickname] = useState(false);

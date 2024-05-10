@@ -12,16 +12,3 @@ export interface MyJoinTabData {
   subText: string;
   join: boolean;
 }
-
-export interface MyNoticeData {
-  link: string;
-  title: string;
-  date: string;
-  new?: boolean;
-}
-
-export interface MyFAQData {
-  category: string;
-  title: string;
-  description: string;
-}

@@ -1,6 +1,6 @@
 import colors from 'tailwindcss/colors';
 
-// TODO: 변수 정리 예정
+// TODO: 변수 정리 해야함
 const variables = {
   color: {
     'current': colors.current,
@@ -31,6 +31,13 @@ const variables = {
     'zinc': colors.zinc,
     'neutral': colors.neutral,
     'stone': colors.stone,
+    // tab category
+    'note': colors.amber,
+    'link': colors.orange,
+    'search': colors.teal,
+    'image': colors.blue,
+    'file': colors.violet,
+    'report': colors.rose,
   },
   font: {
     family: '',

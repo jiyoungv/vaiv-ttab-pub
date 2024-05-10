@@ -26,30 +26,37 @@ export default function MyPage() {
             </h1>
           </div>
           <div className="flex justify-center mb-5">
-            <Button href={`${process.env.NEXT_PUBLIC_FRONT_URL}/my/info`} color="white" size="sm" round>
+            <Button href={`${process.env.NEXT_PUBLIC_FRONT_URL}/my/account`} color="white" size="sm" round>
               내 정보 수정
             </Button>
           </div>
           <div className="flex justify-between items-center px-10 py-3 rounded-2xl bg-primary-500">
-            {[
-              { amount: 13, text: '탭 개수' },
-              { amount: 153, text: '팔로워' },
-              { amount: 153, text: '팔로잉' },
-            ].map((v, i) => (
-              <>
-                <div key={i} className="text-center">
-                  <p className="text-white text-2xl font-bold">
-                    {v.amount}
-                  </p>
-                  <p className="text-primary-100 text-sm font-medium">
-                    {v.text}
-                  </p>
-                </div>
-                {i < 2 && (
-                  <div key={`${i}-divider`} className="w-px h-8 bg-primary-300"></div>
-                )}
-              </>
-            ))}
+            <Link href={`${process.env.NEXT_PUBLIC_FRONT_URL}/my-tab`} className="group text-center">
+              <p className="text-white text-2xl font-bold">
+                {Number(13).toLocaleString()}
+              </p>
+              <p className="text-primary-100 text-sm font-medium group-hover:underline">
+                탭
+              </p>
+            </Link>
+            <div className="w-px h-8 bg-primary-300"></div>
+            <Link href={`${process.env.NEXT_PUBLIC_FRONT_URL}/my/follow`} className="group text-center">
+              <p className="text-white text-2xl font-bold">
+                {Number(1000).toLocaleString()}
+              </p>
+              <p className="text-primary-100 text-sm font-medium group-hover:underline">
+                팔로워
+              </p>
+            </Link>
+            <div className="w-px h-8 bg-primary-300"></div>
+            <Link href={`${process.env.NEXT_PUBLIC_FRONT_URL}/my/follow`} className="group text-center">
+              <p className="text-white text-2xl font-bold">
+                1.1k?
+              </p>
+              <p className="text-primary-100 text-sm font-medium group-hover:underline">
+                팔로잉
+              </p>
+            </Link>
           </div>
         </Inner>
       </section>
@@ -67,17 +74,21 @@ export default function MyPage() {
                   link: `${process.env.NEXT_PUBLIC_FRONT_URL}/my/join-tab`,
                   text: '탭 참여 신청',
                 },
+                { 
+                  link: `${process.env.NEXT_PUBLIC_FRONT_URL}/my/badge`,
+                  text: '활동 배지',
+                },
               ],
             },
             {
               title: '고객지원',
               list: [
                 { 
-                  link: `${process.env.NEXT_PUBLIC_FRONT_URL}/my/notice`,
+                  link: `${process.env.NEXT_PUBLIC_FRONT_URL}/support/notice`,
                   text: '공지사항',
                 },
                 { 
-                  link: `${process.env.NEXT_PUBLIC_FRONT_URL}/my/faq`,
+                  link: `${process.env.NEXT_PUBLIC_FRONT_URL}/support/faq`,
                   text: '자주 묻는 질문',
                 },
               ],

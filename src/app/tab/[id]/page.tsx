@@ -1,13 +1,97 @@
 'use client'
+import { useMemo } from 'react';
+
 import AppLayout from '@/components/domain/AppLayout';
 import TabDetail from '@/components/domain/tab/TabDetail';
 import IconButton from '@/components/common/IconButton';
+import DropDown from '@/components/common/DropDown';
 import Inner from '@/components/common/Inner';
 import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
 import { tempTabDetailData } from '@/utils/tempData';
 
 export default function TabDetailPage() {
+  const dropDownList = useMemo(() => {
+    const listOfOwner = [
+      { 
+        value: 'share', 
+        label: '탭 공유', 
+        icon: 'mgc_share_forward_line',
+        onClick: () => alert('DEV: 탭 공유'),
+      },
+      { 
+        value: 'edit', 
+        label: '탭 수정', 
+        icon: 'mgc_edit_2_line',
+        onClick: () => alert('DEV: 탭 수정'),
+      },
+      { 
+        value: 'setting', 
+        label: '탭 설정', 
+        icon: 'mgc_settings_5_line',
+        onClick: () => alert('DEV: 탭 설정'),
+      },
+      { 
+        value: 'delete', 
+        label: '탭 삭제', 
+        icon: 'mgc_delete_2_line',
+        onClick: () => {
+          const res = confirm('정말 삭제하시겠습니까?');
+          if (res) {
+            alert('DEV: 탭 삭제');
+          }
+        },
+      },
+    ];
+
+    const listOfNotJoiner = [
+      { 
+        value: 'share', 
+        label: '탭 공유', 
+        icon: 'mgc_share_forward_line',
+        onClick: () => alert('DEV: 탭 공유'),
+      },
+      { 
+        value: 'join', 
+        label: '탭 참여', 
+        icon: 'mgc_enter_door_line',
+        onClick: () => alert('DEV: 탭 참여'),
+      },
+      { 
+        value: 'report', 
+        label: '탭 신고', 
+        icon: 'mgc_report_line',
+        onClick: () => alert('DEV: 탭 신고'),
+      },
+    ];
+
+    const listOfJoiner = [
+      { 
+        value: 'share', 
+        label: '탭 공유', 
+        icon: 'mgc_share_forward_line',
+        onClick: () => alert('DEV: 탭 공유'),
+      },
+      { 
+        value: 'out', 
+        label: '탭 나가기', 
+        icon: 'mgc_exit_door_line',
+        onClick: () => alert('DEV: 탭 나가기'),
+      },
+      { 
+        value: 'report', 
+        label: '탭 신고', 
+        icon: 'mgc_report_line',
+        onClick: () => alert('DEV: 탭 신고'),
+      },
+    ];
+
+    if ('DEV: 탭 주인') return listOfOwner;
+    if ('DEV: 탭 미참여자') return listOfNotJoiner;
+    if ('DEV: 탭 참여자') return listOfJoiner;
+    return listOfNotJoiner;
+  }, []);
+
   return (
     <AppLayout
       navBar={{
@@ -20,13 +104,7 @@ export default function TabDetailPage() {
               }}
               onClick={() => alert('DEV: 관심탭 추가 or 관심탭 취소')}
             />
-            <IconButton 
-              icon={{
-                name: 'mgc_more_2_line',
-                ariaLabel: '더보기',
-              }}
-              onClick={() => alert('TODO: Dropdown Menu Open')}
-            />
+            <DropDown list={dropDownList} />
           </div>
         )
       }}

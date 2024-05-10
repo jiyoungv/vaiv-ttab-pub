@@ -16,12 +16,13 @@ export default function TabPreviewInfoIcon({
       className={classNames(
         'inline-flex justify-center items-center w-6 aspect-square rounded-full backdrop-blur-[1px]',
         {
-          'bg-amber-500/50': category === 'note',
-          'bg-orange-500/50': category === 'link',
-          'bg-teal-500/50': category === 'search',
-          'bg-blue-500/50': category === 'image',
-          'bg-violet-500/50': category === 'file',
-          'bg-primary-500/50': category === 'report',
+          'bg-primary-500/50': !category,
+          'bg-note-500/50': category === 'note',
+          'bg-link-500/50': category === 'link',
+          'bg-search-500/50': category === 'search',
+          'bg-image-500/50': category === 'image',
+          'bg-file-500/50': category === 'file',
+          'bg-report-500/50': category === 'report',
         },
       )}
     >

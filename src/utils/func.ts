@@ -1,3 +1,4 @@
+import variables from '@/style/variables';
 import { TabCategory } from '@/types/tab';
 
 export const tabCategoryIconName = (category: TabCategory) => {

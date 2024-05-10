@@ -2,10 +2,15 @@ export type TabCategory = 'note' | 'link' | 'search' | 'image' | 'file' | 'repor
 
 export interface TabPreviewInfoData {
   category: TabCategory;
-  text?: string;
-  src?: string;
-  question?: string;
-  answer?: string;
+  note?: string;
+  link?: string;
+  search?: {
+    question?: string;
+    answer?: string;
+  };
+  image?: string;
+  file?: string;
+  report?: string;
 }
 
 export interface TabPreviewData {
@@ -25,7 +30,27 @@ export interface TabPreviewData {
 }
 
 export interface TabDetailInfoData {
-
+  category: TabCategory;
+  thumbNail: string;
+  nickname: string;
+  date: string;
+  contents: {
+    note?: string;
+    link?: string;
+    search?: {
+      question?: string;
+      answer?: string;
+    };
+    images?: string[];
+    file?: string;
+    report?: string;
+  };
+  memo: string;
+  keywords: string[];
+  like: boolean;
+  likeAmount: string;
+  commentAmount: string;
+  viewAmount: string;
 }
 
 export interface TabDetailData {

@@ -8,7 +8,7 @@ export default function SwipeTab({
 }: SwipeTabProps) {
   return (
     <div className="bg-white">
-      SwipeTab
+      TODO: SwipeTab
     </div>
   );
 }
