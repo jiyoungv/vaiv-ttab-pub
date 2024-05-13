@@ -6,10 +6,9 @@
 @tailwind utilities;
 
 @layer base {
-  /* TODO: 변수 정리 해야함 */
   :root {
     /* font */
-    --text-6xl: 60px;
+    /* --text-6xl: 60px;
     --text-5xl: 48px;
     --text-4xl: 36px;
     --text-3xl: 32px;
@@ -18,7 +17,7 @@
     --text-lg: 18px;
     --text-base: 16px;
     --text-sm: 14px;
-    --text-xs: 12px;
+    --text-xs: 12px; */
   
     /* layout */
     --mo-max-width: 600px;

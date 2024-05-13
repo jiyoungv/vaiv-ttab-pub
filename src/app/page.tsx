@@ -18,7 +18,11 @@ export default function Home() {
       bg="dark"
     >
       <section>
-        <SwipeTab />
+        <SwipeTab 
+          list={[
+            { value: '', label: '' },
+          ]} 
+        />
       </section>
       <section>
         {tempTabPreviewData && (

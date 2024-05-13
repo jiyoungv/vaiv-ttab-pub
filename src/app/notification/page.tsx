@@ -33,19 +33,17 @@ export default function NotificationPage() {
       }}
     >
       {tempNotificationData && (
-        <section className="relative mb-4">
-          <Tab 
-            list={[
-              { value: 'all', label: '전체' },
-              { value: 'join-tab', label: '참여탭' },
-              { value: 'like-tab', label: '관심탭' },
-              { value: 'follow', label: '팔로우' },
-            ]}
-            onChange={(activeValue) => setTab(activeValue)}
-          />
-        </section>
+        <Tab 
+          list={[
+            { value: 'all', label: '전체' },
+            { value: 'join-tab', label: '참여탭' },
+            { value: 'like-tab', label: '관심탭' },
+            { value: 'follow', label: '팔로우' },
+          ]}
+          onChange={(activeValue) => setTab(activeValue)}
+        />
       )}
-      <section>
+      <section className="mt-4">
         <Inner>
           <div className="mb-5">
             <p className="text-slate-500 text-sm font-medium">최근 30일</p>

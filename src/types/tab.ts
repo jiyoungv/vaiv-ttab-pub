@@ -31,7 +31,7 @@ export interface TabPreviewData {
 
 export interface TabDetailInfoData {
   category: TabCategory;
-  thumbNail: string;
+  thumbnail: string;
   nickname: string;
   date: string;
   contents: {
@@ -70,5 +70,5 @@ export interface TabDetailData {
   privacy: boolean;
   join: boolean;
   keywords: string[];
-  thumbNail: string;
+  thumbnail: string;
 }

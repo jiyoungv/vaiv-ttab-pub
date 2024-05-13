@@ -52,7 +52,7 @@ export default function Toggle({
         className={classNames(
           'relative rounded-xl',
           {
-            'bg-slate-100': !localChecked,
+            'bg-slate-200': !localChecked,
             'bg-primary-500': localChecked,
             'w-9 h-5': size === 'sm',
             'w-11 h-6': size === 'md',

@@ -64,7 +64,7 @@ export default function TabDetailHead({ data }: TabDetailHeadProps) {
             >
               <div className="relative pr-3">
                 <div className="inline-block border border-white rounded-full">
-                  <ProfileThumbnail src={data?.thumbNail} width="30px" />
+                  <ProfileThumbnail src={data?.thumbnail} width="30px" />
                 </div>
                 <div className="inline-flex justify-center items-center absolute right-0 top-1/2 -translate-y-1/2 w-8 aspect-square border border-white rounded-full bg-slate-800">
                   <p className="text-white text-xs font-me">

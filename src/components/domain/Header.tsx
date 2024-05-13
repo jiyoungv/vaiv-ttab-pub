@@ -16,17 +16,18 @@ export default function Header({}: HeaderProps) {
           <Link href={`${process.env.NEXT_PUBLIC_FRONT_URL}`}>
             <Image src={ImgLogo} alt="Ttab Home" />
           </Link>
-          <IconButton 
-            icon={{
-              name: 'mgc_notification_line',
-              ariaLabel: '알림',
-            }}
-            href={`${process.env.NEXT_PUBLIC_FRONT_URL}/notification`}
-          >
+          <div className="relative">
+            <IconButton 
+              icon={{
+                name: 'mgc_notification_line',
+                ariaLabel: '알림',
+              }}
+              href={`${process.env.NEXT_PUBLIC_FRONT_URL}/notification`}
+            />
             <p className="inline-flex justify-center items-center absolute -top-1 -right-0.5 w-4 aspect-square rounded-full bg-error-500 text-white text-xs">
               1
             </p>
-          </IconButton>
+          </div>
         </nav>
       </Inner>
     </HeaderLayout>

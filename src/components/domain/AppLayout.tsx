@@ -23,7 +23,7 @@ export default function AppLayout({
 }: AppLayoutProps) {
   return (
     <div className={classNames(
-      'relative max-w-[var(--mo-max-width)] mx-auto',
+      'overflow-clip relative max-w-[var(--mo-max-width)] mx-auto',
       {
         'bg-slate-100': bg === 'dark',
         [`${className}`]: className,

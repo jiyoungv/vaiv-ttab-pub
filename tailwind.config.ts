@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss';
 // import colors from 'tailwindcss/colors';
 
-import variables from './src/style/variables';
+import variables from './src/styles/variables';
 
 const config: Config = {
   content: [
@@ -70,6 +70,8 @@ const config: Config = {
     extend: {
       spacing: {
         '4.5': '1.125rem',
+        '7.5': '1.875rem',
+        '13': '3.25rem',
         '15': '3.75rem',
         '17': '4.25rem',
         '25': '6.25rem',

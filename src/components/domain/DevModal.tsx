@@ -2,7 +2,7 @@ import Button from '@/components/common/Button';
 
 const list = [
   'Loading(Skeleton)과 NoData는 일단 컴포넌트 밖으로 뺐는데, 필요하면 컴포넌트 안에 넣고 사용',
-  '주석 -  DEV: 개발 참고사항, TODO: 퍼블리셔 작업 예정',
+  '주석 -  DEV: 개발 참고 사항, TODO: 퍼블리셔 작업 예정',
 ];
 
 export interface DevModalProps {
@@ -12,7 +12,7 @@ export interface DevModalProps {
 export default function DevModal({ onClose }: DevModalProps) {
   return (
     <aside className="z-50 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-      <div className="w-[320px] p-4 rounded-lg bg-white shadow-lg">
+      <div className="w-[320px] p-4 rounded-lg bg-primary-50 shadow-lg">
         <p className="mb-4 text-slate-700 text-2xl font-bold text-center">
           📌개발 전달 사항📌
         </p>

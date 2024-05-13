@@ -46,7 +46,7 @@ export default function SupportFAQPage() {
             <Input 
               value={keyword}
               onChange={(e) => setKeyword(e.target.value)}
-              placeholder="궁금하신 내용을 입력해주세요."
+              placeholder="궁금하신 내용을 입력해주세요"
               required
               leftIcon="mgc_search_line"
               variant="dark"

@@ -1,6 +1,6 @@
 import type { ThemeConfig } from 'antd';
 
-import variables from '@/style/variables';
+import variables from '@/styles/variables';
 
 const antdTheme: ThemeConfig = {
   token: {

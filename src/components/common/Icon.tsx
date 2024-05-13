@@ -4,6 +4,7 @@ export interface IconProps {
   name?: string;
   color?: string;
   size?: string;
+  style?: React.CSSProperties;
   ariaLabel?: string;
   className?: string;
 }
@@ -12,6 +13,7 @@ export default function Icon({
   name = 'mgc_heart_line', 
   color = 'text-slate-700', 
   size = 'text-2xl-size', 
+  style,
   ariaLabel,
   className,
 }: IconProps) {
@@ -26,6 +28,7 @@ export default function Icon({
           [`${className}`]: className,
         },
       )}
+      style={style}
       aria-label={ariaLabel}
     ></i>
   );

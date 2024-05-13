@@ -1,87 +1,65 @@
 'use client'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRecoilState } from 'recoil';
 
 import AppLayout from '@/components/domain/AppLayout';
-import Inner from '@/components/common/Inner';
-import TabPreviewList from '@/components/domain/tab/TabPreviewList';
+import Toggle from '@/components/common/Toggle';
 import Input from '@/components/common/Input';
-import Radio from '@/components/common/Radio';
-import Skeleton from '@/components/common/Skeleton';
-import NoData from '@/components/common/NoData';
-import { tempTabPreviewData } from '@/utils/tempData';
+import SearchResult from '@/components/domain/search/SearchResult';
+import SearchResultRAG from '@/components/domain/search/SearchResultRAG';
+import { searchTypeState } from '@/states';
 
 export default function SearchResultPage() {
-  const [sort, setSort] = useState('sort1');
+  const [mounted, setMounted] = useState(false);
+
+  const [searchType, setSearchRAG] = useRecoilState(searchTypeState);
+
+  // 첫 로딩시 RAG 토글 off
+  useEffect(() => {
+    if (mounted) return;
+    setSearchRAG('default');
+  }, [mounted, setSearchRAG]);
 
   return (
     <AppLayout 
       navBar={{
         right: (
-          <Link
-            href={`${process.env.NEXT_PUBLIC_FRONT_URL}/search`}
-            className="flex-auto"
-          >
+          <div className="flex-auto relative">
             <Input 
               value="마케팅"
-              placeholder="검색어를 입력해주세요."
+              placeholder="검색어를 입력해주세요"
               leftIcon="mgc_search_line"
+              right={(
+                <div className="z-10 flex items-center gap-1 relative">
+                  <p className="text-slate-500 text-xs font-bold">
+                    RAG검색
+                  </p>
+                  <Toggle 
+                    size="md" 
+                    onChange={(checked) => setSearchRAG(!checked ? 'default' : 'rag')}
+                  />
+                </div>
+              )}
               variant="dark"
               full 
             />
-          </Link>
+            <Link
+              href={`${process.env.NEXT_PUBLIC_FRONT_URL}/search`}
+              className="absolute top-0 left-0 h-full w-[calc(100%-118px)]"
+            ></Link>
+          </div>
         ),
       }}
       hideGnb
-      bg="dark"
+      bg={searchType === 'default' ? 'dark' : 'default'}
     >
-      <section>
-        {tempTabPreviewData && (
-          <>
-            <div className="bg-white">
-              <Inner>
-                <div className="flex justify-between items-center gap-1 py-3">
-                  <button 
-                    type="button"
-                    className="text-slate-500 text-sm font-bold hover:underline"
-                    onClick={() => alert('TODO: 검색 옵션 바텀 시트 open')}
-                  >  
-                    검색 옵션
-                  </button>
-                  <div className="inline-flex gap-2">
-                    {[
-                      { id: 'sort1', text: '정확도순' },
-                      { id: 'sort2', text: '최신순' },
-                    ].map((v, i) => (
-                      <Radio 
-                        key={i}
-                        id={v.id}
-                        name="sort" 
-                        text={v.text}
-                        checked={sort === v.id} 
-                        onChange={(e) => e.target.checked && setSort(v.id)} 
-                      />
-                    ))}
-                  </div>
-                </div>
-              </Inner>
-            </div>
-            <TabPreviewList data={tempTabPreviewData} />
-          </>
-        )}
-        {'DEV: loading' && (
-          <div className="flex flex-col gap-3 mt-3">
-            {Array(5).fill('').map((v, i) => (
-              <Skeleton key={i} color="white" height="100px" square />
-            ))}
-          </div>
-        )}
-        {'DEV: no data' && (
-          <NoData
-            text="검색 결과가 없습니다."
-          />
-        )}
-      </section>
+      {searchType === 'default' && (
+        <SearchResult />
+      )}
+      {searchType === 'rag' && (
+        <SearchResultRAG />
+      )}
     </AppLayout>
   );
 }

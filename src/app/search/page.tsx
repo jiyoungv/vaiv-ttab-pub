@@ -1,19 +1,32 @@
 'use client'
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { useRecoilState } from 'recoil';
 
 import AppLayout from '@/components/domain/AppLayout';
 import Inner from '@/components/common/Inner';
 import Input from '@/components/common/Input';
+import Toggle from '@/components/common/Toggle';
 import RecentSearchItem from '@/components/domain/search/RecentSearchItem';
 import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
+import { searchTypeState } from '@/states';
 import { tempRecentSearchData } from '@/utils/tempData';
 
 export default function SearchPage() {
   const router = useRouter();
 
+  const [mounted, setMounted] = useState(false);
+
   const [keyword, setKeyword] = useState('');
+
+  const [searchType, setSearchRAG] = useRecoilState(searchTypeState);
+
+  // 첫 로딩시 RAG 토글 off
+  useEffect(() => {
+    if (mounted) return;
+    setSearchRAG('default');
+  }, [mounted, setSearchRAG]);
 
   const onSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
@@ -29,10 +42,21 @@ export default function SearchPage() {
             <Input 
               value={keyword}
               onChange={(e) => setKeyword(e.target.value)}
-              placeholder="검색어를 입력해주세요."
+              placeholder="검색어를 입력해주세요"
               autoFocus
               required
               leftIcon="mgc_search_line"
+              right={(
+                <div className="flex items-center gap-1">
+                  <p className="text-slate-500 text-xs font-bold">
+                    RAG검색
+                  </p>
+                  <Toggle 
+                    size="md" 
+                    onChange={(checked) => setSearchRAG(!checked ? 'default' : 'rag')}
+                  />
+                </div>
+              )}
               variant="dark"
               full 
             />

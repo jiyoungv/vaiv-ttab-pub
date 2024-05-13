@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 
 import AppLayout from '@/components/domain/AppLayout';
 import Tab from '@/components/common/Tab';
+import CreateInfo from '@/components/domain/create/CreateInfo';
 
 export default function CreatePage() {
   const router = useRouter();
@@ -48,11 +49,17 @@ export default function CreatePage() {
     >
       <Tab 
         list={[
-          { value: 'information', label: '정보 생성' },
+          { value: 'info', label: '정보 생성' },
           { value: 'tab', label: '탭 생성' },
         ]}
-        onChange={(activeValue) => setTab(activeValue)}
+        onChange={(value) => setTab(value)}
       />
+      {tab === 'info' && (
+        <CreateInfo />
+      )}
+      {tab === 'tab' && (
+        <div>TODO: 탭생성</div>
+      )}
     </AppLayout>
   );
 }

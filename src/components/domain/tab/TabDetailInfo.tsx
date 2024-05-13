@@ -105,7 +105,7 @@ export default function TabDetailInfo({ data }: TabDetailInfoProps) {
           <div className="flex justify-between items-center gap-1">
             <Link href={`${process.env.NEXT_PUBLIC_FRONT_URL}/profile/${data?.nickname}`}>
               <div className="inline-flex items-center gap-2">
-                <ProfileThumbnail src={data?.thumbNail} width="36px" />
+                <ProfileThumbnail src={data?.thumbnail} width="36px" />
                 <div>
                   <p className="text-slate-700 text-base-read font-bold">
                     {data?.nickname}

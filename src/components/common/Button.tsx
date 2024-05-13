@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import InternalButton, { InternalButtonProps } from '@/components/common/InternalButton';
 import Icon from '@/components/common/Icon';
-// import variables from '@/style/variables';
+// import variables from '@/styles/variables';
 
 interface ButtonProps extends InternalButtonProps {
   variant?: 'fill' | 'link';
@@ -16,6 +16,7 @@ interface ButtonProps extends InternalButtonProps {
   square?: boolean;
   round?: boolean;
   full?: boolean;
+  shadow?: boolean;
 }
 
 export default function Button({ 
@@ -28,6 +29,7 @@ export default function Button({
   square,
   round,
   full,
+  shadow,
   ...props
 }: ButtonProps) {
   const rootClassName = useMemo(() => classNames(
@@ -89,9 +91,13 @@ export default function Button({
       // full
       'w-full': full,
 
+      // shadow
+      'shadow-lg': shadow && color !== 'primary',
+      'drop-shadow-primary': shadow && color === 'primary',
+
       [`${props.className}`]: props.className,
     },
-  ), [variant, color, size, icon, square, round, full, props.disabled, props.className]);
+  ), [variant, color, size, icon, square, round, full, shadow, props.disabled, props.className]);
 
   const textSize = useMemo(() => {
     if (size === 'base') return 'text-base-read';

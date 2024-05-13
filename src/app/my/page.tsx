@@ -18,7 +18,7 @@ export default function MyPage() {
       <section className="pt-8">
         <Inner>
           <div className="flex justify-center mb-4">
-            <ProfileThumbnail src="/images/temp/profile.png" width="100px" />
+            <ProfileThumbnail src='' width="100px" />
           </div>
           <div className="mb-2 text-center">
             <h1 className="text-slate-700 text-2xl font-bold">

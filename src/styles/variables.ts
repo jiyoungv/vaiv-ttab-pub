@@ -1,6 +1,5 @@
 import colors from 'tailwindcss/colors';
 
-// TODO: 변수 정리 해야함
 const variables = {
   color: {
     'current': colors.current,
@@ -53,9 +52,6 @@ const variables = {
       'sm': '14px',
       'xs': '12px',
     },
-  },
-  layout: {
-    moMaxWidth: '600px',
   },
 };
 

@@ -1,22 +1,24 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useRef, useState, useEffect, useMemo } from 'react';
 import classNames from 'classnames';
 
 export interface TabProps {
-  list?: {
+  list: {
     value: string;
     label: string;
   }[];
   value?: string;
   defaultActiveValue?: string;
-  onChange?: (activeValue: string) => void;
+  onChange?: (value: string) => void;
 }
 
 export default function Tab({
-  list = [{ value: 'tab1', label: 'tab1' }, { value: 'tab2', label: 'tab2' }],
+  list,
   value,
   defaultActiveValue,
   onChange,
 }: TabProps) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   const [mounted, setMounted] = useState(false);
 
   const [activeValue, setActiveValue] = useState(value || list[0].value);
@@ -33,30 +35,32 @@ export default function Tab({
   const activeIndex = useMemo(() => list.findIndex(v => v.value === activeValue), [list, activeValue]);
 
   return (
-    <div className="z-10 sticky top-0 bg-white" role="tablist">
-      <ul 
-        className="flex border-b border-b-slate-400"
-      >
+    <div ref={scrollRef} className="z-30 sticky top-17 bg-white" role="tablist">
+      <ul className="flex border-b border-b-slate-400">
         {list.map((v, i) => (
           <li 
             key={i}
-            className={classNames(
-              'inline-flex justify-center items-center relative h-15 text-base-read cursor-pointer',
-              {
-                'text-slate-400 font-medium hover:text-slate-700': v.value !== activeValue,
-                'text-slate-700 font-bold': v.value === activeValue,
-              },
-            )}
-            onClick={() => {
-              setActiveValue(v.value);
-              if (onChange) onChange(v.value);
-            }}
             style={{
               width: `${widthPercent}%`,
             }}
-            role="button"
           >
-            {v.label}
+            <button
+              type="button"
+              className={classNames(
+                'inline-flex justify-center items-center relative w-full h-15 text-base-read cursor-pointer',
+                {
+                  'text-slate-400 font-medium hover:text-slate-700': v.value !== activeValue,
+                  'text-slate-700 font-bold': v.value === activeValue,
+                },
+              )}
+              onClick={() => {
+                setActiveValue(v.value);
+                scrollRef?.current?.scrollIntoView({ behavior: 'smooth' });
+                if (onChange) onChange(v.value);
+              }}
+            >
+              {v.label}
+            </button>
           </li>
         ))}
       </ul>

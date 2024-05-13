@@ -16,7 +16,7 @@ export const tempTabPreviewData: TabPreviewData[] = [
     infos: [
       {
         category: 'image',
-        image: '/images/temp/temp1.png',
+        image: '/images/temp/temp4.jpg',
       },
       {
         category: 'note',
@@ -59,7 +59,7 @@ export const tempTabPreviewData: TabPreviewData[] = [
     infos: [
       {
         category: 'image',
-        image: '/images/temp/temp1.png',
+        image: '/images/temp/temp2.jpg',
       },
       {
         category: 'note',
@@ -105,7 +105,7 @@ export const tempTabPreviewData: TabPreviewData[] = [
       },
       {
         category: 'image',
-        image: '/images/temp/temp1.png',
+        image: '/images/temp/temp4.jpg',
       },
       {
         category: 'note',
@@ -143,7 +143,7 @@ export const tempTabPreviewData: TabPreviewData[] = [
       },
       {
         category: 'image',
-        image: '/images/temp/temp1.png',
+        image: '/images/temp/temp2.jpg',
       },
       {
         category: 'note',
@@ -170,7 +170,7 @@ export const tempTabPreviewData: TabPreviewData[] = [
     infos: [
       {
         category: 'image',
-        image: '/images/temp/temp1.png',
+        image: '/images/temp/temp4.jpg',
       },
       {
         category: 'note',
@@ -197,7 +197,7 @@ export const tempTabPreviewData: TabPreviewData[] = [
     infos: [
       {
         category: 'image',
-        image: '/images/temp/temp1.png',
+        image: '/images/temp/temp2.jpg',
       },
       {
         category: 'note',
@@ -220,7 +220,7 @@ export const tempTabPreviewData: TabPreviewData[] = [
     infos: [
       {
         category: 'image',
-        image: '/images/temp/temp1.png',
+        image: '/images/temp/temp4.jpg',
       },
     ],
   },
@@ -241,7 +241,7 @@ export const tempTabDetailData: TabDetailData = {
   infos: [
     {
       category: 'note',
-      thumbNail: '/images/temp/temp1.png',
+      thumbnail: '/images/temp/temp1.jpg',
       nickname: '이탭은내꺼',
       date: '2024-01-01',
       contents: {
@@ -256,7 +256,7 @@ export const tempTabDetailData: TabDetailData = {
     },
     {
       category: 'link',
-      thumbNail: '/images/temp/profile.png',
+      thumbnail: '',
       nickname: 'xman',
       date: '2024-01-01',
       contents: {
@@ -271,7 +271,7 @@ export const tempTabDetailData: TabDetailData = {
     },
     {
       category: 'search',
-      thumbNail: '/images/temp/temp2.jpg',
+      thumbnail: '/images/temp/temp2.jpg',
       nickname: 'vaiv_worker',
       date: '2024-01-01',
       contents: {
@@ -289,17 +289,17 @@ export const tempTabDetailData: TabDetailData = {
     },
     {
       category: 'image',
-      thumbNail: '/images/temp/temp3.jpg',
+      thumbnail: '/images/temp/temp3.png',
       nickname: '웨스턴차이나',
       date: '2024-01-01',
       contents: {
         images: [
-          '/images/temp/temp1.png',
+          '/images/temp/temp1.jpg',
           '/images/temp/temp2.jpg',
-          '/images/temp/temp3.jpg',
-          '/images/temp/temp1.png',
+          '/images/temp/temp3.png',
+          '/images/temp/temp1.jpg',
           '/images/temp/temp2.jpg',
-          '/images/temp/temp3.jpg',
+          '/images/temp/temp3.png',
         ],
       },
       memo: '메모입니다. 이미지는 최대 몇개까지 들어갈까요? 6개로 예상해봅니다. 최대 용량도 지정될까요?',
@@ -311,7 +311,7 @@ export const tempTabDetailData: TabDetailData = {
     },
     {
       category: 'file',
-      thumbNail: '/images/temp/temp1.png',
+      thumbnail: '/images/temp/temp1.jpg',
       nickname: '라도집',
       date: '2024-01-01',
       contents: {
@@ -329,13 +329,13 @@ export const tempTabDetailData: TabDetailData = {
   privacy: false,
   join: true,
   keywords: ['키워드1', '키워드2', '키워드3', '키워드4'],
-  thumbNail: '/images/temp/temp1.png',
+  thumbnail: '/images/temp/temp1.jpg',
 };
 
 export const tempNotificationData = [
   {
     link: `${process.env.NEXT_PUBLIC_FRONT_URL}/tab/1`,
-    image: '/images/temp/profile.png',
+    image: '/images/temp/temp1.jpg',
     nickname: '닉네임',
     ttabName: '탭이름',
     date: '2024.03.01',
@@ -344,7 +344,7 @@ export const tempNotificationData = [
   },
   {
     link: `${process.env.NEXT_PUBLIC_FRONT_URL}/tab/1`,
-    image: '/images/temp/profile.png',
+    image: '/images/temp/temp1.jpg',
     nickname: 'vaiv',
     ttabName: '탭이름2',
     date: '2024.02.01',
@@ -352,7 +352,7 @@ export const tempNotificationData = [
   },
   {
     link: `${process.env.NEXT_PUBLIC_FRONT_URL}/tab/1`,
-    image: '/images/temp/profile.png',
+    image: '/images/temp/temp1.jpg',
     nickname: 'ABCDEFG',
     ttabName: '탭이름',
     date: '2024.01.01',
@@ -361,7 +361,7 @@ export const tempNotificationData = [
   },
   {
     link: `${process.env.NEXT_PUBLIC_FRONT_URL}/tab/1`,
-    image: '/images/temp/profile.png',
+    image: '/images/temp/temp1.jpg',
     nickname: '닉네임',
     ttabName: '탭이름',
     date: '2024.01.01',
@@ -369,7 +369,7 @@ export const tempNotificationData = [
   },
   {
     link: `${process.env.NEXT_PUBLIC_FRONT_URL}/tab/1`,
-    image: '/images/temp/profile.png',
+    image: '/images/temp/temp1.jpg',
     nickname: '닉네임',
     ttabName: '탭이름',
     date: '2024.01.01',

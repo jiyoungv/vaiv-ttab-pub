@@ -1,10 +1,19 @@
+'use client'
+import { useState } from 'react';
+
 import AppLayout from '@/components/domain/AppLayout';
+import Inner from '@/components/common/Inner';
+import BigSelect from '@/components/common/BigSelect';
 import TabPreviewList from '@/components/domain/tab/TabPreviewList';
 import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
 import { tempTabPreviewData } from '@/utils/tempData';
 
 export default function MyTabPage() {
+  const [select, setSelect] = useState('recent');
+
+  const [view, setView] = useState('card');
+
   return (
     <AppLayout
       navBar={{
@@ -12,8 +21,24 @@ export default function MyTabPage() {
       }}
       bg="dark"
     >
-      <section>
-        TODO: 탭 select, 보기 방식
+      <section className="py-2 bg-white">
+        <Inner>
+          <div className="flex justify-between items-center gap-1">
+            <BigSelect 
+              list={[
+                { value: 'recent', label: '최근 조회 탭(10)' },
+                { value: 'join', label: '참여중인 탭(10)' },
+                { value: 'bookmark', label: '관심 탭(10)' },
+                { value: 'privacy', label: '비공개 탭(10)' },
+              ]}
+              onChange={(value) => setSelect(value)}
+              dim
+            />
+            <div>
+              TODO: 보기 방식
+            </div>
+          </div>
+        </Inner>
       </section>
       <section>
         {tempTabPreviewData && (

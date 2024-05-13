@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import { ConfigProvider } from 'antd';
 
 import 'mingcute_icon/font/Mingcute.css';
-import '@/style/globals.css';
-import antdTheme from '@/style/antdTheme';
+import '@/styles/globals.css';
+import antdTheme from '@/styles/antdTheme';
+import RecoilWrapper from '@/components/domain/RecoilWrapper';
 
 export const metadata: Metadata = {
   title: 'Ttab',
@@ -17,12 +18,14 @@ export default function RootLayout({
 }>) {
   return (
     <ConfigProvider theme={antdTheme}>
-      <html lang="ko">
-        <body>
-          <div id="root">{children}</div>
-          <div id="portal"></div>
-        </body>
-      </html>
+      <RecoilWrapper>
+        <html lang="ko">
+          <body>
+            <div id="root">{children}</div>
+            <div id="portal"></div>
+          </body>
+        </html>
+      </RecoilWrapper>
     </ConfigProvider>
   );
 }
