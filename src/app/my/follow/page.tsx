@@ -13,7 +13,7 @@ import NoData from '@/components/common/NoData';
 export default function MyFollowPage() {
   const [nickname, setNickname] = useState('');
 
-  const onSubmit = useCallback((e: React.FormEvent) => {
+  const onSubmitSearch = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     alert('DEV: 검색하기');
   }, []);
@@ -33,11 +33,11 @@ export default function MyFollowPage() {
       <section className="py-5">
         <Inner variant="narrow">
           <div className="mb-5">
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmitSearch}>
               <Input 
                 value={nickname}
                 onChange={(e) => setNickname(e.target.value)}
-                placeholder="닉네임을 입력해주세요"
+                placeholder="닉네임을 입력해주세요."
                 variant="dark"
                 leftIcon="mgc_search_line"
                 full

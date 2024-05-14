@@ -4,6 +4,12 @@ import classNames from 'classnames';
 import Inner from '@/components/common/Inner';
 import Icon from '@/components/common/Icon';
 import CreateInfoNote from '@/components/domain/create/CreateInfoNote';
+import CreateInfoLink from '@/components/domain/create/CreateInfoLink';
+import CreateInfoSearch from '@/components/domain/create/CreateInfoSearch';
+import CreateInfoImage from '@/components/domain/create/CreateInfoImage';
+import CreateInfoBot from '@/components/domain/create/CreateInfoBot';
+import CreateInfoRecommend from '@/components/domain/create/CreateInfoRecommend';
+import CreateTag from '@/components/domain/create/CreateTag';
 import { tabCategoryIconName } from '@/utils/func';
 import { TabCategory } from '@/types/tab';
 
@@ -23,8 +29,8 @@ export default function CreateInfo({}: CreateInfoProps) {
   const activeCategory = useCallback((localCategory: TabCategory) => localCategory === category, [category]);
 
   return (
-    <section>
-      <div className="py-2.5">
+    <article>
+      <section className="py-2.5">
         <Inner>
           <div className="flex justify-between">
             {categoryList.map((v, i) => (
@@ -32,6 +38,7 @@ export default function CreateInfo({}: CreateInfoProps) {
                 key={i}
                 type="button"
                 onClick={() => setCategory(v.category)}
+                className="group"
               >
                 <figure 
                   className={classNames(
@@ -55,7 +62,7 @@ export default function CreateInfo({}: CreateInfoProps) {
                 </figure>
                 <p 
                   className={classNames(
-                    'mt-1 text-xs',
+                    'mt-1 text-xs group-hover:font-bold',
                     {
                       'text-slate-500': !activeCategory(v.category),
                       'text-slate-700 font-bold': activeCategory(v.category),
@@ -68,27 +75,66 @@ export default function CreateInfo({}: CreateInfoProps) {
             ))}
           </div>
         </Inner>
-      </div>
-      <div className="mt-5">
+      </section>
+      <section className="pt-5 pb-4">
         <Inner>
-          {category === 'note' && <CreateInfoNote />}
+          {category === 'note' && (
+            <CreateInfoNote />
+          )}
+          {category === 'link' && (
+            <CreateInfoLink />
+          )}
+          {category === 'search' && (
+            <CreateInfoSearch />
+          )}
+          {category === 'image' && (
+            <CreateInfoImage />
+          )}
+          {/* {category === 'file' && (
+          )} */}
         </Inner>
-      </div>
-      <div>
-        TODO: AI bot
-      </div>
-      <div>
-        <p className="text-slate-700 text-base-read font-bold">
-          🧐 다른 사람들은 이런 메모들을 자주 하고 있어요.
-        </p>
-        TODO: 추천
-      </div>
-      <div>
-        TODO: 태그
-      </div>
-      <div>
-        TODO: 탭 선택, 최근 저장한 정보
-      </div>
-    </section>
+      </section>
+      <CreateInfoBot />
+      <CreateInfoRecommend />
+      <CreateTag />
+      <section>
+        {[
+          { 
+            title: '탭 선택',
+            sub: '미분류 탭',
+            onClick: () => {
+              alert('TODO: 탭 선택 바텀시트 open')
+            },
+          },
+          { 
+            title: '최근 저장한 정보',
+            onClick: () => {
+              alert('TODO: 탭 선택 바텀시트 open')
+            },
+          },
+        ].map((v, i) => (
+          <button 
+            key={i}
+            type="button"
+            className="flex justify-between items-center gap-1 px-3.5 py-4 w-full border-b border-b-slate-200 last:border-b-0 hover:bg-slate-50"
+            onClick={v.onClick}
+          >
+            <div className="flex-auto text-left">
+              <p className="text-slate-900 text-base-read font-medium">
+                {v.title}
+              </p>
+            </div>
+            <div className="flex-shrink-0 flex items-center gap-2">
+              {v.sub && (
+                <p className="text-slate-500 text-base-read">
+                  {v.sub}
+                </p>
+              )}
+              <Icon name="mgc_right_line" size="text-xl-size" />
+            </div>
+          </button>
+        ))}
+      </section>
+    </article>
   );
 }

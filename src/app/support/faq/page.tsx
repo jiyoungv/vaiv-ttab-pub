@@ -13,7 +13,7 @@ import { faqCategorys, faqData } from '@/utils/constant';
 export default function SupportFAQPage() {
   const [keyword, setKeyword] = useState('');
 
-  const onSubmit = useCallback((e: React.FormEvent) => {
+  const onSubmitSearch = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     alert('DEV: 검색하기');
   }, []);
@@ -41,12 +41,12 @@ export default function SupportFAQPage() {
       }}
     >
       <section>
-        <form onSubmit={onSubmit} className="mt-5">
+        <form onSubmit={onSubmitSearch} className="mt-5">
           <Inner>
             <Input 
               value={keyword}
               onChange={(e) => setKeyword(e.target.value)}
-              placeholder="궁금하신 내용을 입력해주세요"
+              placeholder="궁금하신 내용을 입력해주세요."
               required
               leftIcon="mgc_search_line"
               variant="dark"

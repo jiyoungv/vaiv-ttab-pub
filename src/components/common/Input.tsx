@@ -14,7 +14,7 @@ export interface InputProps {
   error?: boolean;
   autoFocus?: boolean;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
-  variant?: 'default' | 'dark';
+  variant?: 'default' | 'dark' | 'clear';
   full?: boolean;
   leftIcon?: string; 
   left?: React.ReactNode;
@@ -53,7 +53,7 @@ export default function Input({
   return (
     <div 
       className={classNames(
-        'inline-flex justify-between items-center gap-2 px-3 py-2.5 border',
+        'inline-flex justify-between items-center gap-2',
         {
           'rounded-lg': variant === 'default',
           'border-slate-200': variant === 'default' && !focus,
@@ -62,6 +62,9 @@ export default function Input({
           'rounded-5xl': variant === 'dark',
           'border-slate-50': variant === 'dark' && !focus,
           'bg-slate-50': variant === 'dark' && !disabled,
+
+          'px-3 py-2.5 border': variant !== 'clear',
+          'bg-transparent': variant === 'clear',
 
           'bg-slate-100': disabled,
           'border-error-500': error,
@@ -88,6 +91,7 @@ export default function Input({
               'text-slate-700': !disabled,
               'bg-white': variant === 'default' && !disabled,
               'bg-slate-50': variant === 'dark' && !disabled,
+              'bg-transparent': variant === 'clear' && !disabled,
               'bg-slate-100 text-slate-400': disabled,
             },
           )}

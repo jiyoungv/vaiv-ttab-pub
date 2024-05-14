@@ -302,7 +302,7 @@ export const tempTabDetailData: TabDetailData = {
           '/images/temp/temp3.png',
         ],
       },
-      memo: '메모입니다. 이미지는 최대 몇개까지 들어갈까요? 6개로 예상해봅니다. 최대 용량도 지정될까요?',
+      memo: '메모입니다. 이미지입니다.',
       keywords: ['키워드1', '키워드2'],
       like: false,
       likeAmount: '1.1k',
@@ -317,7 +317,7 @@ export const tempTabDetailData: TabDetailData = {
       contents: {
         file: '파일명.pdf',
       },
-      memo: '메모입니다. 파일은 최대 몇개까지 들어갈까요? 1개로 예상해봅니다. 최대 용량도 지정될까요? 위에 버튼을 누르면 다운로드인가요? 따로 뷰어 모달을 띄어주나요? 다운로드였으면 좋겠어요',
+      memo: '메모입니다. 파일입니다.',
       keywords: ['키워드1', '키워드2'],
       like: false,
       likeAmount: '1.1k',

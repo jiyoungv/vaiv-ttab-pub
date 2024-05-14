@@ -31,14 +31,14 @@ export default function MyPage() {
             </Button>
           </div>
           <div className="flex justify-between items-center px-10 py-3 rounded-2xl bg-primary-500">
-            <Link href={`${process.env.NEXT_PUBLIC_FRONT_URL}/my-tab`} className="group text-center">
+            <div className="group text-center">
               <p className="text-white text-2xl font-bold">
-                {Number(13).toLocaleString()}
+                1000
               </p>
               <p className="text-primary-100 text-sm font-medium group-hover:underline">
-                탭
+                탭머니
               </p>
-            </Link>
+            </div>
             <div className="w-px h-8 bg-primary-300"></div>
             <Link href={`${process.env.NEXT_PUBLIC_FRONT_URL}/my/follow`} className="group text-center">
               <p className="text-white text-2xl font-bold">
@@ -51,7 +51,7 @@ export default function MyPage() {
             <div className="w-px h-8 bg-primary-300"></div>
             <Link href={`${process.env.NEXT_PUBLIC_FRONT_URL}/my/follow`} className="group text-center">
               <p className="text-white text-2xl font-bold">
-                1.1k?
+                1.1m
               </p>
               <p className="text-primary-100 text-sm font-medium group-hover:underline">
                 팔로잉

@@ -8,7 +8,7 @@ import Icon from '@/components/common/Icon';
 interface ButtonProps extends InternalButtonProps {
   variant?: 'fill' | 'link';
   // variant?: 'fill' | 'soft' | 'line' | 'clear' | 'link';
-  color?: 'primary' | 'secondary' | 'cancel' | 'white' | 'teal';
+  color?: 'primary' | 'secondary' | 'cancel' | 'white' | 'teal' | 'slate';
   size?: 'base' | 'xs' | 'sm' | 'lg' | 'xl';
   leftIcon?: string;
   rightIcon?: string;
@@ -43,6 +43,7 @@ export default function Button({
       'border-slate-100 bg-slate-100 text-slate-500 hover:border-slate-300 hover:bg-slate-300': variant === 'fill' && color === 'cancel' && !props.disabled,
       'border-white bg-white text-slate-500 hover:border-white/60 hover:bg-white/60': variant === 'fill' && color === 'white' && !props.disabled,
       'border-teal-500 bg-teal-500 text-white hover:border-teal-700 hover:bg-teal-700': variant === 'fill' && color === 'teal' && !props.disabled,
+      'border-slate-600 bg-slate-600 text-white hover:border-slate-800 hover:bg-slate-800': variant === 'fill' && color === 'slate' && !props.disabled,
       'border-slate-200 bg-slate-200 text-white': variant === 'fill' && props.disabled,
 
       // link > color
@@ -51,6 +52,7 @@ export default function Button({
       'text-slate-400 hover:text-slate-600': variant === 'link' && color === 'cancel' && !props.disabled,
       'text-white hover:text-white': variant === 'link' && color === 'white' && !props.disabled,
       'text-teal-500 hover:text-teal-700': variant === 'link' && color === 'teal' && !props.disabled,
+      'text-slate-600 hover:text-teal-800': variant === 'link' && color === 'slate' && !props.disabled,
       'text-slate-200': variant === 'link' && props.disabled,
 
       // [`border-${color}-500 bg-${color}-500 text-white`]: variant === 'fill' && !props.disabled,

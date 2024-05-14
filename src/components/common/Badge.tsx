@@ -10,7 +10,7 @@ export interface BadgeProps {
   color?: 'gray' | 'primary' | 'error' | 'warning' | 'success' | 'cyan' | 'sky' | 'blue' | 'indigo' | 'violet' | 'purple' | 'pink';
   notBlend?: boolean;
   dot?: boolean;
-  closeButton?: boolean;
+  onClose?: () => void;
   left?: React.ReactNode;
   right?: React.ReactNode;
 }
@@ -22,7 +22,7 @@ export default function Badge({
   color = 'gray',
   notBlend,
   dot,
-  closeButton,
+  onClose,
   left,
   right,
 }: BadgeProps) { 
@@ -97,12 +97,14 @@ export default function Badge({
           [`${bgColor}`]: color,
           [`${textColor}`]: color,
           'mix-blend-multiply': !notBlend,
+          'cursor-pointer': onClick,
         },
       )}
       onClick={onClick}
+      role={!onClick ? undefined : 'button'}
     >
       {dot && (
-        <span className="inline-flex justify-center items-center w-2 aspect-square -ml-0.5 mr-1.5">
+        <div className="inline-flex justify-center items-center w-2 aspect-square -ml-0.5 mr-1.5">
           <i 
             className={classNames(
               'inline-block w-1.5 aspect-square rounded-full',
@@ -111,7 +113,7 @@ export default function Badge({
               },
             )}
           ></i>
-        </span>
+        </div>
       )}
       {left}
       {children && (
@@ -128,15 +130,17 @@ export default function Badge({
         </p>
       )}
       {right}
-      {closeButton && (
-        <IconButton 
-          className="ml-1"
-          icon={{
-            name: 'mgc_close_fill',
-            size: 'text-xs-size',
-            color: `${iconTextColor}`,
-          }}
-        />
+      {onClose && (
+        <div className="ml-1">
+          <IconButton 
+            icon={{
+              name: 'mgc_close_fill',
+              size: 'text-xs-size',
+              color: `${iconTextColor}`,
+            }}
+            onClick={onClose}
+          />
+        </div>
       )}
     </div>
   );

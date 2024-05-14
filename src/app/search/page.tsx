@@ -28,7 +28,7 @@ export default function SearchPage() {
     setSearchRAG('default');
   }, [mounted, setSearchRAG]);
 
-  const onSubmit = useCallback((e: React.FormEvent) => {
+  const onSubmitSearch = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     alert('DEV: 검색하기');
     router.push(`${process.env.NEXT_PUBLIC_FRONT_URL}/search/${keyword}`);
@@ -38,11 +38,11 @@ export default function SearchPage() {
     <AppLayout 
       navBar={{
         right: (
-          <form className="flex-auto" onSubmit={onSubmit}>
+          <form className="flex-auto" onSubmit={onSubmitSearch}>
             <Input 
               value={keyword}
               onChange={(e) => setKeyword(e.target.value)}
-              placeholder="검색어를 입력해주세요"
+              placeholder="검색어를 입력해주세요."
               autoFocus
               required
               leftIcon="mgc_search_line"

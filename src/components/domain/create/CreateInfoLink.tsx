@@ -3,10 +3,11 @@ import { useState } from 'react';
 import Label from '@/components/common/Label';
 import TextArea from '@/components/common/TextArea';
 import Button from '@/components/common/Button';
+import TabDetailInfoLink from '@/components/domain/tab/TabDetailInfoLink';
 
-export interface CreateInfoNoteProps {}
+export interface CreateInfoLinkProps {}
 
-export default function CreateInfoNote({}: CreateInfoNoteProps) {
+export default function CreateInfoLink({}: CreateInfoLinkProps) {
   const [note, setNote] = useState('');
 
   return (
@@ -16,11 +17,12 @@ export default function CreateInfoNote({}: CreateInfoNoteProps) {
         <TextArea 
           value={note}
           onChange={(e) => setNote(e.target.value)}
-          placeholder="간단한 입력 후에 AI로 메모를 완성해보세요."
+          placeholder="URL을 입력해주세요."
           variant="clear"
           autoSize={{ minRows: 6, maxRows: 10 }}
         />
       </form>
+      <TabDetailInfoLink data="https://www.vaiv.kr/" />
       {'DEV: 히스토리가 쌓이면?' && (
         <div className="flex justify-end mt-1">
           <Button

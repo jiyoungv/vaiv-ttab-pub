@@ -39,7 +39,6 @@ const variables = {
     'report': colors.rose,
   },
   font: {
-    family: '',
     size: {
       '6xl': '60px',
       '5xl': '48px',

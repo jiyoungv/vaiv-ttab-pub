@@ -1,10 +1,13 @@
 import { useRef, useState, useEffect, useMemo } from 'react';
 import classNames from 'classnames';
+import { useRouter } from 'next/navigation';
 
 export interface TabProps {
   list: {
     value: string;
     label: string;
+    href?: string;
+    onClick?: () => void;
   }[];
   value?: string;
   defaultActiveValue?: string;
@@ -17,6 +20,8 @@ export default function Tab({
   defaultActiveValue,
   onChange,
 }: TabProps) {
+  const router = useRouter();
+
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const [mounted, setMounted] = useState(false);
@@ -56,8 +61,11 @@ export default function Tab({
               onClick={() => {
                 setActiveValue(v.value);
                 scrollRef?.current?.scrollIntoView({ behavior: 'smooth' });
+                if (v.href) router.push(v.href);
+                if (v.onClick) v.onClick();
                 if (onChange) onChange(v.value);
               }}
+              role={v.href ? 'link' : 'button'}
             >
               {v.label}
             </button>

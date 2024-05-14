@@ -17,6 +17,7 @@ export interface TextAreaProps {
   disabled?: boolean;
   readOnly?: boolean;
   error?: boolean;
+  variant?: 'default' | 'clear';
 }
 
 export default function TextArea({
@@ -29,11 +30,16 @@ export default function TextArea({
   disabled, 
   readOnly,
   error,
+  variant = 'default',
 }: TextAreaProps) { 
   return (
     <AntdTextArea
       className={classNames(
-        'scrollbar-mini px-3.5 py-2.5 text-base-read hover:border-slate-200 focus:border-primary-500 focus:shadow-none',
+        'scrollbar-mini text-base-read focus:border-primary-500 focus:shadow-none',
+        {
+          'px-3.5 py-2.5 hover:border-slate-200': variant === 'default',
+          'p-0 border-none rounded-none': variant === 'clear',
+        },
       )}
       value={value}
       onChange={onChange}

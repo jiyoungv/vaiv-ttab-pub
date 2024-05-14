@@ -5,6 +5,7 @@ import AppLayout from '@/components/domain/AppLayout';
 import Inner from '@/components/common/Inner';
 import ProfileThumbnail from '@/components/domain/ProfileThumbnail';
 import Icon from '@/components/common/Icon';
+import Label from '@/components/common/Label';
 import Input from '@/components/common/Input';
 import Button from '@/components/common/Button';
 import TextArea from '@/components/common/TextArea';
@@ -59,17 +60,13 @@ export default function MyAccountPage() {
               </div>
             </div>
             <div>
-              <div className="mb-1.5">
-                <label className="text-slate-500 text-sm font-medium">
-                  닉네임
-                </label>
-              </div>
+              <Label>닉네임</Label>
               <div className="flex gap-2">
                 <Input 
                   value={nickname}
                   onChange={(e) => setNickname(e.target.value)}
                   disabled={!editNickname} 
-                  placeholder="닉네임을 입력해주세요"
+                  placeholder="닉네임을 입력해주세요."
                   full
                 />
                 {!editNickname ? (
@@ -93,17 +90,13 @@ export default function MyAccountPage() {
               </div>
             </div>
             <div className="mt-7">
-              <div className="mb-1.5">
-                <label className="text-slate-500 text-sm font-medium">
-                  소개글
-                </label>
-              </div>
+              <Label>소개글</Label>
               <div>
                 <TextArea 
                   value={introduction}
                   onChange={(e) => setIntroduction(e.target.value)}
                   autoSize={{ maxRows: 5, minRows: 5 }}
-                  placeholder="소개글을 입력해주세요"
+                  placeholder="소개글을 입력해주세요."
                 />
               </div>
             </div>
@@ -129,12 +122,12 @@ export default function MyAccountPage() {
           <form>
             <div>
               <div className="flex justify-between gap-1 mb-1.5">
-                <label className="text-slate-500 text-sm font-medium">
-                  로그인 계정
-                </label>
-                <p className="px-1.5 py-0.5 rounded-5xl bg-slate-100 text-slate-500 text-xs font-medium">
-                  가입일 : 2024-01-01
-                </p>
+                <Label mb="0">로그인 계정</Label>
+                <div className="px-1.5 py-0.5 rounded-5xl bg-slate-100">
+                  <p className="text-slate-500 text-xs font-medium">
+                    가입일 : 2024-01-01
+                  </p>
+                </div>
               </div>
               <div>
                 <Input 
@@ -170,9 +163,7 @@ export default function MyAccountPage() {
             </div>
             <div className="mt-7">
               <div className="flex items-end gap-1 mb-1.5">
-                <label className="text-slate-500 text-sm font-medium">
-                  직무
-                </label>
+                <Label mb="0">직무</Label>
                 <small className="text-slate-400 text-xs">
                   더 좋은 추천 정보가 제공됩니다.
                 </small>

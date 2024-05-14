@@ -28,7 +28,7 @@ export default function SearchResultPage() {
           <div className="flex-auto relative">
             <Input 
               value="마케팅"
-              placeholder="검색어를 입력해주세요"
+              placeholder="검색어를 입력해주세요."
               leftIcon="mgc_search_line"
               right={(
                 <div className="z-10 flex items-center gap-1 relative">

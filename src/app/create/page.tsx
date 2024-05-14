@@ -5,11 +5,12 @@ import { useRouter } from 'next/navigation';
 import AppLayout from '@/components/domain/AppLayout';
 import Tab from '@/components/common/Tab';
 import CreateInfo from '@/components/domain/create/CreateInfo';
+import CreateTab from '@/components/domain/create/CreateTab';
 
-export default function CreatePage() {
+export default function CreateInfoPage() {
   const router = useRouter();
 
-  const [tab, setTab] = useState('information');
+  const [tab, setTab] = useState('info');
 
   return (
     <AppLayout
@@ -35,9 +36,9 @@ export default function CreatePage() {
             type="button"
             className="text-primary-500 text-base-read font-medium hover:underline"
             onClick={() => {
-              const res = confirm('정보 또는 탭을 생성하시겠습니까?');
+              const res = confirm('정보를 생성하시겠습니까?');
               if (res) {
-                alert('DEV: 정보 또는 탭 생성');
+                alert('DEV: 정보 생성');
               }
             }}
             role="link"
@@ -46,6 +47,7 @@ export default function CreatePage() {
           </button>
         ),
       }}
+      hideGnb
     >
       <Tab 
         list={[
@@ -54,12 +56,8 @@ export default function CreatePage() {
         ]}
         onChange={(value) => setTab(value)}
       />
-      {tab === 'info' && (
-        <CreateInfo />
-      )}
-      {tab === 'tab' && (
-        <div>TODO: 탭생성</div>
-      )}
+      {tab === 'info' && <CreateInfo />}
+      {tab === 'tab' && <CreateTab />}
     </AppLayout>
   );
 }
