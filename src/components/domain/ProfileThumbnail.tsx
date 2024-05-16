@@ -5,15 +5,15 @@ import { blurDataURL } from '@/utils/constant';
 
 export interface ProfileThumbnailProps {
   src?: string;
-  width?: string;
+  size?: string;
 }
 
-export default function ProfileThumbnail({ src, width = '20px' }: ProfileThumbnailProps) {
+export default function ProfileThumbnail({ src, size = '20px' }: ProfileThumbnailProps) {
   return (
     <figure 
       className="overflow-hidden flex-shrink-0 relative aspect-square rounded-full"
       style={{
-        width,
+        width: size,
       }}
     >
       {(!src || src === '') ? (
@@ -22,7 +22,7 @@ export default function ProfileThumbnail({ src, width = '20px' }: ProfileThumbna
             name="mgc_user_2_line" 
             color="text-slate-400" 
             style={{
-              fontSize: `calc(${width} / 2)`,
+              fontSize: `calc(${size} / 2)`,
             }}
           />
         </div>

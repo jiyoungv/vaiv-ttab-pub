@@ -13,7 +13,7 @@ export interface TabUserProps {
 export default function TabUser({ data }: TabUserProps) {
   return (
     <div className="flex items-center gap-2 relative">
-      <ProfileThumbnail src={data?.thumbnail} width="40px" />
+      <ProfileThumbnail src={data?.thumbnail} size="40px" />
       <p className="text-slate-700 text-base-read font-medium">
         {data?.nickname}
       </p>

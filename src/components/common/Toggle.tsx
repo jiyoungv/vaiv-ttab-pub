@@ -91,7 +91,6 @@ export default function Toggle({
           {supportText && (
             <p 
               className={classNames(
-                '',
                 {
                   'text-slate-600': !disabled,
                   'text-slate-200': disabled,

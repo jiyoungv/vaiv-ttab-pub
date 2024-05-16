@@ -1,7 +1,69 @@
-export type TabCategory = 'note' | 'link' | 'search' | 'image' | 'file' | 'report';
+export type TabInfoCategory = 'note' | 'link' | 'search' | 'image' | 'file' | 'report';
+
+export type TabInfoNote = string;
+
+export type TabInfoLink = string;
+
+export type TabInfoSearch = {
+  question?: string;
+  answer?: {
+    text?: string;
+    origins?: {
+      number?: number;
+      text?: string;
+    }[];
+  };
+};
+
+export type TabInfoImage = string[];
+
+export type TabInfoFile = string;
+
+export type TabInfoReport = string;
+
+export interface TabInfoData {
+  category: TabInfoCategory;
+  thumbnail: string;
+  nickname: string;
+  date: string;
+  contents: {
+    note?: TabInfoNote;
+    link?: TabInfoLink;
+    search?: TabInfoSearch;
+    images?: TabInfoImage;
+    file?: TabInfoFile;
+    report?: TabInfoReport;
+  };
+  memo: string;
+  keywords: string[];
+  like: boolean;
+  likeAmount: string;
+  commentAmount: string;
+  viewAmount: string;
+}
+
+export interface TabData {
+  id: number;
+  title: string;
+  subText: string;
+  nickname: string;
+  joinAmount: number;
+  date: string;
+  likeAmount: string;
+  commentAmount: string;
+  viewAmount: string;
+  like: boolean;
+  bookmark: boolean;
+  infos: TabInfoData[];
+  mine: boolean;
+  privacy: boolean;
+  join: boolean;
+  keywords: string[];
+  thumbnail: string;
+}
 
 export interface TabPreviewInfoData {
-  category: TabCategory;
+  category: TabInfoCategory;
   note?: string;
   link?: string;
   search?: {
@@ -27,48 +89,4 @@ export interface TabPreviewData {
   bookmark: boolean;
   infos: TabPreviewInfoData[];
   infosRestAmount?: number;
-}
-
-export interface TabDetailInfoData {
-  category: TabCategory;
-  thumbnail: string;
-  nickname: string;
-  date: string;
-  contents: {
-    note?: string;
-    link?: string;
-    search?: {
-      question?: string;
-      answer?: string;
-    };
-    images?: string[];
-    file?: string;
-    report?: string;
-  };
-  memo: string;
-  keywords: string[];
-  like: boolean;
-  likeAmount: string;
-  commentAmount: string;
-  viewAmount: string;
-}
-
-export interface TabDetailData {
-  id: number;
-  title: string;
-  subText: string;
-  nickname: string;
-  joinAmount: number;
-  date: string;
-  likeAmount: string;
-  commentAmount: string;
-  viewAmount: string;
-  like: boolean;
-  bookmark: boolean;
-  infos: TabDetailInfoData[];
-  mine: boolean;
-  privacy: boolean;
-  join: boolean;
-  keywords: string[];
-  thumbnail: string;
 }

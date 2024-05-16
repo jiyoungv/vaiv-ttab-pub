@@ -1,18 +1,16 @@
 import Inner from '@/components/common/Inner';
-import TabDetailHead from '@/components/domain/tab/TabDetailHead';
-import TabDetailInfoList from '@/components/domain/tab/TabDetailInfoList';
-import Skeleton from '@/components/common/Skeleton';
-import NoData from '@/components/common/NoData';
-import { TabDetailData } from '@/types/tab';
+import TabHead from '@/components/domain/tab/TabHead';
+import TabInfoList from '@/components/domain/tab/TabInfoList';
+import { TabData } from '@/types/tab';
 
-export interface TabDetailProps {
-  data?: TabDetailData;
+export interface TabProps {
+  data?: TabData;
 }
 
-export default function TabDetail({ data }: TabDetailProps) {
+export default function Tab({ data }: TabProps) {
   return (
     <>
-      <TabDetailHead data={data} />
+      <TabHead data={data} />
       <section>
         <div className="pt-4 pb-2">
           <Inner>
@@ -32,7 +30,7 @@ export default function TabDetail({ data }: TabDetailProps) {
           </Inner>
         </div>
         {data?.infos && (
-          <TabDetailInfoList data={data?.infos} />
+          <TabInfoList data={data?.infos} />
         )}
       </section>
     </>

@@ -4,7 +4,6 @@ import Badge from '@/components/common/Badge';
 const list = [
   'TO-DO 리스트 정리',
   '삶의 변화가 필요할 때 도움이 되는 명언들',
-  'TODO: swipe 기능',
 ];
 
 export interface CreateInfoRecommendProps {}
@@ -24,12 +23,13 @@ export default function CreateInfoRecommend({}: CreateInfoRecommendProps) {
           <Badge 
             key={i} 
             size="lg"
-            onClick={() => alert('TODO: 추천 메모 삽입')}
+            onClick={() => alert('DEV: 추천 메모 삽입')}
           >
             {v}
           </Badge>
         ))}
       </div>
+      TODO: swipe 기능
     </section>
   );
 }

@@ -6,13 +6,13 @@ import Badge from '@/components/common/Badge';
 import ProfileThumbnail from '@/components/domain/ProfileThumbnail';
 import Icon from '@/components/common/Icon';
 import CommentBottomSheet from '@/components/domain/bottomsheet/CommentBottomSheet';
-import { TabDetailData } from '@/types/tab';
+import { TabData } from '@/types/tab';
 
-export interface TabDetailHeadProps {
-  data?: TabDetailData;
+export interface TabHeadProps {
+  data?: TabData;
 }
 
-export default function TabDetailHead({ data }: TabDetailHeadProps) {
+export default function TabHead({ data }: TabHeadProps) {
   const [openCommentBottomsheet, setOpenCommentBottomsheet] = useState(false);
 
   return (
@@ -64,7 +64,7 @@ export default function TabDetailHead({ data }: TabDetailHeadProps) {
             >
               <div className="relative pr-3">
                 <div className="inline-block border border-white rounded-full">
-                  <ProfileThumbnail src={data?.thumbnail} width="30px" />
+                  <ProfileThumbnail src={data?.thumbnail} size="30px" />
                 </div>
                 <div className="inline-flex justify-center items-center absolute right-0 top-1/2 -translate-y-1/2 w-8 aspect-square border border-white rounded-full bg-slate-800">
                   <p className="text-white text-xs font-me">

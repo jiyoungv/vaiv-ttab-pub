@@ -7,19 +7,19 @@ import Badge from '@/components/common/Badge';
 import Icon from '@/components/common/Icon';
 import DropDown from '@/components/common/DropDown';
 import ProfileThumbnail from '@/components/domain/ProfileThumbnail';
-import TabDetailInfoNote from '@/components/domain/tab/TabDetailInfoNote';
-import TabDetailInfoLink from '@/components/domain/tab/TabDetailInfoLink';
-import TabDetailInfoSearch from '@/components/domain/tab/TabDetailInfoSearch';
-import TabDetailInfoImage from '@/components/domain/tab/TabDetailInfoImage';
-import TabDetailInfoFile from '@/components/domain/tab/TabDetailInfoFile';
-import TabDetailInfoMemo from '@/components/domain/tab/TabDetailInfoMemo';
-import { TabDetailInfoData } from '@/types/tab';
+import TabInfoNote from '@/components/domain/tab/TabInfoNote';
+import TabInfoLink from '@/components/domain/tab/TabInfoLink';
+import TabInfoSearch from '@/components/domain/tab/TabInfoSearch';
+import TabInfoImage from '@/components/domain/tab/TabInfoImage';
+import TabInfoFile from '@/components/domain/tab/TabInfoFile';
+import TabInfoMemo from '@/components/domain/tab/TabInfoMemo';
+import { TabInfoData } from '@/types/tab';
 
-export interface TabDetailInfoProps {
-  data?: TabDetailInfoData;
+export interface TabInfoProps {
+  data?: TabInfoData;
 }
 
-export default function TabDetailInfo({ data }: TabDetailInfoProps) {
+export default function TabInfo({ data }: TabInfoProps) {
   const dropDownList = useMemo(() => {
     const listOfWriter = [
       { 
@@ -105,7 +105,7 @@ export default function TabDetailInfo({ data }: TabDetailInfoProps) {
           <div className="flex justify-between items-center gap-1">
             <Link href={`${process.env.NEXT_PUBLIC_FRONT_URL}/profile/${data?.nickname}`}>
               <div className="inline-flex items-center gap-2">
-                <ProfileThumbnail src={data?.thumbnail} width="36px" />
+                <ProfileThumbnail src={data?.thumbnail} size="36px" />
                 <div>
                   <p className="text-slate-700 text-base-read font-bold">
                     {data?.nickname}
@@ -123,27 +123,27 @@ export default function TabDetailInfo({ data }: TabDetailInfoProps) {
       <section className="pb-4">
         <Inner>
           {(data?.category === 'note' && data?.contents?.note) && (
-            <TabDetailInfoNote data={data?.contents?.note} />
+            <TabInfoNote data={data?.contents?.note} />
           )}
           {(data?.category === 'link' && data?.contents?.link) && (
-            <TabDetailInfoLink data={data?.contents?.link} />
+            <TabInfoLink data={data?.contents?.link} />
           )}
           {(data?.category === 'search' && data?.contents?.search) && (
-            <TabDetailInfoSearch data={data?.contents?.search} />
+            <TabInfoSearch data={data?.contents?.search} omit />
           )}
           {(data?.category === 'file' && data?.contents?.file) && (
-            <TabDetailInfoFile data={data?.contents?.file} />
+            <TabInfoFile data={data?.contents?.file} />
           )}
         </Inner>
         {(data?.category === 'image' && data?.contents?.images) && (
-          <TabDetailInfoImage data={data?.contents?.images} />
+          <TabInfoImage data={data?.contents?.images} />
         )}
       </section>
       <section className="pb-4">
         <Inner>
-          <TabDetailInfoMemo category={data?.category}>
+          <TabInfoMemo category={data?.category}>
             {data?.memo}
-          </TabDetailInfoMemo>
+          </TabInfoMemo>
           <ul className="flex flex-wrap gap-2 mt-4">
             {data?.keywords.map((v, i) => (
               <li key={i}>

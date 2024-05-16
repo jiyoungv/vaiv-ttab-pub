@@ -1,6 +1,6 @@
-import { TabCategory } from '@/types/tab';
+import { TabInfoCategory } from '@/types/tab';
 
-export const tabCategoryIconName = (category: TabCategory) => {
+export const tabCategoryIconName = (category: TabInfoCategory) => {
   if (category === 'note') return 'mgc_edit_4_line';
   if (category === 'link') return 'mgc_link_2_line';
   if (category === 'search') return 'mgc_list_search_line';

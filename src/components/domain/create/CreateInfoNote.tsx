@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import Label from '@/components/common/Label';
 import TextArea from '@/components/common/TextArea';
-import Button from '@/components/common/Button';
+import CreateInfoUndo from '@/components/domain/create/CreateInfoUndo';
 
 export interface CreateInfoNoteProps {}
 
@@ -22,14 +22,7 @@ export default function CreateInfoNote({}: CreateInfoNoteProps) {
         />
       </form>
       {'DEV: 히스토리가 쌓이면?' && (
-        <div className="flex justify-end mt-1">
-          <Button
-            onClick={() => alert('DEV: 내용 되돌리기')}
-            color="cancel"
-            icon="mgc_back_line"
-            round
-          />
-        </div>
+        <CreateInfoUndo />
       )}
     </div>
   );

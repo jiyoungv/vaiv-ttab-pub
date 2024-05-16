@@ -1,11 +1,11 @@
 import classNames from 'classnames';
 
 import Icon from '@/components/common/Icon';
-import { TabCategory } from '@/types/tab';
+import { TabInfoCategory } from '@/types/tab';
 import { tabCategoryIconName } from '@/utils/func';
 
 export interface TabPreviewInfoIconProps {
-  category?: TabCategory;
+  category?: TabInfoCategory;
 }
 
 export default function TabPreviewInfoIcon({

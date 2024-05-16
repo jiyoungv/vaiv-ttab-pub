@@ -3,6 +3,9 @@ import { useState, useCallback } from 'react';
 import Label from '@/components/common/Label';
 import Input from '@/components/common/Input';
 import Button from '@/components/common/Button';
+import TabInfoSearch from '@/components/domain/tab/TabInfoSearch';
+import CreateInfoUndo from '@/components/domain/create/CreateInfoUndo';
+import { tempTabSearchData } from '@/utils/tempData';
 
 export interface CreateInfoSearchProps {}
 
@@ -11,7 +14,7 @@ export default function CreateInfoSearch({}: CreateInfoSearchProps) {
 
   const onSubmitSearch = useCallback((e: React.FormEvent) => {
     e.preventDefault();
-
+    alert('DEV: 검색하기 & 결과 노출');
   }, []);
 
   return (
@@ -39,16 +42,11 @@ export default function CreateInfoSearch({}: CreateInfoSearchProps) {
           </Button>
         </div>
       </form>
-      
+      <div className="py-2.5">
+        <TabInfoSearch data={tempTabSearchData} />
+      </div>
       {'DEV: 히스토리가 쌓이면?' && (
-        <div className="flex justify-end mt-1">
-          <Button
-            onClick={() => alert('DEV: 내용 되돌리기')}
-            color="cancel"
-            icon="mgc_back_line"
-            round
-          />
-        </div>
+        <CreateInfoUndo />
       )}
     </div>
   );

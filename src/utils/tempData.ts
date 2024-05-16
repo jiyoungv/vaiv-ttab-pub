@@ -1,4 +1,138 @@
-import { TabPreviewData, TabDetailData } from '@/types/tab';
+import { TabPreviewData, TabData } from '@/types/tab';
+
+export const tempTabNoteData = '노트입니다. 컨텐츠들이랑 메모들 엔터 처리를 [태그, \\n, 공백... ] 이중 어떻게 하실지 몰라서 그냥 일단 놔뒀어요 나중에 알려주시면 수정할게요';
+
+export const tempTabLinkData = 'https://www.google.com/domain만 보여주기로 했었던 것 같은데...';
+
+export const tempTabSearchData = {
+  question: 'AI 검색 질문입니다.',
+  answer: {
+    text: `요즘 인기 있는 스마트폰 애플리케이션으로는 &apos;분초사회&apos;에 맞는 15~20분짜리 영상을 줄글로 빠르게 요약해주는 애플리케이션이 있습니다.<span className="text-primary-400">[1]</span> 또한, 가상의 펫을 키울 수 있는 &apos;펫키우기 헬로펫&apos;과 비디오 편집과 관련된 &apos;키네마스터&apos; 등이 있습니다. 또한, 부동산 관련 애플리케이션인 &apos;피터팬의 좋은방 구하기&apos;와 MZ벨소리 설정을 도와주는 &apos;꿀팁 요즘 유행하는 MZ벨소리 빵빵&apos;도 인기가 있습니다.<span className="text-teal-500">[2]</span> <span className="text-blue-500">[3]</span>`,
+    origins: [
+      {
+        number: 1,
+        text: '“유튜브 2배속도 이젠 지루해” 유튜브 영상들 AI로 줄글로 압축하고 있습니다. 신기하죠? 신기하죠? 신기하죠? 신기하죠? 신기하죠? 신기하죠?',
+      },
+      {
+        number: 2,
+        text: '원문 링크 제목입니다.',
+      },
+      {
+        number: 3,
+        text: '원문 링크 제목입니다.',
+      },
+    ],
+  },
+};
+
+export const tempTabImageData = [
+  '/images/temp/temp1.jpg',
+  '/images/temp/temp2.jpg',
+  '/images/temp/temp3.png',
+  '/images/temp/temp1.jpg',
+  '/images/temp/temp2.jpg',
+  '/images/temp/temp3.png',
+];
+
+export const tempTabInfoFileData = '파일명_파일명_파일명_파일명_파일명_파일명_파일명_파일명_파일명_파일명.pdf';
+
+export const tempTabReportData = '리포트는 이번에 안하나봐요...';
+
+export const tempTabData: TabData = {
+  id: 1,
+  title: '타이틀이 한줄이면 이렇게.',
+  subText: '서브텍스트가 있다면 이렇게 나오겠지요.',
+  nickname: 'Nickname',
+  joinAmount: 36,
+  date: '2024-01-01',
+  likeAmount: '1.1k',
+  commentAmount: '1.1k',
+  viewAmount: '1.1k',
+  like: true,
+  bookmark: true,
+  infos: [
+    {
+      category: 'note',
+      thumbnail: '/images/temp/temp1.jpg',
+      nickname: '이탭은내꺼',
+      date: '2024-01-01',
+      contents: {
+        note: tempTabNoteData,
+      },
+      memo: '메모입니다. 컨텐츠들이랑 메모들 엔터 처리를 [태그, \\n, 공백... ] 이중 어떻게 하실지 몰라서 그냥 일단 놔뒀어요 나중에 알려주시면 수정할게요',
+      keywords: ['키워드1', '키워드2'],
+      like: true,
+      likeAmount: '1.1k',
+      commentAmount: '1.1k',
+      viewAmount: '1.1k',
+    },
+    {
+      category: 'link',
+      thumbnail: '',
+      nickname: 'xman',
+      date: '2024-01-01',
+      contents: {
+        link: tempTabLinkData,
+      },
+      memo: '메모입니다. 링크도 여러개를 달 수 있나요?',
+      keywords: ['키워드1', '키워드2'],
+      like: false,
+      likeAmount: '1.1k',
+      commentAmount: '1.1k',
+      viewAmount: '1.1k',
+    },
+    {
+      category: 'search',
+      thumbnail: '/images/temp/temp2.jpg',
+      nickname: 'vaiv_worker',
+      date: '2024-01-01',
+      contents: {
+        search: tempTabSearchData,
+      },
+      memo: '메모입니다. 컨텐츠들이랑 메모들 엔터 처리를 [태그, \\n, 공백... ] 이중 어떻게 하실지 몰라서 그냥 일단 놔뒀어요 나중에 알려주시면 수정할게요',
+      keywords: ['키워드1', '키워드2'],
+      like: true,
+      likeAmount: '1.1k',
+      commentAmount: '1.1k',
+      viewAmount: '1.1k',
+    },
+    {
+      category: 'image',
+      thumbnail: '/images/temp/temp3.png',
+      nickname: '웨스턴차이나',
+      date: '2024-01-01',
+      contents: {
+        images: tempTabImageData,
+      },
+      memo: '메모입니다. 이미지입니다.',
+      keywords: ['키워드1', '키워드2'],
+      like: false,
+      likeAmount: '1.1k',
+      commentAmount: '1.1k',
+      viewAmount: '1.1k',
+    },
+    {
+      category: 'file',
+      thumbnail: '/images/temp/temp1.jpg',
+      nickname: '라도집',
+      date: '2024-01-01',
+      contents: {
+        file: tempTabInfoFileData,
+      },
+      memo: '메모입니다. 파일입니다.',
+      keywords: ['키워드1', '키워드2'],
+      like: false,
+      likeAmount: '1.1k',
+      commentAmount: '1.1k',
+      viewAmount: '1.1k',
+    },
+  ],
+  mine: true,
+  privacy: false,
+  join: true,
+  keywords: ['키워드1', '키워드2', '키워드3', '키워드4'],
+  thumbnail: '/images/temp/temp1.jpg',
+};
 
 export const tempTabPreviewData: TabPreviewData[] = [
   {
@@ -225,112 +359,6 @@ export const tempTabPreviewData: TabPreviewData[] = [
     ],
   },
 ];
-
-export const tempTabDetailData: TabDetailData = {
-  id: 1,
-  title: '타이틀이 한줄이면 이렇게.',
-  subText: '서브텍스트가 있다면 이렇게 나오겠지요.',
-  nickname: 'Nickname',
-  joinAmount: 36,
-  date: '2024-01-01',
-  likeAmount: '1.1k',
-  commentAmount: '1.1k',
-  viewAmount: '1.1k',
-  like: true,
-  bookmark: true,
-  infos: [
-    {
-      category: 'note',
-      thumbnail: '/images/temp/temp1.jpg',
-      nickname: '이탭은내꺼',
-      date: '2024-01-01',
-      contents: {
-        note: '노트입니다. 컨텐츠들이랑 메모들 엔터 처리를 [태그, \\n, 공백... ] 이중 어떻게 하실지 몰라서 그냥 일단 놔뒀어요 나중에 알려주시면 수정할게요',
-      },
-      memo: '메모입니다. 컨텐츠들이랑 메모들 엔터 처리를 [태그, \\n, 공백... ] 이중 어떻게 하실지 몰라서 그냥 일단 놔뒀어요 나중에 알려주시면 수정할게요',
-      keywords: ['키워드1', '키워드2'],
-      like: true,
-      likeAmount: '1.1k',
-      commentAmount: '1.1k',
-      viewAmount: '1.1k',
-    },
-    {
-      category: 'link',
-      thumbnail: '',
-      nickname: 'xman',
-      date: '2024-01-01',
-      contents: {
-        link: 'https://www.google.com/domain만 보여주기로 했었던 것 같은데...',
-      },
-      memo: '메모입니다. 링크도 여러개를 달 수 있나요?',
-      keywords: ['키워드1', '키워드2'],
-      like: false,
-      likeAmount: '1.1k',
-      commentAmount: '1.1k',
-      viewAmount: '1.1k',
-    },
-    {
-      category: 'search',
-      thumbnail: '/images/temp/temp2.jpg',
-      nickname: 'vaiv_worker',
-      date: '2024-01-01',
-      contents: {
-        search: {
-          question: 'AI 검색 질문입니다.',
-          answer: 'AI 검색 답변입니다. 대답이 길어지면 텍스트 글자 수 제한이 있어요 더보기를 누르면 볼 수 있습니다. 대답이 길어지면 텍스트 글자 수 제한이 있어요 더보기를 누르면 볼 수 있습니다. 대답이 길어지면 텍스트 글자 수 제한이 있어요 더보기를 누르면 볼 수 있습니다.',
-        },
-      },
-      memo: '메모입니다. 컨텐츠들이랑 메모들 엔터 처리를 [태그, \\n, 공백... ] 이중 어떻게 하실지 몰라서 그냥 일단 놔뒀어요 나중에 알려주시면 수정할게요',
-      keywords: ['키워드1', '키워드2'],
-      like: true,
-      likeAmount: '1.1k',
-      commentAmount: '1.1k',
-      viewAmount: '1.1k',
-    },
-    {
-      category: 'image',
-      thumbnail: '/images/temp/temp3.png',
-      nickname: '웨스턴차이나',
-      date: '2024-01-01',
-      contents: {
-        images: [
-          '/images/temp/temp1.jpg',
-          '/images/temp/temp2.jpg',
-          '/images/temp/temp3.png',
-          '/images/temp/temp1.jpg',
-          '/images/temp/temp2.jpg',
-          '/images/temp/temp3.png',
-        ],
-      },
-      memo: '메모입니다. 이미지입니다.',
-      keywords: ['키워드1', '키워드2'],
-      like: false,
-      likeAmount: '1.1k',
-      commentAmount: '1.1k',
-      viewAmount: '1.1k',
-    },
-    {
-      category: 'file',
-      thumbnail: '/images/temp/temp1.jpg',
-      nickname: '라도집',
-      date: '2024-01-01',
-      contents: {
-        file: '파일명.pdf',
-      },
-      memo: '메모입니다. 파일입니다.',
-      keywords: ['키워드1', '키워드2'],
-      like: false,
-      likeAmount: '1.1k',
-      commentAmount: '1.1k',
-      viewAmount: '1.1k',
-    },
-  ],
-  mine: true,
-  privacy: false,
-  join: true,
-  keywords: ['키워드1', '키워드2', '키워드3', '키워드4'],
-  thumbnail: '/images/temp/temp1.jpg',
-};
 
 export const tempNotificationData = [
   {

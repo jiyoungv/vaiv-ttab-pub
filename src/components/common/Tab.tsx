@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import classNames from 'classnames';
 import { useRouter } from 'next/navigation';
 
@@ -22,8 +22,6 @@ export default function Tab({
 }: TabProps) {
   const router = useRouter();
 
-  const scrollRef = useRef<HTMLDivElement>(null);
-
   const [mounted, setMounted] = useState(false);
 
   const [activeValue, setActiveValue] = useState(value || list[0].value);
@@ -40,7 +38,7 @@ export default function Tab({
   const activeIndex = useMemo(() => list.findIndex(v => v.value === activeValue), [list, activeValue]);
 
   return (
-    <div ref={scrollRef} className="z-30 sticky top-17 bg-white" role="tablist">
+    <div className="z-30 sticky top-17 bg-white" role="tablist">
       <ul className="flex border-b border-b-slate-400">
         {list.map((v, i) => (
           <li 
@@ -60,7 +58,6 @@ export default function Tab({
               )}
               onClick={() => {
                 setActiveValue(v.value);
-                scrollRef?.current?.scrollIntoView({ behavior: 'smooth' });
                 if (v.href) router.push(v.href);
                 if (v.onClick) v.onClick();
                 if (onChange) onChange(v.value);

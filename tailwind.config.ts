@@ -101,6 +101,9 @@ const config: Config = {
       lineClamp: {
         10: '10',
       },
+      content: {
+        'empty': '""',
+      },
     },
   },
   plugins: [

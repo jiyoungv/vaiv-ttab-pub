@@ -7,13 +7,14 @@ import CreateInfoNote from '@/components/domain/create/CreateInfoNote';
 import CreateInfoLink from '@/components/domain/create/CreateInfoLink';
 import CreateInfoSearch from '@/components/domain/create/CreateInfoSearch';
 import CreateInfoImage from '@/components/domain/create/CreateInfoImage';
+import CreateInfoFile from '@/components/domain/create/CreateInfoFile';
 import CreateInfoBot from '@/components/domain/create/CreateInfoBot';
 import CreateInfoRecommend from '@/components/domain/create/CreateInfoRecommend';
 import CreateTag from '@/components/domain/create/CreateTag';
 import { tabCategoryIconName } from '@/utils/func';
-import { TabCategory } from '@/types/tab';
+import { TabInfoCategory } from '@/types/tab';
 
-const categoryList: { category: TabCategory; label: string; }[] = [
+const categoryList: { category: TabInfoCategory; label: string; }[] = [
   { category: 'note', label: '노트' },
   { category: 'link', label: '링크' },
   { category: 'search', label: 'AI 검색' },
@@ -26,7 +27,7 @@ export interface CreateInfoProps {}
 export default function CreateInfo({}: CreateInfoProps) {
   const [category, setCategory] = useState('note');
   
-  const activeCategory = useCallback((localCategory: TabCategory) => localCategory === category, [category]);
+  const activeCategory = useCallback((localCategory: TabInfoCategory) => localCategory === category, [category]);
 
   return (
     <article>
@@ -44,7 +45,7 @@ export default function CreateInfo({}: CreateInfoProps) {
                   className={classNames(
                     'inline-flex justify-center items-center w-13 aspect-square rounded-full',
                     {
-                      'bg-slate-50 text-slate-400': !category || !activeCategory(v.category),
+                      'bg-slate-50 text-slate-400 group-hover:bg-slate-100': !category || !activeCategory(v.category),
                       'bg-note-50 text-note-500': category === 'note' && activeCategory(v.category),
                       'bg-link-50 text-link-500': category === 'link' && activeCategory(v.category),
                       'bg-search-50 text-search-500': category === 'search' && activeCategory(v.category),
@@ -62,7 +63,7 @@ export default function CreateInfo({}: CreateInfoProps) {
                 </figure>
                 <p 
                   className={classNames(
-                    'mt-1 text-xs group-hover:font-bold',
+                    'mt-1 text-xs',
                     {
                       'text-slate-500': !activeCategory(v.category),
                       'text-slate-700 font-bold': activeCategory(v.category),
@@ -90,8 +91,9 @@ export default function CreateInfo({}: CreateInfoProps) {
           {category === 'image' && (
             <CreateInfoImage />
           )}
-          {/* {category === 'file' && (
-          )} */}
+          {category === 'file' && (
+            <CreateInfoFile />
+          )}
         </Inner>
       </section>
       <CreateInfoBot />

@@ -2,15 +2,15 @@
 import { useMemo } from 'react';
 
 import AppLayout from '@/components/domain/AppLayout';
-import TabDetail from '@/components/domain/tab/TabDetail';
+import Tab from '@/components/domain/tab/Tab';
 import IconButton from '@/components/common/IconButton';
 import DropDown from '@/components/common/DropDown';
 import Inner from '@/components/common/Inner';
 import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
-import { tempTabDetailData } from '@/utils/tempData';
+import { tempTabData } from '@/utils/tempData';
 
-export default function TabDetailPage() {
+export default function TabPage() {
   const dropDownList = useMemo(() => {
     const listOfOwner = [
       { 
@@ -99,8 +99,8 @@ export default function TabDetailPage() {
           <div className="flex items-center gap-3">
             <IconButton 
               icon={{
-                name: !tempTabDetailData?.bookmark ? 'mgc_bookmark_line' : 'mgc_bookmark_fill',
-                ariaLabel: !tempTabDetailData?.bookmark ? '관심탭 추가' : '관심탭 취소',
+                name: !tempTabData?.bookmark ? 'mgc_bookmark_line' : 'mgc_bookmark_fill',
+                ariaLabel: !tempTabData?.bookmark ? '관심탭 추가' : '관심탭 취소',
               }}
               onClick={() => alert('DEV: 관심탭 추가 or 관심탭 취소')}
             />
@@ -110,8 +110,8 @@ export default function TabDetailPage() {
       }}
       bg="dark"
     >
-      {tempTabDetailData && (
-        <TabDetail data={tempTabDetailData} />
+      {tempTabData && (
+        <Tab data={tempTabData} />
       )}
       {'DEV: loading' && (
         <div className="bg-slate-100">

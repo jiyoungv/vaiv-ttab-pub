@@ -1,18 +1,18 @@
 import classNames from 'classnames';
 
-import { TabCategory } from '@/types/tab';
+import { TabInfoCategory } from '@/types/tab';
 
-export interface TabDetailInfoMemoProps {
-  category?: TabCategory;
+export interface TabInfoMemoProps {
+  category?: TabInfoCategory;
   children?: string;
   className?: string;
 }
 
-export default function TabDetailInfoMemo({
+export default function TabInfoMemo({
   category,
   children,
   className,
-}: TabDetailInfoMemoProps) {
+}: TabInfoMemoProps) {
   return (
     <div 
       className={classNames(

@@ -26,7 +26,7 @@ export default function UserDetailPage() {
         <Inner>
           <div className="flex justify-center mb-4">
             <div className="relative">
-              <ProfileThumbnail src="/images/temp/temp1.jpg" width="100px" />
+              <ProfileThumbnail src="/images/temp/temp1.jpg" size="100px" />
               <div className="absolute bottom-0 right-0 w-8 aspect-square rounded-full bg-white text-xs">
                 TODO: 배지
               </div>

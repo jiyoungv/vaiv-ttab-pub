@@ -47,7 +47,7 @@ export default function MyAccountPage() {
           <form>
             <div className="flex justify-center">
               <div className="relative">
-                <ProfileThumbnail src="/images/temp/temp1.jpg" width="120px" />
+                <ProfileThumbnail src="/images/temp/temp1.jpg" size="120px" />
                 <div className="absolute right-0 bottom-0">
                   <input type="file" id="profile" className="hidden" />
                   <label 

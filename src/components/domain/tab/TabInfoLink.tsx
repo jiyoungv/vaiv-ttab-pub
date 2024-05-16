@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-export interface TabDetailInfoLinkProps {
-  data?: string;
+import { TabInfoLink as TabInfoLinkType } from '@/types/tab';
+
+export interface TabInfoLinkProps {
+  data?: TabInfoLinkType;
 }
 
-export default function TabDetailInfoLink({ data }: TabDetailInfoLinkProps) {
+export default function TabInfoLink({ data }: TabInfoLinkProps) {
   return (
     <div>
       <Link href={data ? data : '/'} target="_blank" className="block">

@@ -1,17 +1,26 @@
 import { useState } from 'react';
 import Image from 'next/image';
+import classNames from 'classnames';
 
 import Inner from '@/components/common/Inner';
 import Button from '@/components/common/Button';
 import Icon from '@/components/common/Icon';
+import CreateInfoBotTooltip from '@/components/domain/create/CreateInfoBotTooltip';
 import ImgAIBot from '/public/images/ai_bot.svg';
 
 export interface CreateInfoBotProps {}
 
 export default function CreateInfoBot({}: CreateInfoBotProps) {
-  const [openMessage, setOpenMessage] = useState(true);
+  const [openMessage, setOpenMessage] = useState(false);
 
-  const list = [
+  const list: { 
+    text: string; 
+    onClick: () => void;
+    tooltip?: {
+      text: string;
+      position?: 'top' | 'bottom';
+    };
+  }[] = [
     {
       text: '자동완성',
       onClick: () => {
@@ -33,6 +42,27 @@ export default function CreateInfoBot({}: CreateInfoBotProps) {
         setOpenMessage(true);
       },
     },
+    {
+      text: '파일 요약문 추출',
+      tooltip: {
+        text: '텍스트가 포함된 문서만 가능해요!',
+      },
+      onClick: () => {
+        alert('DEV: 파일 요약문 추출');
+        setOpenMessage(true);
+      },
+    },
+    {
+      text: 'AI검색에 학습시키기',
+      tooltip: {
+        text: 'AI검색에서 학습 문서 검색이 가능해요.',
+        position: 'bottom',
+      },
+      onClick: () => {
+        alert('DEV: AI검색에 학습시키기');
+        setOpenMessage(true);
+      },
+    },
   ];
 
   return (
@@ -45,18 +75,24 @@ export default function CreateInfoBot({}: CreateInfoBotProps) {
           {(list && !openMessage) && (
             <div className="flex flex-wrap gap-2">
               {list.map((v, i) => (
-                <Button
-                  key={i}
-                  onClick={v.onClick}
-                  color="secondary"
-                  size="sm"
-                  round
-                  style={{
-                    borderTopLeftRadius: 0,
-                  }}
-                >
-                  {v.text}
-                </Button>
+                <div key={i} className="inline-block relative">
+                  <Button
+                    onClick={v.onClick}
+                    color="secondary"
+                    size="sm"
+                    round
+                    style={{
+                      borderTopLeftRadius: 0,
+                    }}
+                  >
+                    {v.text}
+                  </Button>
+                  {v.tooltip && (
+                    <CreateInfoBotTooltip position={v.tooltip.position}>
+                      {v.tooltip.text}
+                    </CreateInfoBotTooltip>
+                  )}
+                </div>
               ))}
             </div>
           )}

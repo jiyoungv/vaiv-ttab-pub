@@ -1,15 +1,32 @@
+import { useState } from 'react';
+
 import Label from '@/components/common/Label';
-import Button from '@/components/common/Button';
+import CreateInfoImagePreview from '@/components/domain/create/CreateInfoImagePreview';
+import CreateInfoUploadButton from '@/components/domain/create/CreateInfoUploadButton';
+import CreateInfoUndo from '@/components/domain/create/CreateInfoUndo';
 
 export interface CreateInfoImageProps {}
 
 export default function CreateInfoImage({}: CreateInfoImageProps) {
+  const [imageList, setImageList] = useState<string[]>(['/images/temp/temp1.jpg', '/images/temp/temp2.jpg', '/images/temp/temp3.png', '/images/temp/temp4.jpg']);
+
   return (
     <div>
       <form>
         <Label mb="4">사진 또는 이미지 업로드</Label>
-        <div className="flex flex-wrap gap-3">
-          TODO: 이미지 등록
+        <div className="grid grid-cols-3 gap-3">
+          {imageList.map((v, i) => (
+            <CreateInfoImagePreview 
+              key={i} 
+              src={v} 
+              onClose={() => {
+                const newState = [...imageList];
+                newState.splice(i, 1);
+                setImageList(newState);
+              }}
+            />
+          ))}
+          <CreateInfoUploadButton width="auto" />
         </div>
         <div className="mt-4">
           <small className="text-slate-500 text-xs">
@@ -23,14 +40,7 @@ export default function CreateInfoImage({}: CreateInfoImageProps) {
         </p>
       </div>
       {'DEV: 히스토리가 쌓이면?' && (
-        <div className="flex justify-end mt-1">
-          <Button
-            onClick={() => alert('DEV: 내용 되돌리기')}
-            color="cancel"
-            icon="mgc_back_line"
-            round
-          />
-        </div>
+        <CreateInfoUndo />
       )}
     </div>
   );

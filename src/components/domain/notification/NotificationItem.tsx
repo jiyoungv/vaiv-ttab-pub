@@ -16,7 +16,7 @@ export default function NotificationItem({ data }: NotificationItemProps) {
           {data?.unchecked && (
             <i className="inline-block absolute left-0 top-4 w-2 aspect-square rounded-full bg-primary-500" aria-label="확인하지 않은 알림"></i>
           )}
-          <ProfileThumbnail src={data?.image} width="40px" />
+          <ProfileThumbnail src={data?.image} size="40px" />
           <div>
             <p className="text-slate-700 text-base group-hover:underline">
               <b className="font-bold">{data?.nickname}</b>
