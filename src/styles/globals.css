@@ -21,6 +21,7 @@
   
     /* layout */
     --mo-max-width: 600px;
+    --main-padding-bottom: calc(76px + 18px);
   }
   html {font-family: theme('fontFamily.en'), theme('fontFamily.kr'), theme('fontFamily.system');font-size: 16px;font-weight: 400;line-height: 1;letter-spacing: 0;}
 }
@@ -43,5 +44,5 @@
 
 /* swiper custom */
 .tab-image-swiper.swiper-horizontal .swiper-pagination-bullets .swiper-pagination-bullet {margin: 0 3px;}
-.tab-image-swiper .swiper-pagination-bullet {opacity: 1;background: theme('colors.slate.300');}
-.tab-image-swiper .swiper-pagination-bullet-active {background: theme('colors.white');}
+.tab-image-swiper .swiper-pagination-bullet {opacity: 0.8;background: rgba(255, 255, 255, 0.6);box-shadow: theme('boxShadow.md');}
+.tab-image-swiper .swiper-pagination-bullet-active {opacity: 1;background: theme('colors.primary.500');}

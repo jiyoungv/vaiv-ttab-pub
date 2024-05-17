@@ -491,3 +491,33 @@ export const tempSupportNoticeDetailData = {
   text: `안녕하세요 Ttab 팀입니다.\n\n일단 엔터를 \\n로 넣어봤습니다.\n어떻게 나누실지 모르겠네요.\n\nTtab 서비스 고도화 업데이트 작업으로 인해 2024.01.01 18시 부터 2024.01.02 7시까지 서비스가 중단될 예정입니다.\n\n좀 더 편리한 Ttab 서비스로 돌아오겠습니다.\n\nTtab팀 드림.`,
   new: true,
 };
+
+export const tempBadgeData = [
+  {
+    image: '/images/badge_beginner.png',
+    name: '비기너',
+    locked: false,
+  },
+  {
+    image: '/images/badge_first_share.png',
+    name: '공유의 시작',
+    locked: false,
+  },
+  {
+    image: '/images/badge_beginner.png',
+    name: '정보왕',
+    locked: true,
+  },
+  {
+    name: '탭 러버',
+    locked: true,
+  },
+  {
+    name: '인기쟁이',
+    locked: true,
+  },
+  {
+    name: '마당발',
+    locked: true,
+  },
+];

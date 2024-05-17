@@ -1,25 +1,36 @@
 'use client'
 import { useState } from 'react';
+import classNames from 'classnames';
 
 import AppLayout from '@/components/domain/AppLayout';
 import Inner from '@/components/common/Inner';
+import Icon from '@/components/common/Icon';
 import BigSelect from '@/components/common/BigSelect';
 import TabPreviewList from '@/components/domain/tab/TabPreviewList';
 import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
 import { tempTabPreviewData } from '@/utils/tempData';
+import { TabView } from '@/types/tab';
+
+const viewList: { 
+  value: TabView; 
+  icon: string;
+}[] = [
+  { value: 'default', icon: 'mgc_layout_grid_fill' },
+  { value: 'list', icon: 'mgc_list_check_line' },
+];
 
 export default function MyTabPage() {
   const [select, setSelect] = useState('recent');
 
-  const [view, setView] = useState('card');
+  const [view, setView] = useState<TabView>('default');
 
   return (
     <AppLayout
       navBar={{
         title: '마이탭',
       }}
-      bg="dark"
+      bg={view === 'default' ? 'dark' : 'default'}
     >
       <section className="py-2 bg-white">
         <Inner>
@@ -34,20 +45,38 @@ export default function MyTabPage() {
               onChange={(value) => setSelect(value)}
               dim
             />
-            <div>
-              TODO: 보기 방식
+            <div className="flex gap-1">
+              {viewList.map((v, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => setView(v.value)}
+                  className={classNames(
+                    'p-1 border hover:bg-slate-50', 
+                    {
+                      'border-slate-200': view !== v.value,
+                      'border-slate-700': view === v.value,
+                    },
+                  )}
+                >
+                  <Icon 
+                    name={v.icon}
+                    color={view !== v.value ? 'text-slate-400' : 'text-slate-700'}
+                  />
+                </button>
+              ))}
             </div>
           </div>
         </Inner>
       </section>
       <section>
         {tempTabPreviewData && (
-          <TabPreviewList data={tempTabPreviewData} />
+          <TabPreviewList data={tempTabPreviewData} view={view} />
         )}
         {'DEV: loading' && (
           <div className="flex flex-col gap-3">
             {Array(5).fill('').map((v, i) => (
-              <Skeleton key={i} color="white" height="100px" square />
+              <Skeleton key={i} color={view === 'default' ? 'white' : 'default'} height="100px" square />
             ))}
           </div>
         )}

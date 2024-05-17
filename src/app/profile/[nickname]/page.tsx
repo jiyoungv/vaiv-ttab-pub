@@ -4,14 +4,15 @@ import { useState } from 'react';
 import AppLayout from '@/components/domain/AppLayout';
 import Inner from '@/components/common/Inner';
 import ProfileThumbnail from '@/components/domain/ProfileThumbnail';
+import BadgeImage from '@/components/domain/BadgeImage';
 import Badge from '@/components/common/Badge';
 import Button from '@/components/common/Button';
 import Tab from '@/components/common/Tab';
 import TabPreviewList from '@/components/domain/tab/TabPreviewList';
-import BadgePreviewList from '@/components/domain/BadgePreviewList';
+import BadgeList from '@/components/domain/BadgeList';
 import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
-import { tempTabPreviewData } from '@/utils/tempData';
+import { tempTabPreviewData, tempBadgeData } from '@/utils/tempData';
 
 export default function UserDetailPage() {
   const [tab, setTab] = useState('tab');
@@ -27,8 +28,8 @@ export default function UserDetailPage() {
           <div className="flex justify-center mb-4">
             <div className="relative">
               <ProfileThumbnail src="/images/temp/temp1.jpg" size="100px" />
-              <div className="absolute bottom-0 right-0 w-8 aspect-square rounded-full bg-white text-xs">
-                TODO: 배지
+              <div className="absolute -bottom-1 -right-1">
+                <BadgeImage src="/images/badge_beginner.png" size="40px" />
               </div>
             </div>
           </div>
@@ -121,8 +122,8 @@ export default function UserDetailPage() {
           )}
           {tab === 'badge' && (
             <div className="mt-5 px-10">
-              {'DEV: data' && (
-                <BadgePreviewList />
+              {tempBadgeData && (
+                <BadgeList data={tempBadgeData} />
               )}
               {'DEV: loading' && (
                 <div className="flex justify-between">

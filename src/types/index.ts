@@ -15,3 +15,9 @@ export interface RecentSearchData {
   link: string;
   keyword: string;
 }
+
+export interface BadgeData {
+  image?: string;
+  name?: string;
+  locked?: boolean;
+}

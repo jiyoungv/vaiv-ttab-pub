@@ -54,7 +54,6 @@ export default function SupportFAQPage() {
             />
           </Inner>
         </form>
-        TODO: tab slide 기능
         {filteredData && (
           <>
             <ul className="flex gap-1 my-6">
@@ -79,6 +78,7 @@ export default function SupportFAQPage() {
                 </li>
               ))}
             </ul>
+            TODO: swipe 기능
             <div>
               {filteredData.map((data, i) => (
                 <SupportFAQ key={i} data={data} />

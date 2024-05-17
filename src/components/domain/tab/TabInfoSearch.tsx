@@ -11,7 +11,7 @@ export interface TabInfoSearchProps {
 
 export default function TabInfoSearch({ data, omit }: TabInfoSearchProps) {
   const [open, setOpen] = useState(false);
-console.log(parse(data?.answer?.text!))
+
   return (
     <div className="flex flex-col gap-2">
       {data?.question && (

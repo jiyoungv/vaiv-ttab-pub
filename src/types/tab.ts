@@ -1,3 +1,5 @@
+export type TabView = 'default' | 'list';
+
 export type TabInfoCategory = 'note' | 'link' | 'search' | 'image' | 'file' | 'report';
 
 export type TabInfoNote = string;

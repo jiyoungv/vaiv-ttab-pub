@@ -10,6 +10,7 @@ export interface AppLayoutProps {
   navBar?: NavBarProps; 
   hideGnb?: boolean;
   bg?: 'default' | 'dark';
+  pb?: 'default' | '0';
   className?: string;
 }
 
@@ -19,6 +20,7 @@ export default function AppLayout({
   navBar, 
   hideGnb,
   bg = 'default',
+  pb = 'default',
   className,
 }: AppLayoutProps) {
   return (
@@ -37,7 +39,12 @@ export default function AppLayout({
       {!hideGnb && (
         <Gnb />
       )}
-      <main className="relative min-h-screen pt-17 pb-[calc(76px+theme(spacing[4.5]))]">
+      <main className={classNames(
+        'relative min-h-screen pt-17',
+        {
+          'pb-[var(--main-padding-bottom)]': pb === 'default',
+        },
+      )}>
         {children}
       </main>
     </div>
