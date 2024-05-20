@@ -7,12 +7,9 @@ import TabPreviewList from '@/components/domain/tab/TabPreviewList';
 import IconButton from '@/components/common/IconButton';
 import Skeleton from '@/components/common/Skeleton';
 import NoData from '@/components/common/NoData';
-import DevModal from '@/components/domain/DevModal';
 import { tempTabPreviewData } from '@/utils/tempData';
 
 export default function Home() {
-  const [openDevModal, setOpenDevModal] = useState(true);
-
   const [tag, setTag] = useState('tag-all');
 
   return (
@@ -84,7 +81,6 @@ export default function Home() {
           />
         )}
       </section>
-      {openDevModal && <DevModal onClose={() => setOpenDevModal(false)} />}
     </AppLayout>
   );
 }

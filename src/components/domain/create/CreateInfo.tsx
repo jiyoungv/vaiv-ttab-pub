@@ -111,7 +111,7 @@ export default function CreateInfo({}: CreateInfoProps) {
           { 
             title: '최근 저장한 정보',
             onClick: () => {
-              alert('TODO: 탭 선택 바텀시트 open')
+              alert('TODO: 최근 저장한 정보 바텀시트 open')
             },
           },
         ].map((v, i) => (
